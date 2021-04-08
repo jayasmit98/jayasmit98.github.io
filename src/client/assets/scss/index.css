@@ -1,0 +1,27 @@
+.fas {
+  color: #525659;
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+.navbar {
+  height: 5rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem 1.5rem;
+}
+
+.navbar .logo img {
+  height: auto;
+  width: 9rem;
+}
+/*# sourceMappingURL=index.css.map */
