@@ -24,4 +24,177 @@
   height: auto;
   width: 9rem;
 }
+
+.top {
+  width: 100%;
+  height: auto;
+  background-color: #93bede;
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.top h1 {
+  letter-spacing: 0.1rem;
+}
+
+p {
+  text-align: center;
+}
+
+.topsearch {
+  border-radius: 0px;
+  margin-top: 0.5rem;
+  padding: 0.75rem 3.5rem;
+}
+
+.country {
+  padding-left: 2.3rem;
+}
+
+.fa-map-marker-alt {
+  position: absolute;
+  padding-top: 0.85rem;
+  left: 1.75rem;
+  margin: 0;
+}
+
+.gps {
+  position: absolute;
+  width: 1.2rem;
+  height: auto;
+  color: #525659;
+  padding-top: 0.85rem;
+  right: 1.75rem;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.how_it_works_container {
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  row-gap: 1.5rem;
+}
+
+.how_it_works_container div {
+  text-align: center;
+}
+
+.how_it_works_container div span {
+  padding-top: 0.20rem;
+  font-size: 1.6rem;
+}
+
+.how_it_works_container div h3 {
+  text-align: left;
+  margin-bottom: 0;
+  color: #a19f9f;
+}
+
+.one {
+  border: 0.5px solid #a19f9f;
+  border-radius: 10px;
+  padding: 1.15rem 0.5rem;
+  -ms-grid-columns: 1.25fr 8.75fr;
+      grid-template-columns: 1.25fr 8.75fr;
+}
+
+.one:hover {
+  border: 0.5px solid black;
+}
+
+.one:hover span {
+  color: #93bede;
+}
+
+.one:hover h3 {
+  color: #222844;
+}
+
+.one:active {
+  border: 0.5px solid black;
+}
+
+.one:active span {
+  color: #93bede;
+}
+
+.one:active h3 {
+  color: #222844;
+}
+
+.fbox .imgcont {
+  padding: 1.2rem;
+  width: 100%;
+  height: auto;
+}
+
+.fbox h4 {
+  margin-bottom: 1.25rem;
+}
+
+.fbox p {
+  margin-bottom: 0.5rem;
+}
+
+.expertdoctors {
+  background-color: #222844;
+}
+
+.expertdoctors h2, .expertdoctors p {
+  color: white;
+}
+
+.doctorgrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  row-gap: 1rem;
+}
+
+.doctorcard {
+  background-color: white;
+}
+
+.doctorcard img {
+  margin-bottom: 0.75rem;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.doctorcard .data_container {
+  position: relative;
+  text-align: left;
+  padding-bottom: 1.2rem;
+  border-bottom: 4px solid #93bede;
+}
+
+.doctorcard .data_container h5 {
+  color: #167ddd;
+  margin-bottom: 0.5rem;
+  margin-left: 2.65rem;
+}
+
+.doctorcard .data_container h5::before {
+  content: '';
+  background-color: #167ddd;
+  width: 2.3rem;
+  height: 0.110rem;
+  position: absolute;
+  top: 0.65rem;
+  left: 0;
+}
+
+.doctorcard .data_container p {
+  text-align: left;
+  color: #222844;
+  font-size: 1.1rem;
+  letter-spacing: 0;
+  margin-bottom: 0.2rem;
+  margin-left: 2.65rem;
+}
 /*# sourceMappingURL=index.css.map */

@@ -42,6 +42,7 @@ h1,h2,h3,h4,h5,h6{
 h1,h2{
     font-size:2rem;
     line-height: 2.4rem;
+    font-weight: 600;
     margin-bottom:0.625rem;
 }
 
@@ -72,8 +73,9 @@ h6{
 p {
     font-family: Nexa-Light;
     line-height: 1.4rem;
-    font-size:0.9rem;
-    font-weight: 600;
+    font-size:4rem;
+    //font-weight: 600;
+    
     color: $dark-blue-color;
     margin-bottom:0.625rem;
 }

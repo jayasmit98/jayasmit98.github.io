@@ -1,3 +1,16 @@
+$background-blue-color:rgb(147, 190, 222);
+$white-color: rgb(255, 255, 255);
+$dark-blue-color:rgb(34, 40, 68);
+$light-blue-background-color: rgb(147, 190, 222);
+$grey:rgb(161, 159, 159);
+$off-white:rgb(244, 244, 248);
+$sky-blue:rgb(22, 125, 221);
+$light-grey:rgb(219, 216, 216);
+$blue-grey:rgb(240, 240, 245);
+$light-blue: rgb(209, 229, 245);
+$white:rgb(255,255,255);
+$dark-grey:rgb(102, 101, 101);
+
 .fas {
     color: #525659;
     height: auto;
@@ -11,14 +24,163 @@
     justify-content: space-between;
     padding:1.5rem 1.5rem;
 }
+.navbar{
+    .logo {
+        img {
+            height:auto;
+            width:9rem;
+        }
+    }   
+}
 
-    .navbar{
-        .logo {
-            img {
-                height:auto;
-                width:9rem;
-            }
-        }   
+.top{
+    width:100%;
+    height:auto;
+    background-color:  rgb(147, 190, 222);
+    text-align:center;
+    padding:2.5rem 1rem;
+    h1{
+        letter-spacing: 0.1rem;
     }
 
+}
+p{
+    text-align:center;
+}
 
+.topsearch {
+    border-radius: 0px;
+    margin-top:0.5rem;
+    padding:0.75rem 3.5rem;
+}
+ .country {
+    padding-left:2.3rem;
+ }
+
+.fa-map-marker-alt {
+    position: absolute;
+    padding-top: 0.85rem;    
+    left:1.75rem;
+    margin:0;
+} 
+
+.gps {
+    position: absolute;
+    width:1.2rem;
+    height:auto;
+    color:#525659;
+    padding-top:0.85rem;
+    right:1.75rem;
+}
+
+.grid{
+    display:grid;
+}
+.how_it_works_container {
+    grid-template-columns: 100%;
+    row-gap: 1.5rem;
+    div{
+        text-align:center;
+        span{
+            
+            padding-top:0.20rem;
+            font-size:1.6rem;
+        }
+        h3{
+            text-align: left;
+            margin-bottom:0;
+            color:$grey
+        }
+    }
+}
+
+.one {
+    border:0.5px solid $grey;
+    border-radius: 10px;
+    padding:1.15rem 0.5rem;
+    grid-template-columns: 1.25fr 8.75fr;
+    
+}
+.one:hover{
+    border:0.5px solid black;
+    span{
+        color: $light-blue-background-color;
+    }
+    h3{
+        color:$dark-blue-color;
+    }
+}
+.one:active{
+    border:0.5px solid black;
+    span{
+        color: $light-blue-background-color;
+    }
+    h3{
+        color:$dark-blue-color;
+    }
+}
+
+.fbox{
+    .imgcont{
+        padding:1.2rem;
+        width:100%;
+        height:auto;        
+    }
+    h4{
+        margin-bottom: 1.25rem;
+    }
+    p{
+        margin-bottom:0.5rem;
+    }    
+}
+.expertdoctors{
+    background-color: $dark-blue-color;
+    h2,p{
+        color:$white;
+    }  
+}
+.doctorgrid {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 1rem;
+}
+
+.doctorcard {
+    background-color: white;
+    
+    img{
+        margin-bottom:0.75rem;
+        height: 500px;
+        object-fit: cover;
+    }
+    .data_container{
+        position:relative;
+        text-align: left;
+        padding-bottom: 1.2rem;
+        border-bottom: 4px solid $light-blue-background-color;
+        h5{
+            color:$sky-blue;
+            margin-bottom:0.5rem;
+            margin-left: 2.65rem;
+            
+        }
+        h5::before{
+            content:'';
+            background-color: $sky-blue;
+            width:2.3rem;
+            height:0.110rem;
+            position:absolute;
+            top:0.65rem;
+            left:0;
+            
+        }
+        p{
+            text-align: left;
+            color:$dark-blue-color;
+            font-size:1.1rem;
+            letter-spacing: 0;
+            margin-bottom:0.2rem;
+            margin-left: 2.65rem;
+        }
+    }    
+}
