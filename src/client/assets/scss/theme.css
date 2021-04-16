@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -14,7 +14,7 @@
 }
 
 section {
-  padding: 2.5rem 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
 }
 
@@ -31,31 +31,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-  font-size: 2.1rem;
+  font-size: 2rem;
   line-height: 2.4rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
-}
-
-h2{
-  font-size:1.9rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
 }
 
 h3 {
   font-size: 1.6rem;
   line-height: 2rem;
-  font-weight: 900;
   margin-bottom: 0.625rem;
 }
 
 h4 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.8rem;
   margin-bottom: 0.625rem;
 }
 
 h5 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.6rem;
   margin-bottom: 0.3125rem;
 }
@@ -69,10 +64,9 @@ h6 {
 p {
   font-family: Nexa-Light;
   line-height: 1.4rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
+  font-size: 4rem;
   color: #222844;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.625rem;
 }
 
 input, select {
@@ -116,7 +110,6 @@ input::-ms-input-placeholder {
 
 input::placeholder {
   font-size: 0.9rem;
-  letter-spacing: 0.1rem;
   color: #a19f9f;
 }
 
@@ -149,9 +142,8 @@ textarea::placeholder {
 }
 
 button {
-  font-family: Nexa-Light;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: Nexa-Bold;
+  font-size: 0.85rem;
   line-height: 1.4rem;
   border: none;
   border-radius: 0.5rem;
@@ -201,10 +193,10 @@ ul {
 }
 
 ul li {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-family: Nexa-Light;
   color: #222844;
-  
+  font-weight: 600;
   line-height: 1.4rem;
   list-style: none;
 }

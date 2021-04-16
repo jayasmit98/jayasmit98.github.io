@@ -11,7 +11,7 @@ $light-blue: rgb(209, 229, 245);
 $white:rgb(255,255,255);
 $dark-grey:rgb(102, 101, 101);
 
-*{
+*, *::before, *::after{
     box-sizing: border-box;
 }
 

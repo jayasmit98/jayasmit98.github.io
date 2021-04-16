@@ -89,7 +89,7 @@ p{
         h3{
             text-align: left;
             margin-bottom:0;
-            color:$grey
+            color:$grey;
         }
     }
 }
@@ -99,12 +99,22 @@ p{
     border-radius: 10px;
     padding:1.15rem 0.5rem;
     grid-template-columns: 1.25fr 8.75fr;
+    h3{
+        margin-bottom: 0;
+        text-align: left;
+        color:$grey;
+    }
+    span{
+        font-size: 1.6rem;
+        padding-top: 0.30rem;
+    }
     
 }
 .one:hover{
     border:0.5px solid black;
     span{
         color: $light-blue-background-color;
+
     }
     h3{
         color:$dark-blue-color;
@@ -142,22 +152,26 @@ p{
 .doctorgrid {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    row-gap: 1rem;
+    row-gap: 1.5rem;
 }
 
 .doctorcard {
-    background-color: white;
-    
+    background-color: $white;
+    border-bottom: 4px solid $light-blue-background-color;
     img{
-        margin-bottom:0.75rem;
+        //margin-bottom:0.75rem;
+        display: block;
         height: 500px;
         object-fit: cover;
     }
     .data_container{
+        background-color: $white;
         position:relative;
         text-align: left;
-        padding-bottom: 1.2rem;
-        border-bottom: 4px solid $light-blue-background-color;
+        //padding-bottom: 1.2rem;
+        padding-top:0.75rem;
+        
+        
         h5{
             color:$sky-blue;
             margin-bottom:0.5rem;
@@ -170,17 +184,161 @@ p{
             width:2.3rem;
             height:0.110rem;
             position:absolute;
-            top:0.65rem;
+            top:1.4rem;
             left:0;
             
         }
-        p{
+        li{
             text-align: left;
             color:$dark-blue-color;
             font-size:1.1rem;
-            letter-spacing: 0;
             margin-bottom:0.2rem;
             margin-left: 2.65rem;
         }
     }    
+}
+.medicaltreatment{
+    .medical_container{
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        row-gap: 1.5rem;
+        .photos1{
+            background-image: linear-gradient(to top, $dark-blue-color 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg);
+            background-size: cover;
+            height:27rem;
+            position: relative;
+            h5,p{
+                color: white;
+                position:absolute;
+                text-shadow: 4px solid $dark-blue-color;
+                margin-bottom:0;
+            }
+            h5{
+                bottom:2.7rem;
+                left:1.5rem;
+            }
+            p{
+                bottom:1.2rem;
+                left:1.5rem;
+                letter-spacing: 0;
+                font-size:1.1rem;
+                font-weight: 500;
+            }
+        }
+        .photos2{
+            background-image: linear-gradient(to top, $dark-blue-color 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg);
+            background-size: cover;
+            height:27rem;
+            position: relative;
+            h5,p{
+                color: white;
+                position:absolute;
+                text-shadow: 4px solid $dark-blue-color;
+                margin-bottom:0;
+            }
+            h5{
+                bottom:2.7rem;
+                left:1.5rem;
+            }
+            p{
+                bottom:1.2rem;
+                left:1.5rem;
+                letter-spacing: 0;
+                font-size:1.1rem;
+                font-weight: 500;
+            }
+        }
+        .photos3{
+            background-image: linear-gradient(to top, $dark-blue-color 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg);
+            background-size: cover;
+            height:27rem;
+            position: relative;
+            h5,p{
+                color: white;
+                position:absolute;
+                text-shadow: 4px solid $dark-blue-color;
+                margin-bottom:0;
+            }
+            h5{
+                bottom:2.7rem;
+                left:1.5rem;
+            }
+            p{
+                bottom:1.2rem;
+                left:1.5rem;
+                letter-spacing: 0;
+                font-size:1.1rem;
+                font-weight: 500;
+            }
+        }
+        .photos4{
+            background-image: linear-gradient(to top, $dark-blue-color 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg);
+            background-size: cover;
+            height:27rem;
+            position: relative;
+            h5,p{
+                color: white;
+                position:absolute;
+                text-shadow: 4px solid $dark-blue-color;
+                margin-bottom:0;
+            }
+            h5{
+                bottom:2.7rem;
+                left:1.5rem;
+            }
+            p{
+                bottom:1.2rem;
+                left:1.5rem;
+                letter-spacing: 0;
+                font-size:1.1rem;
+                font-weight: 500;
+            }
+        }
+        .photos5{
+            background-image: linear-gradient(to top, $dark-blue-color 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg);
+            background-size: cover;
+            height:27rem;
+            position: relative;
+            h5,p{
+                color: white;
+                position:absolute;
+                text-shadow: 4px solid $dark-blue-color;
+                margin-bottom:0;
+            }
+            h5{
+                bottom:2.7rem;
+                left:1.5rem;
+            }
+            p{
+                bottom:1.2rem;
+                left:1.5rem;
+                letter-spacing: 0;
+                font-size:1.1rem;
+                font-weight: 500;
+            }
+        }
+        .photos6{
+            background-image: linear-gradient(to top, $dark-blue-color 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg);
+            background-size: cover;
+            height:27rem;
+            position: relative;
+            h5,p{
+                color: white;
+                position:absolute;
+                text-shadow: 4px solid $dark-blue-color;
+                margin-bottom:0;
+            }
+            h5{
+                bottom:2.7rem;
+                left:1.5rem;
+            }
+            p{
+                bottom:1.2rem;
+                left:1.5rem;
+                letter-spacing: 0;
+                font-size:1.1rem;
+                font-weight: 500;
+            }
+        }
+    }
 }
