@@ -417,4 +417,56 @@ p {
 .service_container .services h6 {
   font-size: 0.9rem;
 }
+
+.help {
+  background-color: #93bede;
+}
+
+.help h2 {
+  color: white;
+}
+
+.help .sky-blue {
+  font-size: 1.15rem;
+  padding: 0.9rem 0.9rem;
+  border-radius: 5px;
+}
+
+.footer {
+  background-color: #222844;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer .logos {
+  margin-bottom: 1.5rem;
+}
+
+.footer .logos .fab {
+  margin-right: 2rem;
+}
+
+.footer img {
+  width: 14rem;
+  height: 3rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer li, .footer i, .footer p {
+  color: #cccccc;
+}
+
+.footer li {
+  font-size: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.footer .copyright p {
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-bottom: 1.5rem;
+}
 /*# sourceMappingURL=index.css.map */

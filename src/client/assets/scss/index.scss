@@ -368,3 +368,48 @@ p{
         }           
     }
 }
+
+.help{
+    background-color: $light-blue-background-color;
+    h2{
+        color:$white;
+    }
+    .sky-blue{
+        font-size:1.15rem;
+        padding:0.9rem 0.9rem;
+        border-radius: 5px;
+    }
+}
+
+.footer{
+    background-color: $dark-blue-color;
+    padding:1rem;
+    text-align: center;
+    .logos{
+        .fab{
+            margin-right:2rem;
+        }
+        margin-bottom:1.5rem;
+    }
+    img{
+        width:14rem;
+        height:3rem;
+        object-fit: contain;
+        margin-top:1rem;
+        margin-bottom:1.5rem;
+    }
+    li,i,p{
+        color:#cccccc;
+    }
+    li{
+        font-size:20px;
+        margin-bottom: 1.5rem;
+    }
+    .copyright{
+        p{
+            font-weight: 500;
+            letter-spacing: 0;
+            margin-bottom: 1.5rem;
+        }
+    }
+}

@@ -172,6 +172,12 @@ button {
   border: 0.125rem solid #93bede;
 }
 
+.sky-blue {
+  background-color:#0173b2;
+  color:white;
+  border: 0.125rem solid #0173b2; 
+}
+
 .white {
   background-color: white;
   color: #222844;
