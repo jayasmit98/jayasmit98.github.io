@@ -342,3 +342,29 @@ p{
         }
     }
 }
+
+.exclusive{
+    background-color: $blue-grey;
+}
+
+.service_container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 1rem;
+    column-gap: 1rem;
+
+    .services{
+        background-color: $white;
+        padding:1rem 1.5rem;
+        border-radius: 20px;
+        img {
+            height:6.5rem;
+            width:6.5rem;
+            object-fit: cover;
+        }
+        h6{
+            font-size:0.9rem;
+        }           
+    }
+}

@@ -384,4 +384,37 @@ p {
   font-size: 1.1rem;
   font-weight: 500;
 }
+
+.exclusive {
+  background-color: #f0f0f5;
+}
+
+.service_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  row-gap: 1rem;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.service_container .services {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+}
+
+.service_container .services img {
+  height: 6.5rem;
+  width: 6.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.service_container .services h6 {
+  font-size: 0.9rem;
+}
 /*# sourceMappingURL=index.css.map */
