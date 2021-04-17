@@ -5,7 +5,8 @@
 }
 
 .navbar {
-  height: 5rem;
+  height: auto;
+  width: 100%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,12 +18,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1.5rem 1.5rem;
+  padding: 1rem 1rem;
 }
 
 .navbar .logo img {
-  height: auto;
-  width: 9rem;
+  height: 1.5rem;
+  width: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .top {
@@ -33,10 +36,6 @@
   padding: 2.5rem 1rem;
 }
 
-.top h1 {
-  letter-spacing: 0.1rem;
-}
-
 p {
   text-align: center;
 }
@@ -44,7 +43,9 @@ p {
 .topsearch {
   border-radius: 0px;
   margin-top: 0.5rem;
-  padding: 0.75rem 3.5rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 3rem;
+  letter-spacing: 0.1rem;
 }
 
 .country {
@@ -53,23 +54,31 @@ p {
 
 .fa-map-marker-alt {
   position: absolute;
-  padding-top: 0.85rem;
+  padding-top: 0.75rem;
   left: 1.75rem;
   margin: 0;
 }
 
 .gps {
   position: absolute;
-  width: 1.2rem;
+  width: 1rem;
   height: auto;
   color: #525659;
-  padding-top: 0.85rem;
+  padding-top: 0.75rem;
   right: 1.75rem;
 }
 
 .grid {
   display: -ms-grid;
   display: grid;
+}
+
+.howitworks {
+  text-align: center;
+}
+
+.howitworks header p {
+  letter-spacing: 0.05rem;
 }
 
 .how_it_works_container {
@@ -96,7 +105,7 @@ p {
 .one {
   border: 0.5px solid #a19f9f;
   border-radius: 10px;
-  padding: 1.15rem 0.5rem;
+  padding: 0.8rem 0.5rem;
   -ms-grid-columns: 1.25fr 8.75fr;
       grid-template-columns: 1.25fr 8.75fr;
 }
@@ -104,12 +113,13 @@ p {
 .one h3 {
   margin-bottom: 0;
   text-align: left;
+  font-size: 1.3rem;
   color: #a19f9f;
 }
 
 .one span {
-  font-size: 1.6rem;
-  padding-top: 0.30rem;
+  font-size: 1.3rem;
+  padding-top: 0.35rem;
 }
 
 .one:hover {
@@ -143,19 +153,26 @@ p {
 }
 
 .fbox h4 {
-  margin-bottom: 1.25rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
 }
 
 .fbox p {
   margin-bottom: 0.5rem;
+  letter-spacing: 0.05rem;
 }
 
 .expertdoctors {
   background-color: #222844;
+  text-align: center;
 }
 
 .expertdoctors h2, .expertdoctors p {
   color: white;
+}
+
+.expertdoctors p {
+  letter-spacing: 0.05rem;
 }
 
 .doctorgrid {
@@ -173,7 +190,7 @@ p {
 
 .doctorcard img {
   display: block;
-  height: 500px;
+  height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -187,14 +204,14 @@ p {
 
 .doctorcard .data_container h5 {
   color: #167ddd;
-  margin-bottom: 0.5rem;
-  margin-left: 2.65rem;
+  margin-bottom: 0.3rem;
+  margin-left: 2.2rem;
 }
 
 .doctorcard .data_container h5::before {
   content: '';
   background-color: #167ddd;
-  width: 2.3rem;
+  width: 2rem;
   height: 0.110rem;
   position: absolute;
   top: 1.4rem;
@@ -204,9 +221,17 @@ p {
 .doctorcard .data_container li {
   text-align: left;
   color: #222844;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   margin-bottom: 0.2rem;
-  margin-left: 2.65rem;
+  margin-left: 2.2rem;
+}
+
+.medicaltreatment {
+  text-align: center;
+}
+
+.medicaltreatment header p {
+  letter-spacing: 0.05rem;
 }
 
 .medicaltreatment .medical_container {
@@ -221,7 +246,8 @@ p {
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(7.5%, #222844), color-stop(40%, transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg);
   background-image: linear-gradient(to top, #222844 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg);
   background-size: cover;
-  height: 27rem;
+  height: 23rem;
+  width: auto;
   position: relative;
 }
 
@@ -233,15 +259,16 @@ p {
 }
 
 .medicaltreatment .medical_container .photos1 h5 {
-  bottom: 2.7rem;
-  left: 1.5rem;
+  font-size: 1rem;
+  bottom: 2.5rem;
+  left: 1.15rem;
 }
 
 .medicaltreatment .medical_container .photos1 p {
-  bottom: 1.2rem;
-  left: 1.5rem;
+  bottom: 1rem;
+  left: 1.15rem;
   letter-spacing: 0;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -249,7 +276,7 @@ p {
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(7.5%, #222844), color-stop(40%, transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg);
   background-image: linear-gradient(to top, #222844 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg);
   background-size: cover;
-  height: 27rem;
+  height: 23rem;
   position: relative;
 }
 
@@ -261,15 +288,16 @@ p {
 }
 
 .medicaltreatment .medical_container .photos2 h5 {
-  bottom: 2.7rem;
-  left: 1.5rem;
+  font-size: 1rem;
+  bottom: 2.5rem;
+  left: 1.15rem;
 }
 
 .medicaltreatment .medical_container .photos2 p {
-  bottom: 1.2rem;
-  left: 1.5rem;
+  bottom: 1rem;
+  left: 1.15rem;
   letter-spacing: 0;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -277,7 +305,7 @@ p {
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(7.5%, #222844), color-stop(40%, transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg);
   background-image: linear-gradient(to top, #222844 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg);
   background-size: cover;
-  height: 27rem;
+  height: 23rem;
   position: relative;
 }
 
@@ -289,15 +317,16 @@ p {
 }
 
 .medicaltreatment .medical_container .photos3 h5 {
-  bottom: 2.7rem;
-  left: 1.5rem;
+  font-size: 1rem;
+  bottom: 2.5rem;
+  left: 1.15rem;
 }
 
 .medicaltreatment .medical_container .photos3 p {
-  bottom: 1.2rem;
-  left: 1.5rem;
+  bottom: 1rem;
+  left: 1.15rem;
   letter-spacing: 0;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -305,7 +334,7 @@ p {
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(7.5%, #222844), color-stop(40%, transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg);
   background-image: linear-gradient(to top, #222844 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg);
   background-size: cover;
-  height: 27rem;
+  height: 23rem;
   position: relative;
 }
 
@@ -317,15 +346,16 @@ p {
 }
 
 .medicaltreatment .medical_container .photos4 h5 {
-  bottom: 2.7rem;
-  left: 1.5rem;
+  font-size: 1rem;
+  bottom: 2.5rem;
+  left: 1.15rem;
 }
 
 .medicaltreatment .medical_container .photos4 p {
-  bottom: 1.2rem;
-  left: 1.5rem;
+  bottom: 1rem;
+  left: 1.15rem;
   letter-spacing: 0;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -333,7 +363,7 @@ p {
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(7.5%, #222844), color-stop(40%, transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg);
   background-image: linear-gradient(to top, #222844 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg);
   background-size: cover;
-  height: 27rem;
+  height: 23rem;
   position: relative;
 }
 
@@ -345,15 +375,16 @@ p {
 }
 
 .medicaltreatment .medical_container .photos5 h5 {
-  bottom: 2.7rem;
-  left: 1.5rem;
+  font-size: 1rem;
+  bottom: 2.5rem;
+  left: 1.15rem;
 }
 
 .medicaltreatment .medical_container .photos5 p {
-  bottom: 1.2rem;
-  left: 1.5rem;
+  bottom: 1rem;
+  left: 1.15rem;
   letter-spacing: 0;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -361,7 +392,7 @@ p {
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(7.5%, #222844), color-stop(40%, transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg);
   background-image: linear-gradient(to top, #222844 7.5%, transparent 40%), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg);
   background-size: cover;
-  height: 27rem;
+  height: 23rem;
   position: relative;
 }
 
@@ -373,20 +404,26 @@ p {
 }
 
 .medicaltreatment .medical_container .photos6 h5 {
-  bottom: 2.7rem;
-  left: 1.5rem;
+  font-size: 1rem;
+  bottom: 2.5rem;
+  left: 1.15rem;
 }
 
 .medicaltreatment .medical_container .photos6 p {
-  bottom: 1.2rem;
-  left: 1.5rem;
+  bottom: 1rem;
+  left: 1.15rem;
   letter-spacing: 0;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
 .exclusive {
   background-color: #f0f0f5;
+  text-align: center;
+}
+
+.exclusive header p {
+  letter-spacing: 0.05rem;
 }
 
 .service_container {
@@ -405,30 +442,35 @@ p {
   background-color: white;
   padding: 1rem 1.5rem;
   border-radius: 20px;
+  height: 8rem;
 }
 
 .service_container .services img {
-  height: 6.5rem;
-  width: 6.5rem;
+  height: 3rem;
+  width: 5rem;
+  margin-top: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .service_container .services h6 {
-  font-size: 0.9rem;
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .help {
+  text-align: center;
   background-color: #93bede;
 }
 
 .help h2 {
+  font-size: 1.6rem;
   color: white;
 }
 
 .help .sky-blue {
-  font-size: 1.15rem;
-  padding: 0.9rem 0.9rem;
+  font-size: 1rem;
+  padding: 0.65rem 0.9rem;
   border-radius: 5px;
 }
 
@@ -439,20 +481,21 @@ p {
 }
 
 .footer .logos {
-  margin-bottom: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .footer .logos .fab {
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .footer img {
-  width: 14rem;
+  width: 11rem;
   height: 3rem;
   -o-object-fit: contain;
      object-fit: contain;
   margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .footer li, .footer i, .footer p {
@@ -460,13 +503,13 @@ p {
 }
 
 .footer li {
-  font-size: 20px;
-  margin-bottom: 1.5rem;
+  font-size: 16px;
+  margin-bottom: 1.15rem;
 }
 
 .footer .copyright p {
   font-weight: 500;
   letter-spacing: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 /*# sourceMappingURL=index.css.map */

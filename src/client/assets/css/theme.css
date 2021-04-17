@@ -31,14 +31,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-  font-size: 2.1rem;
-  line-height: 2.4rem;
+  font-size: 1.8rem;
+  line-height: 2rem;
   font-weight: 900;
   margin-bottom: 1rem;
 }
 
 h2{
-  font-size:1.9rem;
+  font-size:1.7rem;
 }
 
 h3 {
@@ -55,7 +55,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.6rem;
   margin-bottom: 0.3125rem;
 }
@@ -69,7 +69,7 @@ h6 {
 p {
   font-family: Nexa-Light;
   line-height: 1.4rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 0.1rem;
   color: #222844;
   margin-bottom: 1.5rem;
@@ -78,7 +78,7 @@ p {
 input, select {
   font-family: Nexa-Light;
   line-height: 1.4rem;
-  padding: 0.8rem 0.75rem;
+  padding: 0.6rem 0.75rem;
   width: 100%;
   font-size: 1.1rem;
   border: none;
@@ -115,7 +115,7 @@ input::-ms-input-placeholder {
 }
 
 input::placeholder {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   letter-spacing: 0.1rem;
   color: #a19f9f;
 }
@@ -143,7 +143,7 @@ textarea::-ms-input-placeholder {
 }
 
 textarea::placeholder {
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   color: #a19f9f;
   font-family: Nexa-Bold;
 }
@@ -211,7 +211,7 @@ ul li {
   font-family: Nexa-Light;
   color: #222844;
   
-  line-height: 1.4rem;
+  line-height: 1.1rem;
   list-style: none;
 }
 
@@ -261,6 +261,7 @@ a {
   }
   p {
     font-family: Nexa-Light;
+    letter-spacing: 0.05rem;
     font-size: 1rem;
     line-height: 1.4rem;
     font-weight: 600;
