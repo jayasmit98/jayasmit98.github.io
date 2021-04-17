@@ -512,4 +512,58 @@ p {
   letter-spacing: 0;
   margin-bottom: 0.75rem;
 }
+
+@media only screen and (min-width: 700px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .top {
+    padding: 1rem 2rem;
+  }
+  .formcontainer {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .formcontainer .topsearch {
+    max-width: 300;
+    margin: 0rem;
+    font-size: 0.7rem;
+    padding: 0.5rem 2rem;
+    height: 2.57rem;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  .formcontainer .country {
+    border-right: 1px solid #dbd8d8;
+  }
+  .formcontainer .text {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    -webkit-box-flex: 1.5;
+        -ms-flex-positive: 1.5;
+            flex-grow: 1.5;
+  }
+  .formcontainer .country_container {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    position: relative;
+  }
+  .formcontainer .country_container .fas {
+    position: absolute;
+    left: 0.5rem;
+  }
+  .formcontainer .country_container .gps {
+    position: absolute;
+    right: 0.5rem;
+  }
+}
 /*# sourceMappingURL=index.css.map */

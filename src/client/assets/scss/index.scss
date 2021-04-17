@@ -10,7 +10,6 @@ $blue-grey:rgb(240, 240, 245);
 $light-blue: rgb(209, 229, 245);
 $white:rgb(255,255,255);
 $dark-grey:rgb(102, 101, 101);
-
 .fas {
     color: #525659;
     height: auto;
@@ -457,4 +456,50 @@ p{
             margin-bottom: 0.75rem;
         }
     }
+}
+
+@media only screen and (min-width:700px){
+    .navbar{
+        padding:1rem 2rem;
+    }
+    .top{
+        padding:1rem 2rem;
+    }
+    .formcontainer{
+        position:relative;
+        display: flex;
+        flex-direction: row;
+        .topsearch{
+            max-width:300;
+            margin: 0rem;
+            font-size:0.7rem;
+            padding:0.5rem 2rem;
+            height:2.57rem;
+            
+            flex-basis: 30%;
+            flex-grow:1;
+        }
+        .country{
+            border-right: 1px solid $light-grey;            
+        }
+        .text{
+            flex-basis:30%;
+            flex-grow:1.5;
+        }
+        .country_container{
+            flex-basis: 40%;
+            position:relative;
+            .fas{
+                position:absolute;
+                left:0.5rem;
+            }
+            .gps{
+                position:absolute;
+                right:0.5rem;
+                
+            }
+        }
+
+    }
+
 }
