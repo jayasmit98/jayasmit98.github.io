@@ -28,6 +28,10 @@
      object-fit: cover;
 }
 
+.navbar .menubar, .navbar .top_button {
+  display: none;
+}
+
 .top {
   width: 100%;
   height: auto;
@@ -535,12 +539,24 @@ p {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .formcontainer input {
+    margin-bottom: 0;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
   .formcontainer .topsearch {
     max-width: 300;
     margin: 0rem;
     font-size: 0.7rem;
     padding: 0.5rem 2rem;
-    height: 2.57rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     -ms-flex-preferred-size: 30%;
         flex-basis: 30%;
     -webkit-box-flex: 1;
@@ -561,6 +577,11 @@ p {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
     position: relative;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .formcontainer .country_container .fas {
     position: absolute;
@@ -635,8 +656,8 @@ p {
     padding: 1rem 2rem;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 3fr 1fr;
-        grid-template-columns: 3fr 1fr;
+    -ms-grid-columns: 3fr 1.5fr;
+        grid-template-columns: 3fr 1.5fr;
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
     background-color: white;
@@ -644,6 +665,10 @@ p {
   .footer li, .footer i, .footer p {
     color: #222844;
     margin-bottom: 0;
+  }
+  .footer li {
+    font-size: 0.9rem;
+    letter-spacing: 0;
   }
   .footer p {
     color: black;
@@ -656,8 +681,8 @@ p {
     grid-row: 1/2;
     -ms-grid-column: 2;
     grid-column: 2/2;
-    -ms-grid-column-align: center;
-        justify-self: center;
+    -ms-grid-column-align: end;
+        justify-self: end;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -690,16 +715,18 @@ p {
     grid-column: 2/2;
     -ms-grid-row: 2;
     grid-row: 2/2;
-    -ms-grid-column-align: center;
-        justify-self: center;
+    -ms-grid-column-align: end;
+        justify-self: end;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
     margin-bottom: 0;
-    margin-left: 1.5rem;
   }
   .footer .logos .fab {
-    margin-right: 1.25rem;
+    margin-right: 1.30rem;
+  }
+  .footer .logos .fa-instagram {
+    margin-right: 0;
   }
   .footer .copyright {
     -ms-grid-column-align: start;
@@ -710,6 +737,419 @@ p {
   }
   .footer .copyright p {
     margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .navbar {
+    padding: 1rem 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar .logo {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+  }
+  .navbar .logo img {
+    width: 10rem;
+    height: auto;
+  }
+  .navbar .menubar, .navbar .top_button {
+    display: inline;
+  }
+  .navbar i {
+    display: none;
+  }
+  .navbar .menubar {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    max-width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -ms-flex-negative: 2;
+        flex-shrink: 2;
+    margin-bottom: 0;
+  }
+  .navbar .menubar li {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .navbar .top_button {
+    -ms-flex-preferred-size: 17.7rem;
+        flex-basis: 17.7rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .navbar .top_button .white, .navbar .top_button .dark-blue {
+    border: 1px solid #222844;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+  .navbar .top_button .dark-blue {
+    width: 127px;
+  }
+  .top {
+    padding: 7rem 6rem;
+    background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg);
+    background-size: cover;
+    height: auto;
+  }
+  .top header {
+    max-width: 55%;
+    text-align: left;
+  }
+  .top header h1 {
+    margin-bottom: 0rem;
+  }
+  .top header p {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  .top .formcontainer {
+    max-width: 70%;
+  }
+  .top .formcontainer input {
+    margin-bottom: 0;
+  }
+  .top .formcontainer .country_container {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    -ms-flex-negative: 2;
+        flex-shrink: 2;
+  }
+  .top .formcontainer .country_container .country {
+    padding-left: 3rem;
+  }
+  .top .formcontainer .country_container .fas {
+    top: 3px;
+    left: 1.25rem;
+  }
+  .top .formcontainer .country_container .gps {
+    right: 1.25rem;
+    top: 3px;
+    opacity: 0.3;
+  }
+  .top .formcontainer .topsearch {
+    padding: 0.64rem 0.75rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    font-weight: 600;
+  }
+  .top .formcontainer input {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+  }
+  .howitworks {
+    padding: 4rem 6rem;
+  }
+  .howitworks header h2 {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .howitworks header p {
+    text-align: left;
+    margin-bottom: 4rem;
+  }
+  .howitworks .how_it_works_container {
+    -ms-grid-columns: 4fr 6fr;
+        grid-template-columns: 4fr 6fr;
+    -webkit-column-gap: 7rem;
+            column-gap: 7rem;
+    row-gap: 0.5rem;
+  }
+  .howitworks .one {
+    -ms-grid-columns: 2fr 8fr;
+        grid-template-columns: 2fr 8fr;
+    border: 2px solid #ebe4e4;
+    border-radius: 6px;
+  }
+  .howitworks .one span {
+    font-size: 1.4rem;
+  }
+  .howitworks .one h3 {
+    font-size: 1.2rem;
+  }
+  .howitworks .one:hover, .howitworks .one:active {
+    border: 2px solid #93bede;
+  }
+  .howitworks .fbox {
+    padding: 1rem;
+    text-align: center;
+  }
+  .howitworks .fbox figcaption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 1rem 4rem;
+  }
+  .expertdoctors {
+    padding: 4rem 6rem;
+  }
+  .expertdoctors header h2, .expertdoctors header p {
+    text-align: left;
+  }
+  .expertdoctors header h2 {
+    margin-bottom: 0;
+  }
+  .expertdoctors header p {
+    margin-bottom: 3rem;
+  }
+  .expertdoctors .doctorgrid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  .expertdoctors .doctorgrid .doctorcard .data_container h5 {
+    font-size: 1.1rem;
+  }
+  .expertdoctors .doctorgrid .doctorcard .data_container li {
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    font-weight: 600;
+    line-height: 0.9rem;
+  }
+  .expertdoctors .caraousel_buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 3.3rem;
+    margin-left: 1rem;
+  }
+  .expertdoctors .caraousel_buttons .c_button {
+    display: inline;
+    height: 0.8rem;
+    width: 0.8rem;
+    background-color: #a19f9f;
+    border: 2px solid #222844;
+    border-radius: 50%;
+    margin-left: 0.25rem;
+  }
+  .expertdoctors .caraousel_buttons .c_button:active {
+    border: 2px solid #167ddd;
+    background: none;
+  }
+  .medicaltreatment header h2, .medicaltreatment header p {
+    text-align: left;
+  }
+  .medicaltreatment header h2 {
+    margin-bottom: 0;
+  }
+  .medicaltreatment header p {
+    margin-bottom: 3rem;
+  }
+  .medicaltreatment .medical_container {
+    -ms-grid-columns: (1fr)[9];
+        grid-template-columns: repeat(9, 1fr);
+    -ms-grid-rows: (1fr)[11];
+        grid-template-rows: repeat(11, 1fr);
+    height: 750px;
+    row-gap: 1rem;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .medicaltreatment .medical_container .photos1 {
+    height: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 4;
+    grid-row: 1/5;
+  }
+  .medicaltreatment .medical_container .photos2 {
+    height: 100%;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4/7;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 6;
+    grid-row: 1/7;
+  }
+  .medicaltreatment .medical_container .photos3 {
+    height: 100%;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    grid-column: 7/10;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+    grid-row: 1/6;
+  }
+  .medicaltreatment .medical_container .photos4 {
+    height: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 7;
+    grid-row: 5/12;
+  }
+  .medicaltreatment .medical_container .photos5 {
+    height: 100%;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4/7;
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 5;
+    grid-row: 7/12;
+  }
+  .medicaltreatment .medical_container .photos6 {
+    height: 100%;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    grid-column: 7/10;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 6;
+    grid-row: 6/12;
+  }
+  .medicaltreatment .caraousel_buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+  .medicaltreatment .caraousel_buttons .c_button {
+    display: inline;
+    height: 0.8rem;
+    width: 0.8rem;
+    background-color: #dbd8d8;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-left: 0.25rem;
+  }
+  .medicaltreatment .caraousel_buttons .c_button:active {
+    border: 2px solid #167ddd;
+    background: none;
+  }
+  .exclusive header h2, .exclusive header p {
+    text-align: left;
+  }
+  .exclusive header h2 {
+    margin-bottom: 0;
+  }
+  .exclusive header p {
+    margin-bottom: 3rem;
+  }
+  .exclusive .service_container {
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -webkit-column-gap: 0.25rem;
+            column-gap: 0.25rem;
+  }
+  .exclusive .service_container .services {
+    height: 100%;
+    border-radius: 0px;
+    padding: 2.5rem 1rem;
+  }
+  .exclusive .service_container .services figcaption h6 {
+    color: #a19f9f;
+  }
+  .help {
+    padding: 4rem 6rem;
+  }
+  .help .help_container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .help .help_container .left h2 {
+    margin-bottom: 0;
+    font-size: 2.25rem;
+    text-align: left;
+  }
+  .help .help_container .left p {
+    text-align: left;
+  }
+  .help .help_container .right {
+    text-align: right;
+  }
+  .help .help_container .right .sky-blue {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    padding: 1.25rem 3rem;
+  }
+  .footer {
+    padding: 1rem 6rem;
+    border-bottom: 8px solid #167ddd;
+  }
+  .footer li {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .footer .copyright p {
+    font-weight: 600;
+    letter-spacing: 0.025rem;
   }
 }
 /*# sourceMappingURL=index.css.map */
