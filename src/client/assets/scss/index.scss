@@ -578,6 +578,7 @@ p{
         grid-template-rows: repeat(2, 1fr);
         
         background-color: $white;
+        border-bottom: 4px solid $sky-blue;
         li,i,p{
             color: $dark-blue-color;
             margin-bottom:0;

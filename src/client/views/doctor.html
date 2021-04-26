@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/doctor.css">
+    <title>Doctor</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra">
+        </div> 
+        <i class="fas fa-bars"></i>
+        <ul class="menubar">
+            <li>Doctors</li>
+            <li>Hospitals</li>
+            <li>Treatment</li>
+            <li>Other Services</li>
+            <li>About</li>
+        </ul>        
+        <div class="top_button">
+            <button class="white">Login / Sign Up</button>    
+            <button class="dark-blue">Get a Quote</button>
+        </div>
+    </nav> 
+    <section class="intro">
+        <h3>Cardiac Surgeon in <span>Delhi</span></h3>
+    </section>
+    <section class="doctors">
+        <header class="sort">
+            <h5>Home / Doctor List</h5>
+            <select name="sort" id="">
+                <option value="">Sort By</option>
+            </select>
+        </header>
+        <div class="doctor_container">
+            <div class="left">
+                <header class="filter_container">
+                    <h6>Filter By</h6>
+                </header>
+                <div class="location">
+                    <header>
+                        <h6>Location</h6>
+                        <i class="fas fa-search"></i>
+                    </header>
+                    <div class="data_container">
+                        <label class="labels" for="DLF">
+                            <input type="checkbox" class="options" id="DLF" value="DLF Cyber City">
+                        DLF Cyber City</label>
+                        <label class="labels" for="Dwarka">
+                            <input type="checkbox" class="options" id="Dwarka" value="Dwarka">
+                        Dwarka</label>
+                        <label for="Lajpat" class="labels">
+                            <input type="checkbox" class="options" id="Lajpat" value="Lajpat Nagar">
+                        Lajpat Nagar</label>
+                        <label for="Palam" class="labels">
+                            <input type="checkbox" class="options" id="Palam" value="Palam Vihar">
+                        Palam Vihar</label>
+                        <label for="Punjabi" class="labels">
+                            <input type="checkbox" class="options" id="Punjabi" value="Punjabi Bagh">
+                        Punjabi Bagh</label>
+                        <label for="Pusa" class="labels">
+                            <input type="checkbox" class="options" id="Pusa" value="Pusa Road">
+                        Pusa Road</label>
+                    </div>
+                    <div class="bottom">
+                        <p>+ Show More</p>
+                    </div>
+                </div>
+                <div class="treatment">
+                    <header>
+                        <h6>Treatment</h6>
+                        <i class="fas fa-search"></i>
+                    </header>
+                    <div class="data_container">
+                        <label class="labels" for="Mulit">
+                            <input type="checkbox" class="options" id="Multi" value="Multi Organ Transplant">
+                        Multi Organ Transplant</label>
+                        <label class="labels" for="Orthopedic">
+                            <input type="checkbox" class="options" id="Orthopedic" value="Orthopedic Surgery">
+                        Orthopedic Surgery</label>
+                        <label for="Infertility" class="labels">
+                            <input type="checkbox" class="options" id="Infertility" value="Infertility Treatment">
+                        Infertility Treatment</label>
+                        <label for="Dentistry" class="labels">
+                            <input type="checkbox" class="options" id="Dentistry" value="Dentistry">
+                        Dentistry</label>
+                        <label for="Cardiology" class="labels">
+                            <input type="checkbox" class="options" id="Cardiology" value="Cardiology">
+                        Cardiology</label>
+                        <label for="Cancer" class="labels">
+                            <input type="checkbox" class="options" id="Cancer" value="Cancer">
+                        Cancer</label>
+                    </div>
+                    <div class="bottom">
+                        <p>+ Show More</p>
+                    </div>
+                </div>
+                <div class="hospitals">
+                    <header>
+                        <h6>Hospitals</h6>
+                        <i class="fas fa-search"></i>
+                    </header>
+                    <div class="data_container">
+                        <label class="labels" for="Apollo">
+                            <input type="checkbox" class="options" id="Apollo" value="Apollo Hospital">
+                        Apollo Hospital</label>
+                        <label class="labels" for="Manipal">
+                            <input type="checkbox" class="options" id="Manipal" value="Manipal North Side Hospital">
+                        Manipal North Side Hospital</label>
+                        <label for="Northstar" class="labels">
+                            <input type="checkbox" class="options" id="Northstar" value="Northstar">
+                        Northstar</label>
+                        <label for="AIIMS" class="labels">
+                            <input type="checkbox" class="options" id="AIIMS" value="AIIMS">
+                        AIIMS</label>
+                        <label for="Fortis" class="labels">
+                            <input type="checkbox" class="options" id="Fortis" value="Fortis Hospital">
+                        Fortis Hospital</label>
+                        <label for="Elbit" class="labels">
+                            <input type="checkbox" class="options" id="Elbit" value="Elbit Diagnostic">
+                        Elbit Diagnostic</label>
+                    </div>
+                    <div class="bottom">
+                        <p>+ Show More</p>
+                    </div>
+                </div>
+                <div class="experience">
+                    <header>
+                        <h6>Year of Experience</h6>
+                        <i class="fas fa-search"></i>
+                    </header>
+                    <div class="data_container">
+                        <label class="labels" for="30">
+                            <input type="checkbox" class="options" id="30" value="30+">
+                        30+</label>
+                        <label class="labels" for="25">
+                            <input type="checkbox" class="options" id="25" value="25+">
+                        25+</label>
+                        <label for="20" class="labels">
+                            <input type="checkbox" class="options" id="20" value="20+">
+                        20+</label>
+                        <label for="15" class="labels">
+                            <input type="checkbox" class="options" id="15" value="15+">
+                        15+</label>
+                        <label for="10" class="labels">
+                            <input type="checkbox" class="options" id="10" value="10+">
+                        10+</label>
+                        <label for="5" class="labels">
+                            <input type="checkbox" class="options" id="5" value="5+">
+                        5+</label>
+                    </div>
+                    <div class="bottom">
+                        <p>+ Show More</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <figure class="doctor_card">
+                    <figcaption>
+                        <div class="name">
+                            <h5>Duke Sanson</h5>
+                        </div>
+                        <ul>
+                            <li>
+                                <span><i class="fas fa-certificate"></i></span>
+                                Neuro Surgeon
+                            </li>
+                            <li>
+                                <span><i class="fas fa-award"></i></span>
+                                M.B.B.S, M.D
+                            </li>
+                            <li>
+                                <span><i class="far fa-clock"></i></span>
+                                10 years
+                            </li>
+                            <li>
+                                <span><i class="far fa-building"></i></span>
+                                Apollo Hospital, Australia
+                            </li>
+                            <li>
+                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                Australia
+                            </li>
+                        </ul> 
+                        <div class="button_book">
+                            <button class="dark-blue">Book an appointment</button>
+                        </div>
+                    </figcaption>               
+                    <div class="image">
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg" alt="Duke Sanson">
+                    </div>             
+                </figure>
+                <figure class="doctor_card">
+                    <figcaption>
+                        <div class="name">
+                            <h5>Georgia Peter</h5>
+                        </div>
+                        <ul>
+                            <li>
+                                <span><i class="fas fa-certificate"></i></span>
+                                Breast Cancer Surgeon
+                            </li>
+                            <li>
+                                <span><i class="fas fa-award"></i></span>
+                                M.B.B.S, M.D
+                            </li>
+                            <li>
+                                <span><i class="far fa-clock"></i></span>
+                                15 years
+                            </li>
+                            <li>
+                                <span><i class="far fa-building"></i></span>
+                                MAX Hospital, London
+                            </li>
+                            <li>
+                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                London
+                            </li>
+                        </ul> 
+                        <div class="button_book">
+                            <button class="dark-blue">Book an appointment</button>
+                        </div>
+                    </figcaption>               
+                    <div class="image">
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" alt="Georgia Peter">
+                    </div>             
+                </figure>
+                <figure class="doctor_card">
+                    <figcaption>
+                        <div class="name">
+                            <h5>Charlie Moon</h5>
+                        </div>
+                        <ul>
+                            <li>
+                                <span><i class="fas fa-certificate"></i></span>
+                                Cardiac Surgeon
+                            </li>
+                            <li>
+                                <span><i class="fas fa-award"></i></span>
+                                M.B.B.S, M.D, F.R.C.P, M.R.C.P, Fellowship
+                            </li>
+                            <li>
+                                <span><i class="far fa-clock"></i></span>
+                                20 years
+                            </li>
+                            <li>
+                                <span><i class="far fa-building"></i></span>
+                                Apollo Hospital, New Delhi
+                            </li>
+                            <li>
+                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                New Delhi
+                            </li>
+                        </ul> 
+                        <div class="button_book">
+                            <button class="dark-blue">Book an appointment</button>
+                        </div>
+                    </figcaption>               
+                    <div class="image">
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" alt="Charlie Moon">
+                    </div>             
+                </figure>
+                <figure class="doctor_card">
+                    <figcaption>
+                        <div class="name">
+                            <h5>Rose Moon</h5>
+                        </div>
+                        <ul>
+                            <li>
+                                <span><i class="fas fa-certificate"></i></span>
+                                Plastic Surgeon
+                            </li>
+                            <li>
+                                <span><i class="fas fa-award"></i></span>
+                                M.B.B.S, M.D
+                            </li>
+                            <li>
+                                <span><i class="far fa-clock"></i></span>
+                                6 years
+                            </li>
+                            <li>
+                                <span><i class="far fa-building"></i></span>
+                                Emaar Hospital, Dubai
+                            </li>
+                            <li>
+                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                Dubai
+                            </li>
+                        </ul> 
+                        <div class="button_book">
+                            <button class="dark-blue">Book an appointment</button>
+                        </div>
+                    </figcaption>               
+                    <div class="image">
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg" alt="Rose Moon">
+                    </div>             
+                </figure>
+            </div>
+            
+            
+        </div>
+    </section>
+    <section class="help">
+        <div class="help_container">
+            <div class="left">
+                <h2>Need Help?</h2>
+                <p>Just let us know, we will happy to assist you</p>
+            </div>
+            <div class="right">
+                <button class="sky-blue">Submit your enquiry</button>
+            </div>
+        </div>       
+    </section>
+
+    <footer class="footer">
+        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo">
+        <h3 class="followus">TVASTRA</h3>
+            <ul class="tags">
+                <li>Doctors</li>
+                <li>Hospitals</li>
+                <li>Treatment</li>
+                <li>Other Services</li>
+                <li>FAQs</li>
+            </ul>
+        <h3 class="followus">FOLLOW US</h3>    
+            <ul class="followus">
+                <li>Facebook</li>
+                <li>Pinterest</li>
+                <li>Twitter</li>
+                <li>Google+</li>
+                <li>Instagram</li>
+            </ul>
+            
+        
+        <div class="logos">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-google-plus"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+        <div class="copyright">
+            <p>All Rights Reserved. © tvastra 2021</p>
+        </div>
+    </footer>
+</body>
+</html>

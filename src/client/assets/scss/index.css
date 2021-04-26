@@ -661,6 +661,7 @@ p {
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
     background-color: white;
+    border-bottom: 4px solid #167ddd;
   }
   .footer li, .footer i, .footer p {
     color: #222844;
