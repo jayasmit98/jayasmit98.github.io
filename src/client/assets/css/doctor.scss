@@ -69,6 +69,9 @@ $dark-grey:rgb(102, 101, 101);
         height:100%;
         
         row-gap: 1rem;
+        .left{
+            display: none;
+        }
         .doctor_card{
             margin-bottom: 1rem;
             border:2px solid $light-grey;
@@ -269,18 +272,28 @@ $dark-grey:rgb(102, 101, 101);
                 }
             }
             .left{
+                display: block;
                 padding-right:1rem;
                 .filter_container{
-                    
+                    padding:0;
+                }
+                
+                .filter_container_1{
                     padding:0.5rem 1rem;
+                    
                     background-color: $light-grey;
                     text-align: left;
                     margin-bottom:1rem;
+                    width:100%;
                     h6{
                         margin:0;
                         font-size: 0.9rem;
                     }
 
+                }
+
+                .filter_container_2{
+                    display:none;
                 }
 
                 .location, .experience, .hospitals, .treatment{
@@ -411,6 +424,7 @@ $dark-grey:rgb(102, 101, 101);
         }
 
         .logos{
+            display: block;
             grid-column: 2/2;
             grid-row: 2/2;
             justify-self: end;
@@ -437,6 +451,260 @@ $dark-grey:rgb(102, 101, 101);
             align-self: center;
             margin:0;
         }
+    }
+
+}
+
+@media only screen and (min-width:1024px){
+    .navbar{
+        padding:1rem 6rem;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        .logo{
+            flex-basis: 20%;
+            flex-shrink: 1;
+            img{
+                width:10rem;
+                height:auto;
+            }
+        }
+        .menubar, .top_button{
+            display: inline;
+        }
+        i {
+            display: none;
+        }
+        
+        .menubar{
+            li{
+                font-size:0.9rem;
+                font-weight: 600;
+            }
+            flex-basis: 50%;
+            max-width: 40%;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            justify-self: center;
+            align-self: center;
+            flex-shrink: 2;
+            margin-bottom: 0;               
+        }
+        .top_button{
+            flex-basis: 17.7rem;
+            flex-shrink: 0;
+            .white, .dark-blue{
+                border:1px solid $dark-blue-color;
+                border-radius: 3px;
+                font-weight: 600;
+                font-size: 0.75rem;
+            }
+            .dark-blue{
+                width:127px;
+            }
+        } 
+    }
+
+    .intro{
+        h3{
+            font-size: 1.6rem;
+            letter-spacing: 0.05rem;
+            span{
+                font-size:1.7rem;
+                font-family: Nexa-Bold;
+            }
+        }
+    }
+    
+    .doctors{
+        padding:2rem 6rem;
+        .sort{
+            align-items: center;
+            h5{
+                margin:0;
+                font-size:1.1rem;
+                font-weight: 600;
+                color:$dark-grey;
+            }
+            select{
+                margin:0;
+                font-size:0.8rem;
+                font-family:Nexa-Bold;
+                padding:0.7rem 0.75rem;
+            }
+        }
+        .doctor_container{
+            padding-top:2rem;
+            .left{
+                .filter_container{
+                    display:flex;
+                    flex-direction: column;
+                    .filter_container_2{
+                        display: block;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+
+                        .filter_tag{
+                            border:1.2px solid $light-grey;
+                            border-radius: 50px;
+                            padding:0.5rem 1rem;
+                            display: inline;
+                            margin-right:0.25rem;
+                            margin-bottom:0.25rem;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            max-width: 100%;
+
+                            p{
+                                font-size:0.7rem;
+                                letter-spacing: 0;
+                                line-height: normal;
+                                padding-top:0.1rem;
+                                margin:0;
+                            }
+                            .fas{
+                                margin:0rem;
+                                margin-left:0.75rem;
+                                color:$light-blue-background-color;
+                                font-size: 0.7rem;
+                                padding-bottom: 0.1rem;
+                            }
+                        }
+                    }
+
+                }
+
+                .location, .treatment, .hospitals, .experience{
+                    header{
+                        h6{
+                            font-weight: 600;
+                            font-size: 1rem;
+                        }
+                        .fas{
+                            font-size: 1rem;
+                            margin-right: 2rem;   
+                        }
+
+                        .fas::after{
+                            right:-5px;
+                            bottom:12px;
+                        }
+                    }
+
+                    .data_container{
+                        .labels{
+                            font-family: Nexa-Light;
+                            line-height: 1.5rem;
+                            font-weight: 700;
+                            font-size:0.75rem;
+                            letter-spacing: 0.05rem;
+                        }
+
+                    }
+
+                    .bottom{
+                        p{
+                            font-family: Nexa-Bold;
+                            font-size: 0.82rem;
+                            //letter-spacing: 0.05rem;
+                            font-weight: 700;
+                        }
+                    }
+
+                }
+            }
+
+            .right{
+                .doctor_card{
+                    figcaption{
+                        .name{
+                            h5{
+                                margin-top:2rem;
+                                font-size:1.4rem;
+                            }
+                        }
+                        ul{
+                            padding:1rem 3rem;
+                            row-gap: 1rem;
+
+                            li{
+                                font-size:0.8rem;
+                                font-weight: 700;
+                                letter-spacing: 0.05rem;
+
+                                span{
+                                    font-size:0.95rem;
+                                }
+                            }
+                        }
+
+                        .button_book{
+                            margin:2rem 0rem;
+                            .dark-blue{
+                                padding:0.5rem 2.5rem;
+                                font-family: Nexa-Bold;
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                    .image{
+                        width:auto;
+                        height:100%;
+                        max-height: 298px;
+                    }
+                }
+            }
+        }
+    }
+
+    .help{
+        padding:4rem 6rem;
+        .help_container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            justify-content: center;
+            align-items: center;
+            .left{
+                h2{
+                    margin-bottom: 0;
+                    font-size:2.25rem;
+                    text-align: left;
+                }
+                p{
+                    text-align:left;
+                }
+            }
+            .right{
+                text-align: right;
+                .sky-blue{
+                    font-size:1.2rem;
+                    letter-spacing: 0.1rem;
+                    font-weight: 600;
+                    padding:1.25rem 3rem;
+                }
+            }
+        }
+    }
+
+    .footer{
+        padding:1rem 6rem;
+        border-bottom: 8px solid $sky-blue;
+        li{
+            font-size:0.9rem;
+            font-weight: 600;
+        }
+        .copyright{
+            p{
+                font-weight: 600;
+                letter-spacing: 0.025rem;
+            }
+        }
+        
     }
 
 }
