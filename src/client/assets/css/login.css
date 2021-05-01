@@ -82,6 +82,8 @@ body .login {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 0px 0px 1rem #a19f9f;
+          box-shadow: 0px 0px 1rem #a19f9f;
 }
 
 body .login h1 {
@@ -297,6 +299,12 @@ body .copyright span {
   }
   .login h1, .login p {
     text-align: center;
+  }
+  .login input:active {
+    outline: 1.5px solid #666565;
+  }
+  .login form .input1_container .fas:hover {
+    color: #666565;
   }
   .copyright {
     padding: 0;
