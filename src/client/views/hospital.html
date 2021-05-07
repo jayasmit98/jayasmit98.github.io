@@ -7,8 +7,8 @@
     <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/doctor.css">
-    <title>Doctor</title>
+    <link rel="stylesheet" href="../assets/css/hospital.css">
+    <title>Hospital</title>
 </head>
 <body>
     <nav class="navbar">
@@ -29,11 +29,11 @@
         </div>
     </nav> 
     <section class="intro">
-        <h3>Cardiac Surgeon in <span>Delhi</span></h3>
+        <h3>Hospitals in <span>Delhi</span></h3>
     </section>
     <section class="doctors">
         <header class="sort">
-            <h5>Home / Doctor List</h5>
+            <h5>Home / Hospital List</h5>
             <select name="sort" id="">
                 <option value="">Sort By</option>
             </select>
@@ -53,14 +53,7 @@
                             <p>Multi Organ Transplant</p>
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="filter_tag">
-                            <p>Apollo Hospital</p>
-                            <i class="fas fa-times"></i>
-                        </div>
-                        <div class="filter_tag">
-                            <p>30+</p>
-                            <i class="fas fa-times"></i>
-                        </div>
+                        
                     </div>
                     
                 </header>
@@ -93,6 +86,35 @@
                         <p>+ Show More</p>
                     </div>
                 </div>
+                <div class="hospitals">
+                    <header>
+                        <h6>Department</h6>
+                        <i class="fas fa-search"></i>
+                    </header>
+                    <div class="data_container">
+                        <label class="labels" for="Department1">
+                            <input type="checkbox" class="options" id="Department1" value="Department 1">
+                            Department 1</label>
+                        <label class="labels" for="Department2">
+                            <input type="checkbox" class="options" id="Department2" value="Department 2">
+                            Department 2</label>
+                        <label for="Department3" class="labels">
+                            <input type="checkbox" class="options" id="Department3" value="Department 3">
+                            Department 3</label>
+                        <label for="Department4" class="labels">
+                            <input type="checkbox" class="options" id="Department4" value="Department 4">
+                            Department 1</label>
+                        <label for="Department 5" class="labels">
+                            <input type="checkbox" class="options" id="Department5" value="Department 5">
+                            Department 1</label>
+                        <label for="Department6" class="labels">
+                            <input type="checkbox" class="options" id="Department6" value="Department 6">
+                            Department 6</label>
+                    </div>
+                    <div class="bottom">
+                        <p>+ Show More</p>
+                    </div>
+                </div>
                 <div class="treatment">
                     <header>
                         <h6>Treatment</h6>
@@ -105,7 +127,6 @@
                         <label class="labels" for="Orthopedic">
                             <input type="checkbox" class="options" id="Orthopedic" value="Orthopedic Surgery">
                         Orthopedic Surgery</label>
-                        
                         <label for="Infertility" class="labels">
                             <input type="checkbox" class="options" id="Infertility" value="Infertility Treatment">
                         Infertility Treatment</label>
@@ -123,207 +144,209 @@
                         <p>+ Show More</p>
                     </div>
                 </div>
-                <div class="hospitals">
-                    <header>
-                        <h6>Hospitals</h6>
-                        <i class="fas fa-search"></i>
-                    </header>
-                    <div class="data_container">
-                        <label class="labels" for="Apollo">
-                            <input type="checkbox" class="options" id="Apollo" value="Apollo Hospital">
-                        Apollo Hospital</label>
-                        <label class="labels" for="Manipal">
-                            <input type="checkbox" class="options" id="Manipal" value="Manipal North Side Hospital">
-                        Manipal North Side Hospital</label>
-                        <label for="Northstar" class="labels">
-                            <input type="checkbox" class="options" id="Northstar" value="Northstar">
-                        Northstar</label>
-                        <label for="AIIMS" class="labels">
-                            <input type="checkbox" class="options" id="AIIMS" value="AIIMS">
-                        AIIMS</label>
-                        <label for="Fortis" class="labels">
-                            <input type="checkbox" class="options" id="Fortis" value="Fortis Hospital">
-                        Fortis Hospital</label>
-                        <label for="Elbit" class="labels">
-                            <input type="checkbox" class="options" id="Elbit" value="Elbit Diagnostic">
-                        Elbit Diagnostic</label>
-                    </div>
-                    <div class="bottom">
-                        <p>+ Show More</p>
-                    </div>
-                </div>
-                <div class="experience">
-                    <header>
-                        <h6>Year of Experience</h6>
-                        <i class="fas fa-search"></i>
-                    </header>
-                    <div class="data_container">
-                        <label class="labels" for="30">
-                            <input type="checkbox" class="options" id="30" value="30+">
-                        30+</label>
-                        <label class="labels" for="25">
-                            <input type="checkbox" class="options" id="25" value="25+">
-                        25+</label>
-                        <label for="20" class="labels">
-                            <input type="checkbox" class="options" id="20" value="20+">
-                        20+</label>
-                        <label for="15" class="labels">
-                            <input type="checkbox" class="options" id="15" value="15+">
-                        15+</label>
-                        <label for="10" class="labels">
-                            <input type="checkbox" class="options" id="10" value="10+">
-                        10+</label>
-                        <label for="5" class="labels">
-                            <input type="checkbox" class="options" id="5" value="5+">
-                        5+</label>
-                    </div>
-                    <div class="bottom">
-                        <p>+ Show More</p>
-                    </div>
-                </div>
+                
             </div>
             <div class="right">
                 <figure class="doctor_card">
                     <figcaption>
                         <div class="name">
-                            <h5>Duke Sanson</h5>
+                            <h5>Apollo Hospital</h5>
                         </div>
                         <ul>
                             <li>
-                                <span><i class="fas fa-certificate"></i></span>
-                                Neuro Surgeon
-                            </li>
-                            <li>
-                                <span><i class="fas fa-award"></i></span>
-                                M.B.B.S, M.D
-                            </li>
-                            <li>
-                                <span><i class="far fa-clock"></i></span>
-                                10 years
-                            </li>
-                            <li>
-                                <span><i class="far fa-building"></i></span>
-                                Apollo Hospital, Australia
-                            </li>
-                            <li>
                                 <span><i class="fas fa-map-marker-alt"></i></span>
-                                Australia
+                                Delhi Mathura Road, Sarita Vihar, Delhi 110076
+                            </li>
+                            <li>
+                                <span><i class="fas fa-bed"></i></span>
+                                100 beds
+                            </li>
+                            <li>
+                                <span><i class="fas fa-stethoscope"></i></span>
+                                Famous Treatments
                             </li>
                         </ul> 
+                        <div class="tags_container">
+                            <div class="tags">
+                                <p>Multi Organ Transplant</p>   
+                            </div>
+                            <div class="tags">
+                                <p>Orthopedic Surgery</p>   
+                            </div>
+                            <div class="tags">
+                                <p>Infertility Treatment</p>
+                            </div>
+                            <div class="tags">
+                                <p>Dentistry</p>    
+                            </div>
+                            <div class="tags">
+                                <p>Cardiology</p> 
+                            </div>
+                            <div class="tags">
+                                <p>Cancer</p> 
+                            </div>
+                            <div class="tags">
+                                <p>+10 more</p> 
+                            </div>
+                        </div>
                         <div class="button_book">
-                            <button class="dark-blue">Book an appointment</button>
+                            <button class="dark-blue">Call Now</button>
                         </div>
                     </figcaption>               
                     <div class="image">
-                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg" alt="Duke Sanson">
+                        <img src="https://thechirurgie.com/wp-content/uploads/2019/08/indraprastha-apollo-hospitals-sarita-vihar-delhi-multispeciality-hospitals-i9a1q-1.jpg" alt="Duke Sanson">
                     </div>             
                 </figure>
                 <figure class="doctor_card">
                     <figcaption>
                         <div class="name">
-                            <h5>Georgia Peter</h5>
+                            <h5>Fortis Hospital</h5>
                         </div>
                         <ul>
                             <li>
-                                <span><i class="fas fa-certificate"></i></span>
-                                Breast Cancer Surgeon
-                            </li>
-                            <li>
-                                <span><i class="fas fa-award"></i></span>
-                                M.B.B.S, M.D
-                            </li>
-                            <li>
-                                <span><i class="far fa-clock"></i></span>
-                                15 years
-                            </li>
-                            <li>
-                                <span><i class="far fa-building"></i></span>
-                                MAX Hospital, London
-                            </li>
-                            <li>
                                 <span><i class="fas fa-map-marker-alt"></i></span>
-                                London
+                                Delhi Mathura Road, Sarita Vihar, Delhi 110076
+                            </li>
+                            <li>
+                                <span><i class="fas fa-bed"></i></span>
+                                100 beds
+                            </li>
+                            <li>
+                                <span><i class="fas fa-stethoscope"></i></span>
+                                Famous Treatments
                             </li>
                         </ul> 
+                        <div class="tags_container">
+                            <div class="tags">
+                                <p>Multi Organ Transplant</p>   
+                            </div>
+                            <div class="tags">
+                                <p>Orthopedic Surgery</p>   
+                            </div>
+                            <div class="tags">
+                                <p>Infertility Treatment</p>
+                            </div>
+                            <div class="tags">
+                                <p>Dentistry</p>    
+                            </div>
+                            <div class="tags">
+                                <p>Cardiology</p> 
+                            </div>
+                            <div class="tags">
+                                <p>Cancer</p> 
+                            </div>
+                            <div class="tags">
+                                <p>+10 more</p> 
+                            </div>
+                        </div>
                         <div class="button_book">
-                            <button class="dark-blue">Book an appointment</button>
+                            <button class="dark-blue">Call Now</button>
                         </div>
                     </figcaption>               
                     <div class="image">
-                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" alt="Georgia Peter">
+                        <img src="http://d3frl090092vlr.cloudfront.net/Fortis-Hospital-la-shalimar-bagh.jpg" alt="Duke Sanson">
                     </div>             
                 </figure>
                 <figure class="doctor_card">
                     <figcaption>
                         <div class="name">
-                            <h5>Charlie Moon</h5>
+                            <h5>Rockland Hospital</h5>
                         </div>
                         <ul>
                             <li>
-                                <span><i class="fas fa-certificate"></i></span>
-                                Cardiac Surgeon
-                            </li>
-                            <li>
-                                <span><i class="fas fa-award"></i></span>
-                                M.B.B.S, M.D, F.R.C.P, M.R.C.P, Fellowship
-                            </li>
-                            <li>
-                                <span><i class="far fa-clock"></i></span>
-                                20 years
-                            </li>
-                            <li>
-                                <span><i class="far fa-building"></i></span>
-                                Apollo Hospital, New Delhi
-                            </li>
-                            <li>
                                 <span><i class="fas fa-map-marker-alt"></i></span>
-                                New Delhi
+                                Delhi Mathura Road, Sarita Vihar, Delhi 110076
+                            </li>
+                            <li>
+                                <span><i class="fas fa-bed"></i></span>
+                                100 beds
+                            </li>
+                            <li>
+                                <span><i class="fas fa-stethoscope"></i></span>
+                                Famous Treatments
                             </li>
                         </ul> 
+                        <div class="tags_container">
+                            <div class="tags">
+                                <p>Multi Organ Transplant</p>   
+                            </div>
+                            <div class="tags">
+                                <p>Orthopedic Surgery</p>   
+                            </div>
+                            <div class="tags">
+                                <p>Infertility Treatment</p>
+                            </div>
+                            <div class="tags">
+                                <p>Dentistry</p>    
+                            </div>
+                            <div class="tags">
+                                <p>Cardiology</p> 
+                            </div>
+                            <div class="tags">
+                                <p>Cancer</p> 
+                            </div>
+                            <div class="tags">
+                                <p>+10 more</p> 
+                            </div>
+                        </div>
                         <div class="button_book">
-                            <button class="dark-blue">Book an appointment</button>
+                            <button class="dark-blue">Call Now</button>
                         </div>
                     </figcaption>               
                     <div class="image">
-                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" alt="Charlie Moon">
+                        <img src="https://static.medigence.com/uploads/hospital/images/a8fdac0fd3896bed81f22fbf0db58b33.jpg" alt="Duke Sanson">
                     </div>             
                 </figure>
                 <figure class="doctor_card">
                     <figcaption>
                         <div class="name">
-                            <h5>Rose Moon</h5>
+                            <h5>Primus Super Speciality Hospital</h5>
                         </div>
                         <ul>
                             <li>
-                                <span><i class="fas fa-certificate"></i></span>
-                                Plastic Surgeon
-                            </li>
-                            <li>
-                                <span><i class="fas fa-award"></i></span>
-                                M.B.B.S, M.D
-                            </li>
-                            <li>
-                                <span><i class="far fa-clock"></i></span>
-                                6 years
-                            </li>
-                            <li>
-                                <span><i class="far fa-building"></i></span>
-                                Emaar Hospital, Dubai
-                            </li>
-                            <li>
                                 <span><i class="fas fa-map-marker-alt"></i></span>
-                                Dubai
+                                Delhi Mathura Road, Sarita Vihar, Delhi 110076
+                            </li>
+                            <li>
+                                <span><i class="fas fa-bed"></i></span>
+                                100 beds
+                            </li>
+                            <li>
+                                <span><i class="fas fa-stethoscope"></i></span>
+                                Famous Treatments
                             </li>
                         </ul> 
+                        <div class="tags_container">
+                            <div class="tags">
+                                <p>Multi Organ Transplant</p>   
+                            </div>
+                            <div class="tags">
+                                <p>Orthopedic Surgery</p>   
+                            </div>
+                            <div class="tags">
+                                <p>Infertility Treatment</p>
+                            </div>
+                            <div class="tags">
+                                <p>Dentistry</p>    
+                            </div>
+                            <div class="tags">
+                                <p>Cardiology</p> 
+                            </div>
+                            <div class="tags">
+                                <p>Cancer</p> 
+                            </div>
+                            <div class="tags">
+                                <p>+10 more</p> 
+                            </div>
+                        </div>
                         <div class="button_book">
-                            <button class="dark-blue">Book an appointment</button>
+                            <button class="dark-blue">Call Now</button>
                         </div>
                     </figcaption>               
                     <div class="image">
-                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg" alt="Rose Moon">
+                        <img src="https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/8/primus_super_speciality_hospital.jpg" alt="Duke Sanson">
                     </div>             
                 </figure>
-            </div>
             
             
         </div>

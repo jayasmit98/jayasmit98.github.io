@@ -768,6 +768,23 @@ p {
   .navbar .menubar, .navbar .top_button {
     display: inline;
   }
+  .navbar .menubar li:active, .navbar .menubar li:hover, .navbar .top_button li:active, .navbar .top_button li:hover {
+    color: #167ddd;
+  }
+  .navbar .top_button .white:hover, .navbar .top_button .white:active {
+    border: 1px solid #167ddd;
+    background-color: #167ddd;
+    color: white;
+    -webkit-transition: background-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out;
+  }
+  .navbar .top_button .dark-blue:hover, .navbar .top_button .dark-blue:active {
+    border: 1px solid #167ddd;
+    background-color: #167ddd;
+    color: white;
+    -webkit-transition: background-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out;
+  }
   .navbar i {
     display: none;
   }
@@ -1147,6 +1164,14 @@ p {
   .footer li {
     font-size: 0.9rem;
     font-weight: 600;
+  }
+  .footer .tags li:hover, .footer .tags li:active {
+    color: #167ddd;
+    -webkit-transition: color 0.1s ease-in;
+    transition: color 0.1s ease-in;
+  }
+  .footer .logos .fab:hover, .footer .logos .fab:active {
+    color: #167ddd;
   }
   .footer .copyright p {
     font-weight: 600;

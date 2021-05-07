@@ -655,6 +655,26 @@ p{
         }
         .menubar, .top_button{
             display: inline;
+            li:active,li:hover{
+                color:$sky-blue;
+            }
+        }
+        .top_button{
+            
+            .white:hover, .white:active{
+                border:1px solid $sky-blue;
+                background-color: $sky-blue;
+                color:white;
+                transition: background-color 0.1s ease-out;   
+                
+            }
+
+            .dark-blue:hover, .dark-blue:active{
+                border:1px solid $sky-blue;
+                background-color: $sky-blue;
+                color:white;
+                transition: background-color 0.1s ease-out; 
+            }
         }
         i {
             display: none;
@@ -689,7 +709,6 @@ p{
             }
         } 
     }
-
     .top{
         padding:7rem 6rem;
         background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg);
@@ -1002,6 +1021,22 @@ p{
         li{
             font-size:0.9rem;
             font-weight: 600;
+        }
+
+        .tags{
+            li:hover, li:active{
+                color:$sky-blue;
+                transition: color 0.1s ease-in;
+                 
+            }
+    
+        }
+        .logos{
+            .fab:hover, .fab:active{
+                color:$sky-blue;
+                
+            }
+
         }
         .copyright{
             p{
