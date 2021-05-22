@@ -179,73 +179,7 @@ $dark-grey:rgb(102, 101, 101);
 @media only screen and (min-width:728px){
     
     .navbar{
-        padding:1rem 6rem;
-        display: flex;
-        flex-direction: row;
-        justify-content:space-between;
-        .logo{
-            flex-basis: 20%;
-            flex-shrink: 1;
-            img{
-                width:10rem;
-                height:auto;
-            }
-        }
-        .menubar, .top_button{
-            display: inline;
-            li:active,li:hover{
-                color:$sky-blue;
-            }
-        }
-        .top_button{
-            
-            .white:hover, .white:active{
-                border:1px solid $sky-blue;
-                background-color: $sky-blue;
-                color:white;
-                transition: background-color 0.1s ease-out;   
-                
-            }
-
-            .dark-blue:hover, .dark-blue:active{
-                border:1px solid $sky-blue;
-                background-color: $sky-blue;
-                color:white;
-                transition: background-color 0.1s ease-out; 
-            }
-        }
-        i {
-            display: none;
-        }
-        
-        .menubar{
-            li{
-                font-size:0.9rem;
-                font-weight: 600;
-            }
-            flex-basis: 50%;
-            max-width: 40%;
-            display: flex;
-            flex-direction: row;
-            justify-content:space-between;
-            justify-self: center;
-            align-self: center;
-            flex-shrink: 2;
-            margin-bottom: 0;               
-        }
-        .top_button{
-            flex-basis: 17.7rem;
-            flex-shrink: 0;
-            .white, .dark-blue{
-                border:1px solid $dark-blue-color;
-                border-radius: 3px;
-                font-weight: 600;
-                font-size: 0.75rem;
-            }
-            .dark-blue{
-                width:127px;
-            }
-        } 
+        padding:1rem 2rem;
     }
 
     .map_container{
