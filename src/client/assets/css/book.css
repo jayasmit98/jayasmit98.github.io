@@ -1,0 +1,299 @@
+body {
+  background-color: #93bede;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 3rem;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fas {
+  color: #525659;
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+.navbar {
+  height: auto;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1rem;
+  background-color: white;
+}
+
+.navbar .logo img {
+  height: 1.5rem;
+  width: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.navbar .menubar, .navbar .top_button {
+  display: none;
+}
+
+section {
+  -webkit-box-shadow: 1px 1px 5px 1px #666565;
+          box-shadow: 1px 1px 5px 1px #666565;
+  background-color: white;
+  padding: 0;
+  width: 90%;
+}
+
+section header {
+  padding: 1.5rem 0rem;
+  border-bottom: 1px solid #dbd8d8;
+}
+
+section header h1 {
+  color: #167ddd;
+  margin: 0rem;
+}
+
+section .form_container {
+  padding: 1rem 1rem;
+}
+
+section h5 {
+  text-align: left;
+  font-size: 1.15rem;
+}
+
+section input {
+  display: inline;
+  border: 1px solid #dbd8d8;
+}
+
+section textarea {
+  margin-bottom: 1rem;
+}
+
+section .date {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #666565;
+}
+
+section .radio_input {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 0;
+}
+
+section h5 {
+  margin-bottom: 0.7rem;
+}
+
+section .radio_container {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+section .radio_container .container_bits {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 9fr;
+      grid-template-columns: 1fr 9fr;
+}
+
+section .radio_container .container_bits label {
+  font-family: Nexa-Light;
+  text-align: left;
+  line-height: normal;
+  font-weight: normal;
+}
+
+section .health_container {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+section .health_container .upload {
+  border-radius: 0;
+  padding: 0.25rem 1rem;
+  border: 0.5px solid #666565;
+  margin-right: 0.2rem;
+}
+
+section .button_container {
+  position: relative;
+}
+
+section .button_container .dark-blue {
+  width: 100%;
+  border-radius: 0;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+section .button_container .fas {
+  margin: 0;
+  color: white;
+  position: absolute;
+  top: 25%;
+  right: 7.5%;
+}
+
+footer {
+  padding: 2rem 2rem;
+  padding-top: 0;
+}
+
+footer span {
+  color: #222844;
+  font-family: Nexa-Bold;
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 728px) {
+  body {
+    row-gap: 6rem;
+  }
+  .container {
+    max-width: 70%;
+  }
+  .container .form_container {
+    padding: 1rem 1.5rem;
+  }
+  .container .form_container .data_container .radio_container .container_bits {
+    -ms-grid-columns: 0.5fr 9.5fr;
+        grid-template-columns: 0.5fr 9.5fr;
+  }
+  .navbar {
+    padding: 1rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    row-gap: 7rem;
+  }
+  .navbar {
+    padding: 1rem 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar .logo {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+  .navbar .logo img {
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    width: 10rem;
+    height: auto;
+  }
+  .navbar .menubar, .navbar .top_button {
+    display: inline;
+  }
+  .navbar .menubar li:active, .navbar .menubar li:hover, .navbar .top_button li:active, .navbar .top_button li:hover {
+    color: #167ddd;
+  }
+  .navbar .top_button .white:hover, .navbar .top_button .white:active {
+    border: 1px solid #167ddd;
+    background-color: #167ddd;
+    color: white;
+    -webkit-transition: background-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out;
+  }
+  .navbar .top_button .dark-blue:hover, .navbar .top_button .dark-blue:active {
+    border: 1px solid #167ddd;
+    background-color: #167ddd;
+    color: white;
+    -webkit-transition: background-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out;
+  }
+  .navbar i {
+    display: none;
+  }
+  .navbar .menubar {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    max-width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -ms-flex-negative: 2;
+        flex-shrink: 2;
+    margin-bottom: 0;
+  }
+  .navbar .menubar li {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .navbar .top_button {
+    -ms-flex-preferred-size: 17.7rem;
+        flex-basis: 17.7rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .navbar .top_button .white, .navbar .top_button .dark-blue {
+    border: 1px solid #222844;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+  .navbar .top_button .dark-blue {
+    width: 127px;
+  }
+  .container {
+    max-width: 60%;
+  }
+  .container header {
+    padding: 0.25rem 0rem;
+  }
+  .container header h1 {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+  .container .form_container {
+    padding: 1rem 1.5rem;
+  }
+  .container .form_container .data_container .date:active {
+    border: 1px solid #222844;
+  }
+  .container .form_container .data_container .radio_container .container_bits {
+    -ms-grid-columns: 0.5fr 9.5fr;
+        grid-template-columns: 0.5fr 9.5fr;
+  }
+  .container .form_container .data_container .button_container .dark-blue {
+    font-weight: 600;
+    letter-spacing: 0.35rem;
+    padding: 1rem 0rem;
+  }
+}
+/*# sourceMappingURL=book.css.map */
