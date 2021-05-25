@@ -526,10 +526,9 @@
   }
   .help .help_container .right .sky-blue {
     font-size: 1.4rem;
-    letter-spacing: 0.1rem;
     font-family: Nexa-Bold;
     font-weight: 600;
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
   .footer {
     padding: 1rem 6rem;
