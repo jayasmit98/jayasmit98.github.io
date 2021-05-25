@@ -575,7 +575,7 @@ p{
         padding:1rem 2rem;
         display: grid;
         grid-template-columns: (3fr 1.5fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 0.5fr);
         
         background-color: $white;
         border-bottom: 4px solid $sky-blue;
@@ -1018,6 +1018,7 @@ p{
     .footer{
         padding:1rem 6rem;
         border-bottom: 8px solid $sky-blue;
+        grid-template-rows: repeat(2, 0.5fr);
         li{
             font-size:0.9rem;
             font-weight: 600;

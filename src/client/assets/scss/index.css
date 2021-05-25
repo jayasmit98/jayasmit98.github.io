@@ -658,8 +658,8 @@ p {
     display: grid;
     -ms-grid-columns: 3fr 1.5fr;
         grid-template-columns: 3fr 1.5fr;
-    -ms-grid-rows: (1fr)[2];
-        grid-template-rows: repeat(2, 1fr);
+    -ms-grid-rows: (0.5fr)[2];
+        grid-template-rows: repeat(2, 0.5fr);
     background-color: white;
     border-bottom: 4px solid #167ddd;
   }
@@ -1160,6 +1160,8 @@ p {
   .footer {
     padding: 1rem 6rem;
     border-bottom: 8px solid #167ddd;
+    -ms-grid-rows: (0.5fr)[2];
+        grid-template-rows: repeat(2, 0.5fr);
   }
   .footer li {
     font-size: 0.9rem;
