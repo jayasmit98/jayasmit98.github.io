@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/book.css">
+    <title>Book an appointment</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra">
+        </div> 
+        <i class="fas fa-bars"></i>
+        <ul class="menubar">
+            <li>Doctors</li>
+            <li>Hospitals</li>
+            <li>Treatment</li>
+            <li>Other Services</li>
+            <li>About</li>
+        </ul>        
+        <div class="top_button">
+            <button class="white">Login / Sign Up</button>    
+            <button class="dark-blue">Get a Quote</button>
+        </div>
+    </nav> 
+    <section class="container">
+        <header>
+            <h1>Book an appointment</h1>
+        </header>
+        <div class="form_container">
+            <div class="data_container">
+                <h5>Select Appointment Date*</h5>
+                <input class ="date" type="date">
+                <h5>Time Interval*</h5>
+                <div class="radio_container">
+                    <div class="container_bits">
+                        <input class="radio_input" type="radio" id="morning" name="interval" value="morning">
+                        <label for="morning">Morning</label>
+                    </div>
+                    <div class="container_bits">
+                        <input class="radio_input" type="radio" id="afternoon" name="interval" value="morning">
+                        <label for="afternoon">Afternoon</label>
+                    </div>
+                    <div class="container_bits">
+                        <input class="radio_input" type="radio" id="evening" name="interval" value="morning">
+                        <label for="evening">Evening</label>
+                    </div>
+                    
+                    
+                    
+                    </div>
+                
+                <h5>Appointment Status / Urgency*</h5>
+                <div class="radio_container">   
+                    <div class="container_bits">
+                        <input class="radio_input" type="radio" id="routine" name="urgency" value="routine">
+                        <label for="routine">Routine Check-up</label>
+                    </div>
+                    <div class="container_bits">
+                        <input class="radio_input" type="radio" id="non-urgent" name="urgency" value="non-urgent">
+                        <label for="non-urgent">Non Urgent Check-up</label>
+                    </div>
+                    <div class="container_bits">
+                        <input class="radio_input" type="radio" id="urgent" name="urgency" value="urgent">
+                        <label for="urgent">Urgent Check-up</label>
+                    </div>
+                    <div class="container_bits">
+                        <input class="radio_input" type="radio" id="surgical" name="urgency" value="surgical">
+                        <label for="surgical">Surgical Appointment</label>
+                    </div>             
+                </div>
+                
+                <h5>Upload Previous Health Record</h5>
+                <div class="health_container">
+                    
+                    <button class="upload">Choose file</button>
+                    <label for="upload">No file chosen</label>
+                </div>
+                
+                
+                
+                <h5>Appointment Details</h5>
+                <textarea name="details" cols="30" rows="3"></textarea>
+                <div class="button_container">
+                    <button class="dark-blue">BOOK APPOINTMENT</button>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </section>
+    <footer>
+        <span>All Rights Reserved © Tvastra 2020</span>
+    </footer>
+</body>
+</html>
