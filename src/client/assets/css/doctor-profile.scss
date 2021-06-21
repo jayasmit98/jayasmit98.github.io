@@ -146,6 +146,7 @@ $lighter-grey:#eee;
                     align-items: center;
                     justify-content: center;
                     
+                    
                     i{
                         color:$sky-blue;
                         font-size:0.9rem;
@@ -156,12 +157,18 @@ $lighter-grey:#eee;
             }
             .heading_data{
                 background-color: $light-blue;
-                padding:0.75rem;
+                padding:0 0.75rem;
+                //display: none;
+                max-height: 0;
+                overflow:hidden;
+                transition: max-height 0.2s ease-in;
+                
                 p{
                     font-size: 1.1rem;
                     letter-spacing:0.05rem;
                     text-align: left;
                     margin-bottom:0;
+                    margin:0.75rem;
                 }
             }
         }
@@ -344,19 +351,14 @@ $lighter-grey:#eee;
         }
         .top_button{
             
-            .white:hover, .white:active{
-                border:1px solid $sky-blue;
-                background-color: $sky-blue;
-                color:white;
+            
+
+            .sky-blue:hover, .sky-blue:active,.dark-blue:hover, .dark-blue:active{
+                border:1px solid $dark-blue-color;
+                background-color: whitesmoke;
+                color:$dark-blue-color;
                 transition: background-color 0.1s ease-out;   
                 
-            }
-
-            .dark-blue:hover, .dark-blue:active{
-                border:1px solid $sky-blue;
-                background-color: $sky-blue;
-                color:white;
-                transition: background-color 0.1s ease-out; 
             }
         }
         i {
@@ -381,11 +383,14 @@ $lighter-grey:#eee;
         .top_button{
             flex-basis: 17.7rem;
             flex-shrink: 0;
-            .white, .dark-blue{
+            .sky-blue, .dark-blue{
                 border:1px solid $dark-blue-color;
                 border-radius: 3px;
                 font-weight: 600;
                 font-size: 0.75rem;
+            }
+            .sky-blue{
+                border:1px solid $sky-blue;
             }
             .dark-blue{
                 width:127px;

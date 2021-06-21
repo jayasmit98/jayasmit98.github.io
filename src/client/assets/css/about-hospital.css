@@ -240,7 +240,11 @@
 
 .data .data_container .part2 .heading_data {
   background-color: #d1e5f5;
-  padding: 0.75rem;
+  padding: 0 0.75rem;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease;
+  transition: max-height 0.2s ease;
 }
 
 .data .data_container .part2 .heading_data p {
@@ -248,6 +252,7 @@
   letter-spacing: 0.05rem;
   text-align: left;
   margin-bottom: 0;
+  margin: 1rem;
 }
 
 .help {
@@ -482,17 +487,10 @@
   .navbar .menubar li:active, .navbar .menubar li:hover, .navbar .top_button li:active, .navbar .top_button li:hover {
     color: #167ddd;
   }
-  .navbar .top_button .white:hover, .navbar .top_button .white:active {
-    border: 1px solid #167ddd;
-    background-color: #167ddd;
-    color: white;
-    -webkit-transition: background-color 0.1s ease-out;
-    transition: background-color 0.1s ease-out;
-  }
-  .navbar .top_button .dark-blue:hover, .navbar .top_button .dark-blue:active {
-    border: 1px solid #167ddd;
-    background-color: #167ddd;
-    color: white;
+  .navbar .top_button .sky-blue:hover, .navbar .top_button .sky-blue:active, .navbar .top_button .dark-blue:hover, .navbar .top_button .dark-blue:active {
+    border: 1px solid #222844;
+    background-color: whitesmoke;
+    color: #222844;
     -webkit-transition: background-color 0.1s ease-out;
     transition: background-color 0.1s ease-out;
   }
@@ -530,11 +528,14 @@
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
-  .navbar .top_button .white, .navbar .top_button .dark-blue {
+  .navbar .top_button .sky-blue, .navbar .top_button .dark-blue {
     border: 1px solid #222844;
     border-radius: 3px;
     font-weight: 600;
     font-size: 0.75rem;
+  }
+  .navbar .top_button .sky-blue {
+    border: 1px solid #167ddd;
   }
   .navbar .top_button .dark-blue {
     width: 127px;

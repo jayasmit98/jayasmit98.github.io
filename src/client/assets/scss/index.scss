@@ -15,6 +15,13 @@ $dark-grey:rgb(102, 101, 101);
     height: auto;
     margin-top:0.5rem;
 }
+
+.hidden{
+    display: none;
+}
+.show{
+    display: none;
+}
 .navbar {
     height: auto;
     width: 100%;
@@ -43,9 +50,7 @@ $dark-grey:rgb(102, 101, 101);
     background-color:  rgb(147, 190, 222);
     text-align:center;
     padding:2.5rem 1rem;
-    h1{
-        //letter-spacing: 0.1rem;
-    }
+    
 
 }
 p{
@@ -126,6 +131,7 @@ p{
     }
     
 }
+
 .one:hover{
     border:0.5px solid black;
     span{
@@ -145,18 +151,44 @@ p{
         color:$dark-blue-color;
     }
 }
-
+.hide{
+    display: none;
+}
+.show{
+    display: grid;
+    align-items:center;
+}
+.active{
+    span{
+        color:$light-blue-background-color;
+    }
+    h3{
+        color:$dark-blue-color;
+    }
+    border:2px solid $dark-blue-color;
+}
+.grey{
+    span{
+        color:$light-grey;
+    }
+    h3{
+        color:$light-grey;
+    }
+    border:2px solid $light-grey;
+}
 .fbox{
+    
     .imgcont{
         padding:1.2rem;
         width:100%;
         height:auto;        
     }
     h4{
-        font-size:1.3rem;
+        font-size:1.10rem;
         margin-bottom: 0.4rem;
     }
     p{
+        font-size:0.9rem;
         margin-bottom:0.5rem;
         letter-spacing: 0.05rem;
     }    
@@ -175,6 +207,13 @@ p{
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     row-gap: 1.5rem;
+}
+.hide{
+    display: none;
+}
+
+.visible{
+    display: grid;
 }
 
 .doctorcard {
@@ -524,6 +563,7 @@ p{
             grid-column: 1/2;
             h3{
                 font-size:1.15rem;
+                //line-height: 2rem;
                 align-self: center;
             }
             span{
@@ -533,10 +573,23 @@ p{
             }
             
         }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: grid;
+            align-items:center;
+        }
         .fbox{
             grid-column: 2/2;
             grid-row-start: 1;
             grid-row-end:8;
+            .imgcont{
+                height:20rem;
+                img{
+                    object-fit: contain;
+                }
+            }
             
         }
     }
@@ -661,20 +714,14 @@ p{
         }
         .top_button{
             
-            .white:hover, .white:active{
-                border:1px solid $sky-blue;
-                background-color: $sky-blue;
-                color:white;
+            .sky-blue:hover, .sky-blue:active,.dark-blue:hover, .dark-blue:active{
+                border:1px solid $dark-blue-color;
+                background-color: whitesmoke;
+                color:$dark-blue-color;
                 transition: background-color 0.1s ease-out;   
                 
             }
 
-            .dark-blue:hover, .dark-blue:active{
-                border:1px solid $sky-blue;
-                background-color: $sky-blue;
-                color:white;
-                transition: background-color 0.1s ease-out; 
-            }
         }
         i {
             display: none;
@@ -698,12 +745,16 @@ p{
         .top_button{
             flex-basis: 17.7rem;
             flex-shrink: 0;
-            .white, .dark-blue{
+            .sky-blue, .dark-blue{
                 border:1px solid $dark-blue-color;
                 border-radius: 3px;
                 font-weight: 600;
                 font-size: 0.75rem;
             }
+            .sky-blue{
+                border:1px solid $sky-blue;
+            }
+            
             .dark-blue{
                 width:127px;
             }
@@ -764,7 +815,6 @@ p{
         }
         
     }
-
     .howitworks {
         padding:4rem 6rem;
         header{
@@ -788,24 +838,62 @@ p{
             border:2px solid #ebe4e4;
             border-radius: 6px;
             span{
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
             h3{
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
         }
-        .one:hover, .one:active{
+        /*.one:hover, .one:active{
+            border:2px dashed $light-blue-background-color;
+            span{
+                color:$light-blue-background-color;
+            }
+            h3{
+                color:$dark-blue-color;
+            }
+        }*/
+        .hide{
+            display: none;
+        }
+        .show{
+            display:block;
+        }
+        .active{
+            span{
+                color:$light-blue-background-color;
+            }
+            h3{
+                color:$dark-blue-color;
+            }
             border:2px solid $light-blue-background-color;
         }
-
+        .grey{
+            span{
+                color:$light-grey;
+            }
+            h3{
+                color:$light-grey;
+            }
+            border:2px solid $light-grey;
+        }
         .fbox{
             padding:1rem;
             text-align: center;
+            .imgcont{
+                height:30rem;
+                img{
+                    object-fit: contain;
+                }
+            }
             figcaption{
                 display: flex;
                 flex-direction: column;
                 justify-content:center;
                 padding:1rem 4rem;
+                h4{
+                    font-size: 1.2rem;
+                }
             }
         }
     }
@@ -824,11 +912,32 @@ p{
                 margin-bottom: 3rem;
             }
         }
-
+        .animate{
+            position: relative;
+            animation: righttoleft 0.3s ease-out;
+            
+            @keyframes righttoleft{
+                0%{
+                    left:30rem;
+                }
+                25%{
+                    left:15rem
+                }
+                50%{
+                    left:7.5rem;
+                }
+                75%{
+                    left:3rem;
+                }
+                100%{
+                    left:0rem;
+                }
+            }
+        }
         .doctorgrid{
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 1fr;
-
+            
             .doctorcard{
                 .data_container{
                     h5{
@@ -862,7 +971,7 @@ p{
                 border-radius: 50%;
                 margin-left:0.25rem;
             }
-            .c_button:active{
+            .activated{
                 
                 border:2px solid $sky-blue;
                 background:none;
@@ -882,7 +991,35 @@ p{
                 margin-bottom:3rem;
             }
         }
-
+        .animate{
+            position: relative;
+            animation: righttoleft 0.3s ease-out;
+            
+            @keyframes righttoleft{
+                0%{
+                    left:30rem;
+                }
+                25%{
+                    left:15rem
+                }
+                50%{
+                    left:7.5rem;
+                }
+                75%{
+                    left:3rem;
+                }
+                100%{
+                    left:0rem;
+                }
+            }
+        }
+        
+        .hide{
+            display:none;
+        }
+        .visible{
+            display: grid;
+        }
         .medical_container{
             grid-template-columns: repeat(9, 1fr);
             grid-template-rows: repeat(11, 1fr);
@@ -944,7 +1081,7 @@ p{
                 border-radius: 50%;
                 margin-left:0.25rem;
             }
-            .c_button:active{
+            .active{
                 
                 border:2px solid $sky-blue;
                 background:none;

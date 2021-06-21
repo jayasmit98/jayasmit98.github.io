@@ -475,6 +475,8 @@ $lighter-grey:#eee;
     h6{
         font-size:1.2rem;
     }
+
+    
     .blocks_container{
         display:grid;
         grid-template-columns: repeat(2, 1fr);
@@ -503,6 +505,31 @@ $lighter-grey:#eee;
             }
         }
     }
+    .animate{
+        position: relative;
+        animation: righttoleft 0.3s ease-out;
+        
+        @keyframes righttoleft{
+            0%{
+                left:30rem;
+            }
+            25%{
+                left:15rem
+            }
+            50%{
+                left:7.5rem;
+            }
+            75%{
+                left:3rem;
+            }
+            100%{
+                left:0rem;
+            }
+        }
+    }
+    .hide{
+        display: none;
+    }
     .carousel_container{
         display: flex;
         align-items: center;
@@ -518,11 +545,12 @@ $lighter-grey:#eee;
                 background-color:$light-grey;
                 border-radius: 50%;             
             }
-
-            .carousel_button:active{
+            .active{
                 background-color:$sky-blue;
             }
+            
         }
+        
         
     }
 }
@@ -593,7 +621,7 @@ $lighter-grey:#eee;
     display:grid;
     row-gap:2rem;
     .faq_container{
-        display: grid;
+        //display: grid;
             row-gap: 1rem;
             .heading{
                 list-style: none;
@@ -601,16 +629,18 @@ $lighter-grey:#eee;
                 grid-template-columns: 9fr 0.5fr;
                 align-items: center;
                 justify-content: space-between;
-                //height: 3rem;
+                height: 4rem;
                 .part1{
-                    //display:grid;
+                    display:grid;
+                    //grid-template-rows: 60%;
                     //grid-template-columns: 1fr 5fr;
                     align-content: center;
-                    justify-content: center;
+                    justify-content: start;
+                    padding:0.75rem 0;
                     h4{
                         margin-bottom: 0;
                         text-align: left;
-                        line-height: 2rem;
+                        line-height: 1.5rem;
                         color:$sky-blue;
                         font-size:1.2rem;
                     }
@@ -623,7 +653,7 @@ $lighter-grey:#eee;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    
+                    justify-self: flex-end;
                     i{
                         color:$sky-blue;
                         font-size:0.9rem;
@@ -634,12 +664,18 @@ $lighter-grey:#eee;
             }
             .heading_data{
                 background-color: $light-blue;
-                padding:0.75rem;
+                padding:0 0.75rem;
+                //display: none;
+                max-height: 0;
+                overflow:hidden;
+                transition: max-height 0.2s ease-in;
+                
                 p{
                     font-size: 0.9rem;
                     letter-spacing:0.05rem;
                     text-align: left;
                     margin-bottom:0;
+                    margin:0.75rem;
                 }
             }
     }
@@ -934,19 +970,14 @@ $lighter-grey:#eee;
         }
         .top_button{
             
-            .white:hover, .white:active{
-                border:1px solid $sky-blue;
-                background-color: $sky-blue;
-                color:white;
+            
+
+            .sky-blue:hover, .sky-blue:active,.dark-blue:hover, .dark-blue:active{
+                border:1px solid $dark-blue-color;
+                background-color: whitesmoke;
+                color:$dark-blue-color;
                 transition: background-color 0.1s ease-out;   
                 
-            }
-
-            .dark-blue:hover, .dark-blue:active{
-                border:1px solid $sky-blue;
-                background-color: $sky-blue;
-                color:white;
-                transition: background-color 0.1s ease-out; 
             }
         }
         i {
@@ -971,11 +1002,14 @@ $lighter-grey:#eee;
         .top_button{
             flex-basis: 17.7rem;
             flex-shrink: 0;
-            .white, .dark-blue{
+            .sky-blue, .dark-blue{
                 border:1px solid $dark-blue-color;
                 border-radius: 3px;
                 font-weight: 600;
                 font-size: 0.75rem;
+            }
+            .sky-blue{
+                border:1px solid $sky-blue;
             }
             .dark-blue{
                 width:127px;
@@ -1208,7 +1242,7 @@ $lighter-grey:#eee;
             .heading{
                 .part1{
                     h4{
-                        font-size: 1.1rem;
+                        font-size: 1.2rem;
                     }
                 }
             }

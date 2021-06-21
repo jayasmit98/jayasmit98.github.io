@@ -237,17 +237,10 @@ body .copyright span {
   body .navbar .menubar li:active, body .navbar .menubar li:hover, body .navbar .top_button li:active, body .navbar .top_button li:hover {
     color: #167ddd;
   }
-  body .navbar .top_button .white:hover, body .navbar .top_button .white:active {
-    border: 1px solid #167ddd;
-    background-color: #167ddd;
-    color: white;
-    -webkit-transition: background-color 0.1s ease-out;
-    transition: background-color 0.1s ease-out;
-  }
-  body .navbar .top_button .dark-blue:hover, body .navbar .top_button .dark-blue:active {
-    border: 1px solid #167ddd;
-    background-color: #167ddd;
-    color: white;
+  body .navbar .top_button .sky-blue:hover, body .navbar .top_button .sky-blue:active, body .navbar .top_button .dark-blue:hover, body .navbar .top_button .dark-blue:active {
+    border: 1px solid #222844;
+    background-color: whitesmoke;
+    color: #222844;
     -webkit-transition: background-color 0.1s ease-out;
     transition: background-color 0.1s ease-out;
   }
@@ -285,11 +278,14 @@ body .copyright span {
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
-  body .navbar .top_button .white, body .navbar .top_button .dark-blue {
+  body .navbar .top_button .sky-blue, body .navbar .top_button .dark-blue {
     border: 1px solid #222844;
     border-radius: 3px;
     font-weight: 600;
     font-size: 0.75rem;
+  }
+  body .navbar .top_button .sky-blue {
+    border: 1px solid #167ddd;
   }
   body .navbar .top_button .dark-blue {
     width: 127px;
