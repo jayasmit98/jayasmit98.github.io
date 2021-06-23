@@ -1,8 +1,6 @@
 let sel = document.querySelectorAll('.one');
 let fol = document.querySelectorAll('.fbox')
-fol.forEach(el => {
-    el.classList.add('hide');
-})
+
 console.log(fol);
 const expand=(element) => {
     sel.forEach((el)=>{

@@ -19,9 +19,7 @@ $dark-grey:rgb(102, 101, 101);
 .hidden{
     display: none;
 }
-.show{
-    display: none;
-}
+
 .navbar {
     height: auto;
     width: 100%;
@@ -193,6 +191,7 @@ p{
         letter-spacing: 0.05rem;
     }    
 }
+
 .expertdoctors{
     background-color: $dark-blue-color;
     text-align: center;
@@ -265,6 +264,7 @@ p{
             letter-spacing: 0.05rem;
         }
     }
+    
     .medical_container{
         display: grid;
         grid-template-rows: repeat(6, 1fr);
@@ -415,6 +415,16 @@ p{
             }
         }
     }
+    .hide{
+        display: none;
+    }
+    .visible{
+        display: grid;
+    }
+    .caraousel_buttons{
+        display: none;
+    }
+    
 }
 
 .exclusive{

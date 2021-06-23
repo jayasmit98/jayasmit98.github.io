@@ -8,10 +8,6 @@
   display: none;
 }
 
-.show {
-  display: none;
-}
-
 .navbar {
   height: auto;
   width: 100%;
@@ -478,6 +474,19 @@ p {
   letter-spacing: 0;
   font-size: 0.95rem;
   font-weight: 500;
+}
+
+.medicaltreatment .hide {
+  display: none;
+}
+
+.medicaltreatment .visible {
+  display: -ms-grid;
+  display: grid;
+}
+
+.medicaltreatment .caraousel_buttons {
+  display: none;
 }
 
 .exclusive {
