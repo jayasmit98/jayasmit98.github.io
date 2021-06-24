@@ -843,7 +843,9 @@
 }
 
 .faq .faq_container {
-  row-gap: 1rem;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 0.25rem;
 }
 
 .faq .faq_container .heading {
@@ -869,7 +871,6 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  padding: 0.75rem 0;
 }
 
 .faq .faq_container .heading .part1 h4 {
@@ -1525,7 +1526,10 @@
     margin-bottom: 0rem;
   }
   .faq .faq_container {
-    row-gap: 1.5rem;
+    row-gap: 0.3rem;
+  }
+  .faq .faq_container .heading {
+    height: 3rem;
   }
   .faq .faq_container .heading .part1 h4 {
     font-size: 1.2rem;

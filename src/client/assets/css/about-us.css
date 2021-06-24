@@ -96,6 +96,10 @@
   row-gap: 1.5rem;
 }
 
+.freecheckup video {
+  display: none;
+}
+
 .freecheckup .part1 h1, .freecheckup .part1 p {
   color: white;
 }
@@ -440,6 +444,7 @@
             column-gap: 1rem;
   }
   .freecheckup video {
+    display: block;
     position: absolute;
     z-index: -1;
     top: -10%;

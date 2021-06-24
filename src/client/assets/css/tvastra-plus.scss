@@ -621,8 +621,8 @@ $lighter-grey:#eee;
     display:grid;
     row-gap:2rem;
     .faq_container{
-        //display: grid;
-            row-gap: 1rem;
+        display: grid;
+            row-gap: 0.25rem;
             .heading{
                 list-style: none;
                 display: grid;
@@ -632,11 +632,9 @@ $lighter-grey:#eee;
                 height: 4rem;
                 .part1{
                     display:grid;
-                    //grid-template-rows: 60%;
-                    //grid-template-columns: 1fr 5fr;
                     align-content: center;
                     justify-content: start;
-                    padding:0.75rem 0;
+                    
                     h4{
                         margin-bottom: 0;
                         text-align: left;
@@ -1238,8 +1236,9 @@ $lighter-grey:#eee;
             margin-bottom:0rem;
         }
         .faq_container{
-            row-gap: 1.5rem;
+            row-gap: 0.3rem;
             .heading{
+                height: 3rem;
                 .part1{
                     h4{
                         font-size: 1.2rem;

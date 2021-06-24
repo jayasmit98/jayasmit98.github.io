@@ -83,6 +83,9 @@ $lighter-grey:#eee;
 }
 
 .freecheckup{
+    video{
+        display:none;
+    }
     padding:2.5rem 1.5rem;
     background-color:black;
     display: grid;
@@ -368,6 +371,7 @@ $lighter-grey:#eee;
         background:none;
         overflow: hidden;
         video{
+            display: block;
             position: absolute;
             z-index: -1;
             top:-10%;
