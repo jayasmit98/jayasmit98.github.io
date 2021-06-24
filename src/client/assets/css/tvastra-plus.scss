@@ -876,7 +876,14 @@ $lighter-grey:#eee;
 
     .faq{
         display:grid;
-        justify-items:start
+        justify-items:start;
+        .faq_container{
+            row-gap: 0.5rem;
+            .heading{
+                height:3rem;
+            }
+        }
+        
     }
 
     .footer{

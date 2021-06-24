@@ -1135,6 +1135,12 @@
     display: grid;
     justify-items: start;
   }
+  .faq .faq_container {
+    row-gap: 0.5rem;
+  }
+  .faq .faq_container .heading {
+    height: 3rem;
+  }
   .footer {
     padding: 1rem 2rem;
     display: -ms-grid;
