@@ -1,7 +1,7 @@
 let sel = document.querySelectorAll('.one');
 let fol = document.querySelectorAll('.fbox')
 
-console.log(fol);
+
 const expand=(element) => {
     sel.forEach((el)=>{
         el.classList.remove('active');

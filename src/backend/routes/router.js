@@ -1,0 +1,16 @@
+const express = require("express");
+const app = express();
+const router = express.Router();
+const mainc=require("../controller/maincontroller");
+router.route("/").get(mainc.index);
+router.route("/doctor").get(mainc.doctor);
+router.route("/hospital").get(mainc.hospitals);
+router.route("/Dentistry").get(mainc.treatment);
+router.route("/about-us").get(mainc.about);
+router.route("/tvastra-plus").get(mainc.tvastraplus);
+router.route("/query").get(mainc.query);
+router.route("/contact").get(mainc.contact);
+router.route("/FAQ").get(mainc.faq);
+router.route("/about-hospital").get(mainc.abouthospital);
+router.route("/doctor-profile").get(mainc.doctorprofile);
+module.exports=router;
