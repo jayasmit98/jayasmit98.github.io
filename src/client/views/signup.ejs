@@ -30,33 +30,33 @@
     </nav> 
     <section class="login">
         <h1>Sign Up</h1>
-        <form action="submit">
-            <input type="text" placeholder="Enter Name">
-            <input type="text" placeholder="Enter Email">
-            <input type="text" placeholder="Enter Password">
-            <select name="Gender" id="gender" placeholder="Select your gender">
+        <form action="/signup" method="POST">
+            <input name="name" type="text" placeholder="Enter Name">
+            <input name="email" type="text" placeholder="Enter Email">
+            <input name="password" type="text" placeholder="Enter Password">
+            <select name="gender" name="Gender" id="gender" placeholder="Select your gender">
                 <option default>Select your gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
             </select>
-            <input type="text" placeholder="dd/mm/yyyy">
-            <input type="text" placeholder="Enter Phone Number">
+            <input name="dob" type="text" placeholder="dd/mm/yyyy">
+            <input name="phone" type="text" placeholder="Enter Phone Number">
             <div class="two">
-                <input type="text" placeholder="Enter City">
-                <input type="text" placeholder="Enter State">
+                <input name="city" type="text" placeholder="Enter City">
+                <input name="state" type="text" placeholder="Enter State">
             </div>
             
-            <select name="" id="" placeholder="Select your Country">
+            <select name="country" name="" id="" placeholder="Select your Country">
                 <option default>Select your Country</option>
                 <option value="india">India</option>
                 <option value="usa">USA</option>
             </select>
             <div class="button_container">
-                <button class="dark-blue">SIGN UP</button>
+                <button type="submit" class="dark-blue">SIGN UP</button>
                 <i class="fas fa-arrow-right"></i>
             </div>            
         </form>
-        <p>Already Registered? <span>Login</span></p>
+        <p>Already Registered? <a href="/"><span>Login</span></p></a>
     </section>
     <section class="copyright">
         <span>All Rights Reserved © Tvastra 2020</span>

@@ -40,8 +40,45 @@ $dark-grey:rgb(102, 101, 101);
     .menubar, .top_button{
         display: none;
     }
+    
 }
-
+.profile_section{
+    
+    position:fixed;
+    z-index: 1;
+    top:0;
+    background-color: white;
+    height:100vh;
+    width:60vw;
+    display: grid;
+    grid-template-rows: 0.3fr 5fr;
+    row-gap: 1.5rem;
+    align-items: center;
+    display: none;
+    figure{
+        width:7.2rem;
+        height:3.5rem;
+        padding-left:0.8rem;
+        align-items: center;
+        img{
+            object-fit: contain;
+            margin:0;
+            //height:1.5rem;
+        }
+    }
+    .list{
+        display:grid;
+        //row-gap:1rem;
+        align-self: start;
+        li{
+            font-family: Nexa-Bold;
+            font-size: 1.25rem;
+            line-height: 4rem;
+            border-bottom: 1px solid black;
+            padding-left:1rem;
+        }
+    }
+}
 .top{
     width:100%;
     height:auto;
@@ -54,7 +91,9 @@ $dark-grey:rgb(102, 101, 101);
 p{
     text-align:center;
 }
-
+.error_container{
+    display:none;
+}
 .topsearch {
     border-radius: 0px;
     margin-top:0.5rem;
@@ -515,6 +554,17 @@ p{
     .navbar{
         padding:1rem 2rem;
     }
+    .profile_section{
+        figure{
+            padding-left: 1.8rem;
+            width:8.2rem;
+        }
+        .list{
+            li{
+                padding-left:1.8rem;
+            }
+        }
+    }
     .top{
         padding:2rem 2rem;
     }
@@ -703,6 +753,90 @@ p{
 }
 
 @media only screen and (min-width:1024px){
+   body{ 
+    .error_container{
+        display: none;
+        background-color: $white;
+        display: grid;
+        grid-template-columns: 0.5fr 3fr 0.75fr;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        padding:1rem;
+        border-left: 0.25rem solid red;
+        position:absolute;
+        top:5.25rem;
+        right:0.5rem;
+        opacity:0;
+        animation:fade 5s ease-out 0.25s 1;
+        .fas{
+            margin:0;
+        }
+        .fa-times-circle{
+            color:red;
+            font-size:2rem;
+            margin-right: 1rem;
+        }
+        .data_container{
+            justify-self: left;
+            h6{
+                color: red;
+            }
+            h6{
+                margin:0;
+            }
+            span{
+                margin:0;
+                font-size: 1rem;
+            }
+        }
+        .fa-times{
+            margin-left:2rem;
+        }
+    }
+    @keyframes fade{
+        0%{
+            opacity:0;
+        }
+        25%{
+            opacity: 1;
+        }
+        50%{
+            opacity:1;
+        }
+        75%{
+            opacity:0;
+        }
+        100%{
+            opacity:0;
+            
+        }
+
+    }
+    .success{
+        border-left:0.25rem solid green;
+        .fas{
+            margin:0;
+        }
+        .fa-check-circle{
+            color:green;
+            font-size:2rem;
+            margin-right: 1rem;
+        }
+        .data_container{
+            h6{
+                color: green;
+            }
+            h6{
+                margin:0;
+            }
+            span{
+                margin:0;
+                font-size: 1rem;
+            }
+        }
+    }
+    
     .navbar{
         padding:1rem 6rem;
         display: flex;
@@ -743,7 +877,7 @@ p{
                 font-weight: 600;
             }
             flex-basis: 50%;
-            max-width: 40%;
+            max-width: 30%;
             display: flex;
             flex-direction: row;
             justify-content:space-between;
@@ -753,8 +887,12 @@ p{
             margin-bottom: 0;               
         }
         .top_button{
-            flex-basis: 17.7rem;
+            flex-basis: 24.5rem;
             flex-shrink: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 0.75rem;
+            align-items: center;
             .sky-blue, .dark-blue{
                 border:1px solid $dark-blue-color;
                 border-radius: 3px;
@@ -768,7 +906,79 @@ p{
             .dark-blue{
                 width:127px;
             }
+            .name_container{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                cursor: pointer;
+                h6{
+                    font-family:Nexa-Light;
+                    ;
+                    line-height: normal;
+                    font-size:1.125rem;
+                    margin:0;
+                }
+                .fa-angle-down{
+                    color: $dark-blue-color;
+                    display: inline;
+                    margin:0;
+                    margin-left: 0.5rem;
+                }
+                h6:hover{
+                    color:$sky-blue;
+                }
+            }
+            
         } 
+    }
+    .profile_section_2{
+        position:absolute;
+        right:4rem;
+        top:5.5rem;
+        width:16rem;
+        height:20rem;
+        background-color: white;
+        z-index: 1;
+        display: grid;
+        grid-template-rows: 1.5fr 5fr;
+        //row-gap: 1rem;
+        align-items: center;
+        display:none;
+        .part_1{
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            align-items: center;
+            
+            border-bottom: 1px solid $light-grey;
+            padding:1rem;
+            height:5rem;
+            h6{
+                margin:0;
+                justify-self: center;
+
+            }
+            img{
+                height:3rem;
+            }
+        }
+        .list{
+            display: grid;
+            //height: 13rem;
+            align-items: center;
+            margin-bottom:0;
+            li{
+                padding-left: 1rem;
+                line-height: 3rem;
+                font-family: Nexa-Bold;
+                font-size:1.25rem;
+            }
+            li:hover{
+                background-color: $light-grey;
+                color:$sky-blue;
+                border-left: 0.25rem solid $sky-blue;
+                padding-left: 0.75rem;
+            }
+        }
     }
     .top{
         padding:7rem 6rem;
@@ -1193,5 +1403,6 @@ p{
             }
         }
         
+    }
     }
 }

@@ -127,6 +127,15 @@ body{
 
                 }
             }
+            .options_container{
+                display:flex;
+                justify-content: space-between;
+                padding:0.5rem 0rem;
+                a{
+                    font-family: Nexa-Bold;
+                    color:$sky-blue;
+                }
+            }
 
             .button_container{
                 position:relative;
@@ -174,6 +183,7 @@ body{
         display: flex;
         flex-direction: row;
         justify-content:space-between;
+        
         .logo{
             flex-basis: 20%;
             flex-shrink: 1;
@@ -211,7 +221,7 @@ body{
                 font-weight: 600;
             }
             flex-basis: 50%;
-            max-width: 40%;
+            max-width: 30%;
             display: flex;
             flex-direction: row;
             justify-content:space-between;
@@ -221,7 +231,10 @@ body{
             margin-bottom: 0;               
         }
         .top_button{
-            flex-basis: 17.7rem;
+            display: flex;
+            justify-content: flex-end;
+            flex-basis: 16rem;
+            
             flex-shrink: 0;
             .sky-blue, .dark-blue{
                 border:1px solid $dark-blue-color;
@@ -234,11 +247,93 @@ body{
             }
             .dark-blue{
                 width:127px;
+                justify-self: flex-end;
             }
         } 
     }
     }
+    .error_container{
+        z-index: 0;
+        background-color: $white;
+        display: grid;
+        grid-template-columns: 0.5fr 3fr 0.75fr;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        padding:1rem;
+        border-left: 0.25rem solid red;
+        position:absolute;
+        top:5.25rem;
+        right:0.5rem;
+        opacity:0;
+        animation:fade 5s ease-out 0s 1;
+        .fas{
+            margin:0;
+        }
+        .fa-times-circle{
+            color:red;
+            font-size:2rem;
+            margin-right: 1rem;
+        }
+        .data_container{
+            justify-self: left;
+            h6,span{
+                color: red;
+            }
+            h6{
+                margin:0;
+            }
+            span{
+                margin:0;
+                font-size: 1rem;
+            }
+        }
+        .fa-times{
+            margin-left:2rem;
+        }
+    }
+    @keyframes fade{
+        0%{
+            opacity:0;
+        }
+        25%{
+            opacity: 1;
+        }
+        50%{
+            opacity:1;
+        }
+        75%{
+            opacity:0;
+        }
+        100%{
+            opacity:0;
+            
+        }
 
+    }
+    .success{
+        border-left:0.25rem solid green;
+        .fas{
+            margin:0;
+        }
+        .fa-check-circle{
+            color:green;
+            font-size:2rem;
+            margin-right: 1rem;
+        }
+        .data_container{
+            h6,span{
+                color: green;
+            }
+            h6{
+                margin:0;
+            }
+            span{
+                margin:0;
+                font-size: 1rem;
+            }
+        }
+    }
     .login{
         h1,p{
             text-align: center;

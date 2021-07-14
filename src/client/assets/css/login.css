@@ -176,6 +176,21 @@ body .login form .input1_container .fas {
   right: 5%;
 }
 
+body .login form .options_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem 0rem;
+}
+
+body .login form .options_container a {
+  font-family: Nexa-Bold;
+  color: #167ddd;
+}
+
 body .login form .button_container {
   position: relative;
 }
@@ -250,7 +265,7 @@ body .copyright span {
   body .navbar .menubar {
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
-    max-width: 40%;
+    max-width: 30%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -273,8 +288,14 @@ body .copyright span {
     font-weight: 600;
   }
   body .navbar .top_button {
-    -ms-flex-preferred-size: 17.7rem;
-        flex-basis: 17.7rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-preferred-size: 16rem;
+        flex-basis: 16rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -289,6 +310,110 @@ body .copyright span {
   }
   body .navbar .top_button .dark-blue {
     width: 127px;
+    justify-self: flex-end;
+  }
+  .error_container {
+    z-index: 0;
+    background-color: white;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.5fr 3fr 0.75fr;
+        grid-template-columns: 0.5fr 3fr 0.75fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1rem;
+    border-left: 0.25rem solid red;
+    position: absolute;
+    top: 5.25rem;
+    right: 0.5rem;
+    opacity: 0;
+    -webkit-animation: fade 5s ease-out 0s 1;
+            animation: fade 5s ease-out 0s 1;
+  }
+  .error_container .fas {
+    margin: 0;
+  }
+  .error_container .fa-times-circle {
+    color: red;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  .error_container .data_container {
+    -ms-grid-column-align: left;
+        justify-self: left;
+  }
+  .error_container .data_container h6, .error_container .data_container span {
+    color: red;
+  }
+  .error_container .data_container h6 {
+    margin: 0;
+  }
+  .error_container .data_container span {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .error_container .fa-times {
+    margin-left: 2rem;
+  }
+  @-webkit-keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .success {
+    border-left: 0.25rem solid green;
+  }
+  .success .fas {
+    margin: 0;
+  }
+  .success .fa-check-circle {
+    color: green;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  .success .data_container h6, .success .data_container span {
+    color: green;
+  }
+  .success .data_container h6 {
+    margin: 0;
+  }
+  .success .data_container span {
+    margin: 0;
+    font-size: 1rem;
   }
   .login {
     max-width: 35rem;

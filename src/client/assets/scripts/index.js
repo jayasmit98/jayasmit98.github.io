@@ -1,7 +1,28 @@
 let sel = document.querySelectorAll('.one');
-let fol = document.querySelectorAll('.fbox')
-
-
+let fol = document.querySelectorAll('.fbox');
+let  toaster = document.querySelector('.fa-bars');
+let pro = document.querySelector('.profile_section');
+let namecon = document.querySelector('.name_container');
+let pro2 = document.querySelector('.profile_section_2');
+const pop2 = (element) => {
+    console.log(element);
+    if(pro2.style.display=="grid"){
+        pro2.style.display="none";
+    }
+    else{
+        pro2.style.display="grid";
+    }
+}
+namecon.addEventListener('click', pop2);
+const popup = (element) =>{
+    if(pro.style.display=="grid"){
+        pro.style.display="none";
+    }
+    else{
+        pro.style.display="grid";
+    }
+};
+toaster.addEventListener('click', popup);
 const expand=(element) => {
     sel.forEach((el)=>{
         el.classList.remove('active');

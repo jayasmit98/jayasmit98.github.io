@@ -13,21 +13,69 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
+            <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
         </div> 
         <i class="fas fa-bars"></i>
         <ul class="menubar">
             <a href="doctor"><li>Doctors</li></a>
             <a href="hospital"><li>Hospitals</li></a>
             <a href="Dentistry"><li>Treatment</li></a>
-            <li>Other Services</li>
             <a href="about-us"><li>About</li></a>
         </ul>        
         <div class="top_button">
             <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
             <a href="query"><button class="dark-blue">Get a Quote</button></a>
+            <div class="name_container">
+                <h6><%= name %></h6>
+                <i class="fas fa-angle-down"></i>
+            </div>
         </div>
     </nav> 
+    <div class="profile_section">
+        <figure>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra">
+        </figure>
+        <ul class="list">
+            <a href="/appointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/records">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="/payments">
+                <li>My Payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+    <div class="profile_section_2">
+        <div class="part_1">
+            <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
+            <h6><%= name %></h6>
+        </div>
+        <ul class="list">
+            <a href="/appointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/records">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="/payments">
+                <li>My Payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div> 
     <section class="intro">
         <h3>Hospitals in <span>Delhi</span></h3>
     </section>
@@ -385,6 +433,6 @@
             <p>All Rights Reserved. © tvastra 2021</p>
         </div>
     </footer>
-    
+    <script type="text/javascript" src="../assets/scripts/index.js"></script>
 </body>
 </html>

@@ -20,30 +20,47 @@
             <a href="doctor"><li>Doctors</li></a>
             <a href="hospital"><li>Hospitals</li></a>
             <a href="Dentistry"><li>Treatment</li></a>
-            <li>Other Services</li>
             <a href="about-us"><li>About</li></a>
         </ul>        
         <div class="top_button">
-            <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
+            
             <a href="query"><button class="dark-blue">Get a Quote</button></a>
         </div>
-    </nav> 
+    </nav>
+    <% if(error) { %>
+        <% if(errorType=='Failure'){ %>
+            <div class="error_container">
+                <i class="fas fa-times-circle"></i>
+                <div class="data_container">
+                    <h6>Failure</h6>
+                    <span>Incorrect Email or Password</span>
+                </div>
+                <i class="fas fa-times"></i>
+            </div>
+        <% } %>
+        
+    <% } %> 
     <section class="login">
+        
         <h1>Login</h1>
-        <form action="submit">
+        <form action="/" method="POST">
             <div class="input1_container">
-                <input type="text" placeholder="Enter Mobile Number">
+                <input name="email" type="text" placeholder="Enter Email">
                 <i class="fas fa-question-circle"></i>
                 
             </div>
             
-            <input type="text" placeholder="Enter OTP">
+            <input name="password" type="text" placeholder="Enter Password">
+            <div class="options_container">
+                <a href="/otp">Login with OTP</a>
+                <a href="/forgotpassword">Forgot Password</a>
+            </div>
             <div class="button_container">
-                <button class="dark-blue">LOGIN</button>
+                <button type="submit" class="dark-blue">LOGIN</button>
                 <i class="fas fa-arrow-right"></i>
             </div>            
         </form>
-        <p>Not Registered? <span>Sign Up</span></p>
+        <p>Not Registered? <a href="/signup"><span>Sign Up</span></p></a>
     </section>
     <section class="copyright">
         <span>All Rights Reserved © Tvastra 2020</span>

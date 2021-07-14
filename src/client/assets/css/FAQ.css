@@ -32,6 +32,58 @@
   display: none;
 }
 
+.profile_section {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: white;
+  height: 100vh;
+  width: 60vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.3fr 5fr;
+      grid-template-rows: 0.3fr 5fr;
+  row-gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.profile_section figure {
+  width: 7.2rem;
+  height: 3.5rem;
+  padding-left: 0.8rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_section figure img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0;
+}
+
+.profile_section .list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.profile_section .list li {
+  font-family: Nexa-Bold;
+  font-size: 1.25rem;
+  line-height: 4rem;
+  border-bottom: 1px solid black;
+  padding-left: 1rem;
+}
+
+.profile_section_2 {
+  display: none;
+}
+
 .top {
   background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png);
   background-size: fill;
@@ -211,6 +263,13 @@
   .navbar {
     padding: 1rem 2rem;
   }
+  .profile_section figure {
+    padding-left: 1.8rem;
+    width: 8.2rem;
+  }
+  .profile_section .list li {
+    padding-left: 1.8rem;
+  }
   .data .data_container {
     padding: 1.5rem;
   }
@@ -366,7 +425,7 @@
   .navbar .menubar {
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
-    max-width: 40%;
+    max-width: 30%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -389,10 +448,19 @@
     font-weight: 600;
   }
   .navbar .top_button {
-    -ms-flex-preferred-size: 17.7rem;
-        flex-basis: 17.7rem;
+    -ms-flex-preferred-size: 24.5rem;
+        flex-basis: 24.5rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 0.75rem;
+            column-gap: 0.75rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .navbar .top_button .sky-blue, .navbar .top_button .dark-blue {
     border: 1px solid #222844;
@@ -405,6 +473,91 @@
   }
   .navbar .top_button .dark-blue {
     width: 127px;
+  }
+  .navbar .top_button .name_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+  }
+  .navbar .top_button .name_container h6 {
+    font-family: Nexa-Light;
+    line-height: normal;
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  .navbar .top_button .name_container .fa-angle-down {
+    color: #222844;
+    display: inline;
+    margin: 0;
+    margin-left: 0.5rem;
+  }
+  .navbar .top_button .name_container h6:hover {
+    color: #167ddd;
+  }
+  .profile_section_2 {
+    position: absolute;
+    right: 4rem;
+    top: 5.5rem;
+    width: 16rem;
+    height: 20rem;
+    background-color: white;
+    z-index: 1;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1.5fr 5fr;
+        grid-template-rows: 1.5fr 5fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: none;
+  }
+  .profile_section_2 .part_1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 5fr;
+        grid-template-columns: 1fr 5fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #dbd8d8;
+    padding: 1rem;
+    height: 5rem;
+  }
+  .profile_section_2 .part_1 h6 {
+    margin: 0;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .profile_section_2 .part_1 img {
+    height: 3rem;
+  }
+  .profile_section_2 .list {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 0;
+  }
+  .profile_section_2 .list li {
+    padding-left: 1rem;
+    line-height: 3rem;
+    font-family: Nexa-Bold;
+    font-size: 1.25rem;
+  }
+  .profile_section_2 .list li:hover {
+    background-color: #dbd8d8;
+    color: #167ddd;
+    border-left: 0.25rem solid #167ddd;
+    padding-left: 0.75rem;
   }
   .top {
     background-position: 0% 0%;
