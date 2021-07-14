@@ -171,9 +171,24 @@ body .login form .input1_container .fas {
   position: absolute;
   right: 0;
   color: #dbd8d8;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  top: 35%;
+  right: 5.65%;
+}
+
+body .login form .input1_container .far {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  color: #167ddd;
+  font-size: 1.2rem;
+  font-weight: 600;
   top: 35%;
   right: 5%;
+}
+
+body .login form .input1_container .fa-eye {
+  margin-right: 0.05rem;
 }
 
 body .login form .options_container {

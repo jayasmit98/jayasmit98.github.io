@@ -121,10 +121,24 @@ body{
                     position:absolute;
                     right:0;
                     color:$light-grey;
-                    font-size:1rem;
+                    font-size:1.2rem;
+
+                    top:35%;
+                    right:5.65%;
+
+                }
+                .far{
+                    margin:0;
+                    position:absolute;
+                    right:0;
+                    color:$sky-blue;
+                    font-size:1.2rem;
+                    font-weight: 600;
                     top:35%;
                     right:5%;
-
+                }
+                .fa-eye{
+                    margin-right: 0.05rem;
                 }
             }
             .options_container{
