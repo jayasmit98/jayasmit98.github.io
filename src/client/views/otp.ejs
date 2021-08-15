@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/otp.css">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
+        </div> 
+        <i class="fas fa-bars"></i>
+        <ul class="menubar">
+            <a href="doctor"><li>Doctors</li></a>
+            <a href="hospital"><li>Hospitals</li></a>
+            <a href="Dentistry"><li>Treatment</li></a>
+            <a href="about-us"><li>About</li></a>
+        </ul>        
+        <div class="top_button">
+            
+            <a href="query"><button class="dark-blue">Get a Quote</button></a>
+        </div>
+    </nav>
+    <% if(error) { %>
+        <% if(errorType=='Failure'){ %>
+            <div class="error_container">
+                <i class="fas fa-times-circle"></i>
+                <div class="data_container">
+                    <h6>Failure</h6>
+                    <span>Incorrect Email or Password</span>
+                </div>
+                <i class="fas fa-times"></i>
+            </div>
+        <% } %>
+        
+    <% } %> 
+    <section class="login">
+        
+        <h1>Enter Your OTP</h1>
+        <form action="/otp" method="POST">
+            <div class="input1_container">
+                <input class="otp_style" id="otp1" name="otp1" type="text" onkeydown="rep(1,event)" onkeyup="shiftforward(1,event)"  maxlength="1">
+                <input class="otp_style" id="otp2" name="otp2" type="text" onkeydown="rep(2,event)" onkeyup="shiftforward(2,event)"  maxlength="1">
+                <input class="otp_style" id="otp3" name="otp3" type="text" onkeydown="rep(3,event)" onkeyup="shiftforward(3,event)"  maxlength="1">
+                <input class="otp_style" id="otp4" name="otp4" type="text" onkeydown="rep(4,event)" onkeyup="shiftforward(4,event)"  maxlength="1">                
+            </div>
+            <div class="resend_container">
+                <a class="timer" href="#">Resend in 35</a>
+            </div>
+            
+            <div class="button_container">
+                <button type="submit" class="dark-blue">SUBMIT</button>
+                <i class="fas fa-arrow-right"></i>
+            </div>            
+        </form>
+        <p>Not Registered? <a href="/signup"><span>Sign Up</span></p></a>
+    </section>
+    <section class="copyright">
+        <span>All Rights Reserved © Tvastra 2020</span>
+    </section>
+    <script src="../assets/scripts/otp.js"></script>
+</body>
+</html>

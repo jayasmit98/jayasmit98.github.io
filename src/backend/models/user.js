@@ -45,6 +45,12 @@ const user = new mongoose.Schema({
     country:{
         type:String,
         required:true
+    },
+    image:{
+        type:String
+    },
+    isdoctor:{
+        type:Boolean
     }
 })
 

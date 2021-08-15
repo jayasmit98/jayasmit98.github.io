@@ -222,8 +222,8 @@
                             <input type="checkbox" class="options" id="10" value="10+">
                         10+</label>
                         <label for="5" class="labels">
-                            <input type="checkbox" class="options" id="5" value="5+">
-                        5+</label>
+                            <input type="checkbox" class="options" id="12" value="5+">
+                        12+</label>
                     </div>
                     <div class="bottom">
                         <p>+ Show More</p>
@@ -231,146 +231,89 @@
                 </div>
             </div>
             <div class="right">
-                <figure class="doctor_card">
-                    <figcaption>
-                        <div class="name">
-                           <a href="/doctor-profile"><h5>Duke Sanson</h5></a>
+                <% for(var i=0;i<docs.length;i++){%>
+                    <figure class="doctor_card">
+                        <figcaption>
+                            <div class="name">
+                            <a href="/doctor-profile"><h5><%= docs[i].name %></h5></a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <span><i class="fas fa-certificate"></i></span>
+                                    <%= docs[i].specialization %>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-award"></i></span>
+                                    <%= docs[i].awards %>
+                                </li>
+                                <li>
+                                    <span><i class="far fa-clock"></i></span>
+                                    <%= docs[i].experience %>
+                                </li>
+                                <li>
+                                    <span><i class="far fa-building"></i></span>
+                                    <%= docs[i].hospitals%>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-map-marker-alt"></i></span>
+                                    <%= docs[i].state %>
+                                </li>
+                            </ul> 
+                            <div class="button_book">
+                                <button class="dark-blue trigger" onclick="showslots('showslots<%=docs[i]._id %>','<%= docs[i]._id %>')">Book an appointment</button>
+                            </div>
+                        </figcaption>               
+                        <div class="image">
+                            <img src="../assets/uploads/<%= docs[i].image %>" alt="Doctor's Image">
                         </div>
-                        <ul>
-                            <li>
-                                <span><i class="fas fa-certificate"></i></span>
-                                Neuro Surgeon
-                            </li>
-                            <li>
-                                <span><i class="fas fa-award"></i></span>
-                                M.B.B.S, M.D
-                            </li>
-                            <li>
-                                <span><i class="far fa-clock"></i></span>
-                                10 years
-                            </li>
-                            <li>
-                                <span><i class="far fa-building"></i></span>
-                                Apollo Hospital, Australia
-                            </li>
-                            <li>
-                                <span><i class="fas fa-map-marker-alt"></i></span>
-                                Australia
-                            </li>
-                        </ul> 
-                        <div class="button_book">
-                            <button class="dark-blue">Book an appointment</button>
+                        <div class="part_2 hide" id="showslots<%= docs[i]._id %>">
+                            <div class="leftarrow">
+                                <i class="fas fa-chevron-left" onclick="movecar('left','slotmid<%=docs[i]._id%>')"></i>
+                            </div>
+                            <div class="mid" id="slotmid<%= docs[i]._id %>">
+                                <div class="dates 0" id="0" onclick="showsubslots('subslots<%=docs[i]._id %>','<%=docs[i]._id %>', 0)">
+                                    
+                                </div>
+                                <div class="dates 1" id="1" onclick="showsubslots('subslots<%=docs[i]._id %>','<%=docs[i]._id %>', 1)">
+                                    
+                                </div>
+                                <div class="dates 2" id="2" onclick="showsubslots('subslots<%=docs[i]._id%>','<%=docs[i]._id %>', 2)">
+                                    
+                                </div>
+                                <div class="dates 3 inactive" id="3" onclick="showsubslots('subslots<%=docs[i]._id %>','<%=docs[i]._id %>', 3)">
+                                    
+                                </div>
+                                <div class="dates 4 inactive" id="4" onclick="showsubslots('subslots<%=docs[i]._id %>','<%= docs[i]._id%>', 4)">
+                                    
+                                </div>
+                                <div class="dates 5 inactive" id="5" onclick="showsubslots('subslots<%=docs[i]._id %>','<%= docs[i]._id%>', 5)">
+
+                                </div>
+                                <div class="dates 6 inactive" id="6" onclick="showsubslots('subslots<%=docs[i]._id %>','<%= docs[i]._id%>', 6)">
+                                    
+                                </div>
+                            </div>
+                            <div class="rightarrow">
+                                <i class="fas fa-chevron-right" onclick="movecar('right','slotmid<%=docs[i]._id%>')"></i>
+                            </div>
                         </div>
-                    </figcaption>               
-                    <div class="image">
-                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg" alt="Duke Sanson">
-                    </div>             
-                </figure>
-                <figure class="doctor_card">
-                    <figcaption>
-                        <div class="name">
-                            <a href="/doctor-profile"><h5>Georgia Peter</h5></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <span><i class="fas fa-certificate"></i></span>
-                                Breast Cancer Surgeon
-                            </li>
-                            <li>
-                                <span><i class="fas fa-award"></i></span>
-                                M.B.B.S, M.D
-                            </li>
-                            <li>
-                                <span><i class="far fa-clock"></i></span>
-                                15 years
-                            </li>
-                            <li>
-                                <span><i class="far fa-building"></i></span>
-                                MAX Hospital, London
-                            </li>
-                            <li>
-                                <span><i class="fas fa-map-marker-alt"></i></span>
-                                London
-                            </li>
-                        </ul> 
-                        <div class="button_book">
-                            <button class="dark-blue">Book an appointment</button>
-                        </div>
-                    </figcaption>               
-                    <div class="image">
-                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" alt="Georgia Peter">
-                    </div>             
-                </figure>
-                <figure class="doctor_card">
-                    <figcaption>
-                        <div class="name">
-                            <a href="/doctor-profile"><h5>Charlie Moon</h5></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <span><i class="fas fa-certificate"></i></span>
-                                Cardiac Surgeon
-                            </li>
-                            <li>
-                                <span><i class="fas fa-award"></i></span>
-                                M.B.B.S, M.D, F.R.C.P, M.R.C.P, Fellowship
-                            </li>
-                            <li>
-                                <span><i class="far fa-clock"></i></span>
-                                20 years
-                            </li>
-                            <li>
-                                <span><i class="far fa-building"></i></span>
-                                Apollo Hospital, New Delhi
-                            </li>
-                            <li>
-                                <span><i class="fas fa-map-marker-alt"></i></span>
-                                New Delhi
-                            </li>
-                        </ul> 
-                        <div class="button_book">
-                            <button class="dark-blue">Book an appointment</button>
-                        </div>
-                    </figcaption>               
-                    <div class="image">
-                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" alt="Charlie Moon">
-                    </div>             
-                </figure>
-                <figure class="doctor_card">
-                    <figcaption>
-                        <div class="name">
-                            <a href="/doctor-profile"><h5>Rose Moon</h5></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <span><i class="fas fa-certificate"></i></span>
-                                Plastic Surgeon
-                            </li>
-                            <li>
-                                <span><i class="fas fa-award"></i></span>
-                                M.B.B.S, M.D
-                            </li>
-                            <li>
-                                <span><i class="far fa-clock"></i></span>
-                                6 years
-                            </li>
-                            <li>
-                                <span><i class="far fa-building"></i></span>
-                                Emaar Hospital, Dubai
-                            </li>
-                            <li>
-                                <span><i class="fas fa-map-marker-alt"></i></span>
-                                Dubai
-                            </li>
-                        </ul> 
-                        <div class="button_book">
-                            <button class="dark-blue">Book an appointment</button>
-                        </div>
-                    </figcaption>               
-                    <div class="image">
-                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg" alt="Rose Moon">
-                    </div>             
-                </figure>
+                        <div class="part_3 hide" id="subslots<%= docs[i]._id %>">
+                            <div class="slots">
+                                <h5>Morning</h5>
+                                <ul id="morning<%=docs[i]._id %>"></ul>
+                            </div>
+                            <div class="slots">
+                                <h5>Afternoon</h5>
+                                <ul id="afternoon<%=docs[i]._id %>"></ul>
+                            </div>
+                            <div class="slots">
+                                <h5>Evening</h5>
+                                <ul id="evening<%=docs[i]._id %>"></ul>
+                            </div>
+                        </div>             
+                    </figure>
+                <% } %>
+                
             </div>
             
             
@@ -410,5 +353,6 @@
         </div>
     </footer>
     <script type="text/javascript" src="../assets/scripts/index.js"></script>
+    <script src="../assets/scripts/doctor.js"></script>
 </body>
 </html>

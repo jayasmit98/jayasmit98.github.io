@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/addschedule.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clocklet@0.3.0/css/clocklet.min.css">
+    <title>Tvastra</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
+        </div> 
+        <i class="fas fa-bars"></i>
+        <ul class="menubar">
+            <a href="doctor"><li>Doctors</li></a>
+            <a href="hospital"><li>Hospitals</li></a>
+            <a href="Dentistry"><li>Treatment</li></a>
+            <a href="about-us"><li>About</li></a>
+        </ul>        
+        <div class="top_button">
+            <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
+            <a href="query"><button class="dark-blue">Get a Quote</button></a>
+            <div class="name_container">
+                <h6><%= user.name %></h6>
+                <i class="fas fa-angle-down"></i>
+            </div>
+        </div>
+    </nav> 
+    <div class="profile_section">
+        <figure>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra">
+        </figure>
+        <ul class="list">
+            <a href="/appointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/records">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="/payments">
+                <li>My Payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+    <div class="profile_section_2">
+        <div class="part_1">
+            <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
+            <h6><%= user.name %></h6>
+        </div>
+        <ul class="list">
+            <a href="/appointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/records">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="/payments">
+                <li>My Payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+    <section class="schedule_container hide">
+        <form class="schedule_container_data" action="/add-schedule" method="POST">
+            <h3>Create Schedule</h3>
+            <div class="input_container">
+                <label for="days">Select Available Days</label>
+                <select class="showcont" name="days" id="days" multiple>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                </select>
+            </div>
+            <div class="input_container">
+                <label for="hospital">Select Hospital</label>
+                <input type="text" name="hospital" id="hospital">
+            </div>
+            <div class="input_container">
+                <label for="st_time">From Time</label>
+                <input data-clocklet="zIndex:999; placement:top" type="" id="st_time" name="st_time" required>
+            </div>
+            <div class="input_container">
+                <label for="end_time">To time</label>
+                <input data-clocklet="zIndex:999; placement:top" type="text" name="end_time" id="end_time" required>
+            </div>
+            <div class="input_container">
+                <label for="intervals">Intervals</label>
+                <input type="number" name="intervals" id="intervals" required>
+            </div>
+            <div class="button_container">
+                
+                    <button type="submit" class="sky-blue">Done</button>
+                
+                    <button class="dark-blue cancel">Cancel</button>
+                
+                
+            </div>
+        </form>
+    </section>
+    <section class="main_container">
+        <div class="mob_header">
+            <i class="fas fa-angle-double-right show-header"></i>
+            <h3 class="show-header">Click to View Dashboard</h3>
+            <div class="dashboard_phone hideit">
+                <div class="part_1">
+                    <i class="fas fa-angle-double-right"></i>
+                    <h6>Dashboard</h6>
+                </div>
+                <ul class="part_2">
+                    <a href="/profile"><li class="menu_items">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>Profile</h4>
+                    </li></a>
+                    <a href="/appointments"><li class="menu_items">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>Appointments</h4>
+                    </li></a>
+                    <a href="/medicalreports"><li class="menu_items">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>Medical Reports</h4>
+                    </li></a>
+                    <a href="settings"><li class="menu_items">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>Settings</h4>
+                    </li></a>
+                </ul>
+                <div class="part_3">
+                    <i class="fas fa-angle-double-left"></i>
+                    <h6 class="collapse">Collapse</h6>
+                </div>
+            </div>
+        </div>
+        <div class="mob_header_desktop ">
+            <div class="part_1">
+                <i class="fas fa-angle-double-right"></i>
+                <h3>Dashboard</h3>
+            </div>
+            <ul class="part_2">
+                <a href="/profile"><li class="menu_items">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Profile</h4>
+                </li></a>
+                <a href="/appointments"><li class="menu_items">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Appointments</h4>
+                </li></a>
+                <a href="/medicalreports"><li class="menu_items">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Medical Reports</h4>
+                </li></a>
+                <a href="settings"><li class="menu_items">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Settings</h4>
+                </li></a>
+            </div>
+        </div>
+        <div class="data_container" >
+            <div class="part_1">
+                <h2>Schedules</h2>
+                <button  class="sky-blue add-sch">Add Schedule</button>
+            </div>
+            <div class="part_2">
+                <% if(exist) { %>
+                    <% for(var j=0;j<exist.length;j++) { %>
+                        <div class="schedule_details">
+                            <div class="upper_part">
+                                <div class="part__1">
+                                    <h5><%= exist[j].days %></h5>
+                                </div>
+                                <div class="part__2">
+                                    <div class="detail_container">
+                                        <h6><%= exist[j].hospital %></h6>
+                                        <h6><%= exist[j].starttime %> - <%= exist[j].endtime %></h6>
+                                    </div>
+                                    <div class="button_container">
+                                        <form action="/deleteschedule/<%= exist[j]._id %>" method="POST">
+                                            <button class="sky-blue" type="submit">Remove Schedule</button>
+                                        </form>                                
+                                        <button class="dark-blue view" onclick="showslots('<%= j %>')">View Slots</button>
+                                        <form action="/disableallslots/<%= exist[j]._id %>" method="POST" onchange=this.submit()>
+                                            <input type="checkbox">
+                                        </form>                                
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="slots_section hide" id="<%= j %>">
+                            <% for(var i=0;i<exist[j].slots.length-1;i++) { %>
+                                <div class="slots_box">
+                                    <span><%= exist[j].slots[i].time %> - <%= exist[j].slots[i+1].time %></span>
+                                    <form action="/disableslot/<%= exist[j]._id %>/<%= exist[j].slots[i]._id %>" method="POST" onchange="this.submit()">
+                                        <% if(exist[j].slots[i].isDisabled){ %>
+                                            <input type="checkbox" checked>
+                                        <% }else{ %>
+                                            <input type="checkbox">
+                                        <% } %>                            
+                                    </form>                            
+                                </div>
+                                <% } %>
+                        </div>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </section>
+     <section class="help">
+        <div class="help_container">
+            <div class="left">
+                <h2>Need Help?</h2>
+                <p>Just let us know, we will happy to assist you</p>
+            </div>
+            <div class="right">
+                <a href="/src/client/views/query.html"><button class="sky-blue">Submit your enquiry</button></a>
+            </div>
+        </div>       
+    </section>
+    <footer class="footer">
+        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo">
+        
+            <ul class="tags">
+                <a href="doctor"><li>Doctors</li></a>
+                <a href="hospital"><li>Hospitals</li></a>
+                <a href="Dentistry"><li>Treatment</li></a>
+                <a href="contact"><li>Contact Us</li></a>
+                <a href="FAQ"><li>FAQs</li></a>
+            </ul>
+        
+        <div class="logos">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-google-plus"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+        <div class="copyright">
+            <p>All Rights Reserved. © tvastra 2021</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../assets/scripts/index.js"></script>
+    <script src="../assets/scripts/profile.js"></script>
+    <script src="../assets/scripts/addschedule.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clocklet@0.3.0"></script>
+    <script>/* `window.clocklet` object is available */</script> 
+</body>
+</html>

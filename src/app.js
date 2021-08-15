@@ -6,7 +6,7 @@ const compression = require("compression");
 const cors = require("cors");
 const path = require("path");
 const mid = require("./backend/routes/router")
-const bodyParser = require("body-parser");
+const bodyparser = require("body-parser");
 const session = require('express-session');
 const connectDB=require("./backend/database/connection");
 app.use(cors());
@@ -25,8 +25,8 @@ app.use(session({
     }
 }));
 
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
 
 app.set("views", __dirname+"/client/views");

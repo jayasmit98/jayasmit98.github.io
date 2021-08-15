@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/reschedule.css">
+    <title>Doctor</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
+        </div> 
+        <i class="fas fa-bars"></i>
+        <ul class="menubar">
+            <a href="doctor"><li>Doctors</li></a>
+            <a href="hospital"><li>Hospitals</li></a>
+            <a href="Dentistry"><li>Treatment</li></a>
+            <a href="about-us"><li>About</li></a>
+        </ul>        
+        <div class="top_button">
+            <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
+            <a href="query"><button class="dark-blue">Get a Quote</button></a>
+            <div class="name_container">
+                <h6><%= name %></h6>
+                <i class="fas fa-angle-down"></i>
+            </div>
+        </div>
+    </nav> 
+    <div class="profile_section">
+        <figure>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra">
+        </figure>
+        <ul class="list">
+            <a href="/appointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/records">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="/payments">
+                <li>My Payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div>
+    <div class="profile_section_2">
+        <div class="part_1">
+            <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
+            <h6><%= name %></h6>
+        </div>
+        <ul class="list">
+            <a href="/appointments">
+                <li>My Appointments</li>
+            </a>
+            <a href="/records">
+                <li>Medical Records</li>
+            </a>
+            <a href="/settings">
+                <li>Settings</li>
+            </a>
+            <a href="/payments">
+                <li>My Payments</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+        </ul>
+    </div> 
+    <section class="doctors">
+            <div class="right">
+                
+                    <figure class="doctor_card">
+                        <figcaption>
+                            <div class="name">
+                            <a href="/doctor-profile"><h5><%= docs.name %></h5></a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <span><i class="fas fa-certificate"></i></span>
+                                    <%= docs.specialization %>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-award"></i></span>
+                                    <%= docs.awards %>
+                                </li>
+                                <li>
+                                    <span><i class="far fa-clock"></i></span>
+                                    <%= docs.experience %>
+                                </li>
+                                <li>
+                                    <span><i class="far fa-building"></i></span>
+                                    <%= docs.hospitals%>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-map-marker-alt"></i></span>
+                                    <%= docs.state %>
+                                </li>
+                            </ul> 
+                            <div class="button_book">
+                                <button class="dark-blue trigger" onclick="showslots('showslots<%=docs._id %>','<%= docs._id %>')">Book an appointment</button>
+                            </div>
+                        </figcaption>               
+                        <div class="image">
+                            <img src="../assets/uploads/<%= docs.image %>" alt="Doctor's Image">
+                        </div>
+                        <div class="part_2 hide" id="showslots<%= docs._id %>">
+                            <div class="leftarrow">
+                                <i class="fas fa-chevron-left" onclick="movecar('left','slotmid<%=docs._id%>')"></i>
+                            </div>
+                            <div class="mid" id="slotmid<%= docs._id %>">
+                                <div class="dates 0" id="0" onclick="showsubslots('subslots<%=docs._id %>','<%=docs._id %>', 0)">
+                                    
+                                </div>
+                                <div class="dates 1" id="1" onclick="showsubslots('subslots<%=docs._id %>','<%=docs._id %>', 1)">
+                                    
+                                </div>
+                                <div class="dates 2" id="2" onclick="showsubslots('subslots<%=docs._id%>','<%=docs._id %>', 2)">
+                                    
+                                </div>
+                                <div class="dates 3 inactive" id="3" onclick="showsubslots('subslots<%=docs._id %>','<%=docs._id %>', 3)">
+                                    
+                                </div>
+                                <div class="dates 4 inactive" id="4" onclick="showsubslots('subslots<%=docs._id %>','<%= docs._id%>', 4)">
+                                    
+                                </div>
+                                <div class="dates 5 inactive" id="5" onclick="showsubslots('subslots<%=docs._id %>','<%= docs._id%>', 5)">
+
+                                </div>
+                                <div class="dates 6 inactive" id="6" onclick="showsubslots('subslots<%=docs._id %>','<%= docs._id%>', 6)">
+                                    
+                                </div>
+                            </div>
+                            <div class="rightarrow">
+                                <i class="fas fa-chevron-right" onclick="movecar('right','slotmid<%=docs._id%>')"></i>
+                            </div>
+                        </div>
+                        <div class="part_3 hide" id="subslots<%= docs._id %>">
+                            <div class="slots">
+                                <h5>Morning</h5>
+                                <ul id="morning<%=docs._id %>"></ul>
+                            </div>
+                            <div class="slots">
+                                <h5>Afternoon</h5>
+                                <ul id="afternoon<%=docs._id %>"></ul>
+                            </div>
+                            <div class="slots">
+                                <h5>Evening</h5>
+                                <ul id="evening<%=docs._id %>"></ul>
+                            </div>
+                        </div>             
+                    </figure>
+                
+            </div>
+            
+    </section>
+    <section class="help">
+        <div class="help_container">
+            <div class="left">
+                <h2>Need Help?</h2>
+                <p>Just let us know, we will happy to assist you</p>
+            </div>
+            <div class="right">
+                <a href="/query.html"><button class="sky-blue">Submit your enquiry</button></a>
+            </div>
+        </div>       
+    </section>
+    <footer class="footer">
+        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo">
+        
+            <ul class="tags">
+                <a href="doctor"><li>Doctors</li></a>
+                <a href="hospital"><li>Hospitals</li></a>
+                <a href="Dentistry"><li>Treatment</li></a>
+                <a href="contact"><li>Contact Us</li></a>
+                <a href="FAQ"><li>FAQs</li></a>
+            </ul>
+        
+        <div class="logos">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-google-plus"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+        <div class="copyright">
+            <p>All Rights Reserved. © tvastra 2021</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../assets/scripts/index.js"></script>
+    <script src="../assets/scripts/doctor.js"></script>
+</body>
+</html>

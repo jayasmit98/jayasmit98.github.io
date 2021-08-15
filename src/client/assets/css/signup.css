@@ -180,6 +180,31 @@ body .login form .two {
           column-gap: 0.25rem;
 }
 
+body .login form .doctor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-self: center;
+}
+
+body .login form .doctor input {
+  display: inline;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin-right: 1rem;
+}
+
+body .login form .doctor label {
+  font-family: Nexa-Light;
+  font-size: 0.9rem;
+  color: #222844;
+}
+
 body .login form .button_container {
   position: relative;
 }

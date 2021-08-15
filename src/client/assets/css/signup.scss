@@ -131,7 +131,21 @@ body{
                 grid-template-columns: 1fr 1fr;
                 column-gap: 0.25rem;
             }
-
+            .doctor{
+                display: flex;
+                flex-direction: row;
+                justify-self: center;
+                input{
+                    display: inline;
+                    width: min-content;
+                    margin-right:1rem;
+                }
+                label{
+                    font-family: Nexa-Light;
+                    font-size: 0.9rem;
+                    color:$dark-blue-color;
+                }
+            }
             .button_container{
                 position:relative;
                 .dark-blue{
