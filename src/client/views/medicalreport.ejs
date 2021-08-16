@@ -27,7 +27,7 @@
             <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
             <a href="query"><button class="dark-blue">Get a Quote</button></a>
             <div class="name_container">
-                <h6><%= name %></h6>
+                <h6><%= user.name %></h6>
                 <i class="fas fa-angle-down"></i>
             </div>
         </div>
@@ -57,7 +57,7 @@
     <div class="profile_section_2">
         <div class="part_1">
             <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
-            <h6><%= name %></h6>
+            <h6><%= user.name %></h6>
         </div>
         <ul class="list">
             <a href="/appointments">
@@ -78,14 +78,18 @@
         </ul>
     </div>
     <section class="add_record_container hide"> <!-- container for the add record window-->
-        <div class="add_record"> <!--actual container-->
+        <form class="add_record" action="/addrecords" method="POST" enctype="multipart/form-data"> <!--actual container-->
             <div class="part_1">
                 <div class="part__1">
                     <i class="fas fa-plus"></i>
                     <label for="add-photo">Add Photo</label>
                 </div>
                 <div class="part__2">
-                    <input type="file" name="add-photo" id="add-photo" multiple>
+                    <input type="file" name="files" id="add-photo" multiple >
+                </div>
+                <div class="inner_image" id="preview_sect">
+                    <img src="" alt="" id="prev_0">
+                    <img src="" alt="" id="prev_1">
                 </div>
             </div>
             <div class="part_2">
@@ -97,17 +101,17 @@
                 <h4>Type of Report</h4>
                 <div class="part__1">
                     <div class="input_container">
-                        <input type="radio" name="report" id="report">
+                        <input type="radio" name="report" id="report" value="report">
                         <label for="report">Report</label>
                         
                     </div>
                     <div class="input_container">   
-                        <input type="radio" name="report" id="prescription">
+                        <input type="radio" name="report" id="prescription" value="prescription">
                         <label for="prescription">Prescription</label>
                         
                     </div>
                     <div class="input_container">
-                        <input type="radio" name="report" id="invoice">
+                        <input type="radio" name="report" id="invoice" value="invoice">
                         <label for="invoice">Invoice</label>
                         
                     </div>
@@ -116,10 +120,10 @@
                 </div>
             </div>
             <div class="part_4">
-                <button class="sky-blue">Done</button>
+                <button type="submit" class="sky-blue">Done</button>
                 <button class="dark-blue cancel">Cancel</button>
             </div>
-        </div> 
+        </form> 
     </section>
     <section class="main_container">
         <div class="mob_header">
@@ -184,19 +188,23 @@
                 <button class="sky-blue add-records">Add Records</button>
             </div>
             <div class="part_2">
-                <div class="inner_data">
-                    <div class="part_1">
-                        <h6>Date</h6>
+                <% for(var i=0;i<record.length;i++) { %>    
+                    <div class="inner_data">
+                        <div class="part_1">
+                            <h6><%= record[i].date %></h6>
+                        </div>
+                        <ul class="part_2">
+                            <li><%= record[i].name %></li>
+                            <li><%= record[i].title %></li>
+                            <li><%= record[i].report %></li>
+                        </ul>
+                        <div class="part_3">
+                            <form action="/deleterecord/<%=record[i]._id %>" method="POST">
+                                <button type="submit" class="sky-blue">Delete</button>
+                            </form>                            
+                        </div>
                     </div>
-                    <ul class="part_2">
-                        <li>Name</li>
-                        <li>Report Name</li>
-                        <li>Type</li>
-                    </ul>
-                    <div class="part_3">
-                        <button class="sky-blue">Delete</button>
-                    </div>
-                </div>
+                <% } %>    
             </div>
         </div>
     </section>
@@ -236,5 +244,25 @@
     <script type="text/javascript" src="../assets/scripts/index.js"></script>
     <script src="../assets/scripts/profile.js"></script>
     <script src="../assets/scripts/medicalreport.js"></script>
+    <script>
+        const inpFile = document.getElementById('add-photo');
+        
+        inpFile.addEventListener("change", function(){
+            for(var i=0;i<this.files.length;i++){
+                const file = this.files[i];
+                const previmg = document.getElementById(`prev_${i}`);
+                console.log(this.files);
+                if(file){
+                    const reader = new FileReader();
+                    previmg.style.display="block";
+                    reader.addEventListener("load",function(){
+                        previmg.setAttribute("src", this.result);
+                    });
+                    reader.readAsDataURL(file);
+                }
+            }
+        })
+        
+    </script>
 </body>
 </html>

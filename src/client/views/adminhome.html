@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/appointment.css">
+    <link rel="stylesheet" href="../assets/css/adminhome.css">
     
     <title>Tvastra</title>
 </head>
@@ -37,17 +37,17 @@
             <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra">
         </figure>
         <ul class="list">
-            <a href="/appointments">
-                <li>My Appointments</li>
+            <a href="/adminhome">
+                <li>Admin</li>
             </a>
-            <a href="/records">
-                <li>Medical Records</li>
+            <a href="/adminusers">
+                <li>Users</li>
             </a>
-            <a href="/settings">
-                <li>Settings</li>
+            <a href="/admindoctors">
+                <li>Doctors</li>
             </a>
-            <a href="/payments">
-                <li>My Payments</li>
+            <a href="/adminhospitals">
+                <li>Hospitals</li>
             </a>
             <a href="/logout">
                 <li>Logout</li>
@@ -60,17 +60,17 @@
             <h6><%= user.name %></h6>
         </div>
         <ul class="list">
-            <a href="/appointments">
-                <li>My Appointments</li>
+            <a href="/adminhome">
+                <li>Admin</li>
             </a>
-            <a href="/records">
-                <li>Medical Records</li>
+            <a href="/adminusers">
+                <li>Users</li>
             </a>
-            <a href="/settings">
-                <li>Settings</li>
+            <a href="/admindoctors">
+                <li>Doctors</li>
             </a>
-            <a href="/payments">
-                <li>My Payments</li>
+            <a href="/adminhospitals">
+                <li>Hospitals</li>
             </a>
             <a href="/logout">
                 <li>Logout</li>
@@ -102,21 +102,21 @@
                     <h6>Dashboard</h6>
                 </div>
                 <ul class="part_2">
-                    <a href="/profile"><li class="menu_items">
+                    <a href="/adminhome"><li class="menu_items">
                         <i class="fas fa-file-alt"></i>
-                        <h4>Profile</h4>
+                        <h4>Admin</h4>
                     </li></a>
-                    <a href="/appointments"><li class="menu_items">
+                    <a href="/adminusers"><li class="menu_items">
                         <i class="fas fa-file-alt"></i>
-                        <h4>Appointments</h4>
+                        <h4>Users</h4>
                     </li></a>
-                    <a href="/records"><li class="menu_items">
+                    <a href="/admindoctors"><li class="menu_items">
                         <i class="fas fa-file-alt"></i>
-                        <h4>Medical Reports</h4>
+                        <h4>Doctors</h4>
                     </li></a>
-                    <a href="settings"><li class="menu_items">
+                    <a href="/adminhospitals"><li class="menu_items">
                         <i class="fas fa-file-alt"></i>
-                        <h4>Settings</h4>
+                        <h4>Hospitals</h4>
                     </li></a>
                 </ul>
                 <div class="part_3">
@@ -131,74 +131,64 @@
                 <h3>Dashboard</h3>
             </div>
             <ul class="part_2">
-                <a href="/profile"><li class="menu_items">
-                    <i class="fas fa-file-alt"></i>
-                    <h4>Profile</h4>
+                <a href="/adminhome"><li class="menu_items current">
+                    <i class="fas fa-file-alt "></i>
+                    <h4>Admin</h4>
                 </li></a>
-                <a href="/appointments"><li class="menu_items">
+                <a href="/adminusers"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
-                    <h4>Appointments</h4>
+                    <h4>Users</h4>
                 </li></a>
-                <a href="/records"><li class="menu_items">
+                <a href="/admindoctors"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
-                    <h4>Medical Reports</h4>
+                    <h4>Doctors</h4>
                 </li></a>
-                <a href="settings"><li class="menu_items">
+                <a href="adminhospitals"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
-                    <h4>Settings</h4>
+                    <h4>Hospitals</h4>
                 </li></a>
             </div>
         </div>
         <div class="data_container">
-            <div class="part_1">
-                <h2>Upcoming Appointments</h2>
-                <% if(upcomingdets.length==0) { %>
-                    <h6 class="none_app">No Upcoming Appointments</h6>
-                <% }else{%>
-                    <% for(var i=0;i<upcomingdets.length;i++) { %>
-                        <div class="inner_data_container">
-                            <div class="top_part">
-                                <div class="part_1">
-                                    <h4><%= (upcomingdets[i].date.split(","))[1] %></h4>
-                                </div>
-                                <ul class="part_2">
-                                    <h3><%= upcomingdets[i].docname %> </h3>
-                                    <li><%= upcomingdets[i].day %>  <%= upcomingdets[i].slottime %></li>
-                                    <li><%=upcomingdets[i].hospital%></li>
-                                    <span ><%=upcomingdets[i].status%></span>
-                                </ul>
-                            </div>                   
-                        
-                            <div class="part_3">
-                                <form action="/cancelapp/<%= upcomingdets[i].scheduleid %>/<%= upcomingdets[i].slotid %>" method="POST">
-                                    <button class="sky-blue">Cancel Appointment</button>
-                                </form>
-                                <form action="/rescheduleapp/<%= upcomingdets[i].scheduleid %>/<%= upcomingdets[i].docid %>/<%= upcomingdets[i].slotid %>" method="POST">
-                                    <button class="dark-blue">Reschedule Appointment</button>
-                                </form>
-                            </div>  
-                        </div>
-                    <% }%>
-                <% } %>
-            </div>    
-            <div class="part_2">
-                <h2>Completed Appointments</h2>
-                <% for(var i=0;i<completeddet.length;i++) { %>
-                    <div class="inner_data_container">
-                        <div class="top_part">
-                            <div class="part_1">
-                                <h4><%= (completeddet[i].date.split(","))[1] %></h4>
-                            </div>
-                            <ul class="part_2">
-                                <h3><%= completeddet[i].docname %> </h3>
-                                <li><%= completeddet[i].day %><%= completeddet[i].slottime %></li>
-                                <li><%=completeddet[i].hospital%></li>
-                                <span class="completed"><%=completeddet[i].status%></span>
-                            </ul>
-                        </div>                    
+            <div class="blocks_container">
+                <div class="info_blocks">
+                    <div class="part_1">
+                        <i class="fas fa-medkit"></i>
                     </div>
-                <% }%>
+                    <div class="part_2">
+                        <h6>User</h6>
+                        <h6>no</h6>
+                    </div>
+                </div>
+                <div class="info_blocks">
+                    <div class="part_1">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <div class="part_2">
+                        <h6>Doctors</h6>
+                        <h6>no</h6>
+                    </div>
+                </div>
+                <div class="info_blocks">
+                    <div class="part_1">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="part_2">
+                        <h6>Hospitals</h6>
+                        <h6>no</h6>
+                    </div>
+                </div>
+                <div class="info_blocks">
+                    <div class="part_1">
+                        <i class="fas fa-medkit"></i>
+                    </div>
+                    <div class="part_2">
+                        <h6>Appointments</h6>
+                        <h6>no</h6>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </section>
      <section class="help">
