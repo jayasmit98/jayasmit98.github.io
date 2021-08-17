@@ -27,7 +27,7 @@
             <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
             <a href="query"><button class="dark-blue">Get a Quote</button></a>
             <div class="name_container">
-                <h6><%= user.name %></h6>
+                <h6>Admin</h6>
                 <i class="fas fa-angle-down"></i>
             </div>
         </div>
@@ -57,7 +57,7 @@
     <div class="profile_section_2">
         <div class="part_1">
             <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
-            <h6><%= user.name %></h6>
+            <h6>Admin</h6>
         </div>
         <ul class="list">
             <a href="/adminhome">
@@ -151,45 +151,40 @@
         </div>
         <div class="data_container">
             <div class="cards_container">
-                 
+                 <% for(var i=0;i<hospitals.length;i++) { %>
                      <figure class="user_card">
-                         <img src="" alt="">
-                         <div class="hospital_card_container showedit">
-                            <i class="fas fa-id-card showedit"></i>
+                         <div class="image_container">
+                            <img src="../assets/uploads/<%= hospitals[i].image %>" alt="hospital image">
                          </div>
                          
-                         
-                            <ul class="popmenu_container">
-                                <a href="" class="popmenu_list">
-                                    <li >Edit Profile</li>
-                                </a><a href="" class="popmenu_list">
-                                    <li >All booked appointments</li>
-                                </a>
-                            </ul>    
+                         <a href="/adminhospedit/<%= hospitals[i]._id %>"><div class="hospital_card_container showedit">
+                            <i class="fas fa-id-card showedit"></i>
+                         </div></a>    
                          
                          <figcaption>
-                             <h4>Admin</h4>
+                             <h4><%= hospitals[i].name%></h4>
                              <ul class="details_container">
                                  <li class="details">
                                     <i class="fas fa-stethoscope"></i>
-                                    <h6>no</h6>
+                                    <h6><%= JSON.parse(hospitals[i].speciality)[0].value %></h6>
                                  </li>
                                  <li class="details">
                                     <i class="fas fa-bed"></i>
-                                    <h6>Beds</h6>
+                                    <h6><%= hospitals[i].beds %></h6>
                                  </li>
                                  <li class="details">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <h6>Location</h6>
+                                    <h6><%= hospitals[i].location %></h6>
                                  </li>
                                  <li class="details">
                                     <i class="fas fa-stethoscope"></i>
-                                    <h6>Gender</h6>
+                                    <h6><%= JSON.parse(hospitals[i].treatments)[0].value %></h6>
                                  </li>
                                  
                              </ul>
                          </figcaption>
                      </figure>
+                <% } %>
             </div>
             
         </div>
@@ -229,28 +224,6 @@
     </footer>
     <script type="text/javascript" src="../assets/scripts/index.js"></script>
     <script src="../assets/scripts/profile.js"></script>
-    <script>
-        var burger = document.querySelector('.showedit');
-        const showpopup = (element) => {
-            
-            if(element.target.classList.contains('fa-id-card')){
-                element=element.target.parentNode;
-            }
-            else{
-                element=element.target;
-            }
-            var men = element.nextElementSibling;
-            if(men.style.display=='none'){
-                men.style.display='grid';
-            }
-            else{
-                men.style.display='none';
-            }
-        }
-        
-        burger.addEventListener('click',showpopup);
-        
-        
-    </script>
+    
 </body>
 </html>

@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/adminusers.css">
+    <link rel="stylesheet" href="../assets/css/appointment.css">
     
     <title>Tvastra</title>
 </head>
@@ -27,7 +27,7 @@
             <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
             <a href="query"><button class="dark-blue">Get a Quote</button></a>
             <div class="name_container">
-                <h6><%= user.name %></h6>
+                <h6>Admin</h6>
                 <i class="fas fa-angle-down"></i>
             </div>
         </div>
@@ -56,8 +56,8 @@
     </div>
     <div class="profile_section_2">
         <div class="part_1">
-            <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
-            <h6><%= user.name %></h6>
+            
+            <h6>Admin</h6>
         </div>
         <ul class="list">
             <a href="/adminhome">
@@ -69,6 +69,7 @@
             <a href="/admindoctors">
                 <li>Doctors</li>
             </a>
+           
             <a href="/adminhospitals">
                 <li>Hospitals</li>
             </a>
@@ -82,10 +83,10 @@
             <div class="part_1">
                 <h3>Enter New Mobile Number</h3>
             </div>
-            <div class="part_2">
+            <div class="part_2" >
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" pattern="[6789][0-9]{9}">
-                <button class="sky-blue ">SEND OTP</button>  
+                <input type="tel" name="phone" id="newphone" pattern="[6789][0-9]{9}">
+                <button onclick="send()" class="sky-blue ">SEND OTP</button>  
             </div>
             <div class="part_3">
                 <button class="dark-blue cancelview">Cancel</button>
@@ -110,7 +111,7 @@
                         <i class="fas fa-file-alt"></i>
                         <h4>Users</h4>
                     </li></a>
-                    <a href="/admindoctors"><li class="menu_items">
+                    <a href="admindoctors"><li class="menu_items">
                         <i class="fas fa-file-alt"></i>
                         <h4>Doctors</h4>
                     </li></a>
@@ -131,69 +132,49 @@
                 <h3>Dashboard</h3>
             </div>
             <ul class="part_2">
-                <a href="/adminhome"><li class="menu_items ">
-                    <i class="fas fa-file-alt "></i>
+                <a href="/adminhome"><li class="menu_items">
+                    <i class="fas fa-file-alt"></i>
                     <h4>Admin</h4>
                 </li></a>
-                <a href="/adminusers"><li class="menu_items current">
+                <a href="/adminusers"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
                     <h4>Users</h4>
                 </li></a>
-                <a href="/admindoctors"><li class="menu_items ">
+                <a href="/admindoctors"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
                     <h4>Doctors</h4>
                 </li></a>
-                <a href="adminhospitals"><li class="menu_items">
+                <a href="/adminhospitals"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
                     <h4>Hospitals</h4>
                 </li></a>
             </div>
         </div>
         <div class="data_container">
-            <div class="cards_container">
-                 
-                     <figure class="user_card">
-                         <img src="" alt="">
-                         <i class="fas fa-bars showedit"></i>
-                         
-                            <ul class="popmenu_container">
-                                <a href="" class="popmenu_list">
-                                    <li >Edit Profile</li>
-                                </a><a href="" class="popmenu_list">
-                                    <li c>Appointments</li>
-                                </a><a class="popmenu_list" href="">
-                                    <li >Medical Reports</li>
-                                </a>
-                            </ul>    
-                         
-                         <figcaption>
-                             <h4>Admin</h4>
-                             <ul class="details_container">
-                                 <li class="details">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <h6>no</h6>
-                                 </li>
-                                 <li class="details">
-                                    <i class="fas fa-envelope"></i>
-                                    <h6>email</h6>
-                                 </li>
-                                 <li class="details">
-                                    <i class="fas fa-venus-mars"></i>
-                                    <h6>Gender</h6>
-                                 </li>
-                                 <li class="details">
-                                    <i class="fas fa-calendar-week"></i>
-                                    <h6>Date</h6>
-                                 </li>
-                                 <li class="details">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <h6>Location</h6>
-                                 </li>
-                             </ul>
-                         </figcaption>
-                     </figure>
-            </div>
-            
+            <div class="part_1">
+                <h2>Upcoming Appointments</h2>
+                <% if(upcomingdets.length==0) { %>
+                    <h6 class="none_app">No Upcoming Appointments</h6>
+                <% }else{%>
+                    <% for(var i=0;i<upcomingdets.length;i++) { %>
+                        <div class="inner_data_container">
+                            <div class="top_part">
+                                <div class="part_1">
+                                    <h4><%= (upcomingdets[i].date.split(","))[1] %></h4>
+                                </div>
+                                <ul class="part_2">
+                                    <h3><%= upcomingdets[i].docname %> </h3>
+                                    <li><%= upcomingdets[i].day %>  <%= upcomingdets[i].slottime %></li>
+                                    <li><%=upcomingdets[i].hospital%></li>
+                                    <span ><%=upcomingdets[i].status%></span>
+                                </ul>
+                            </div>                   
+                        
+                            
+                        </div>
+                    <% }%>
+                <% } %>
+            </div>    
         </div>
     </section>
      <section class="help">
@@ -231,19 +212,5 @@
     </footer>
     <script type="text/javascript" src="../assets/scripts/index.js"></script>
     <script src="../assets/scripts/profile.js"></script>
-    <script>
-        var burger = document.querySelector('.showedit');
-        const showpopup = (element) => {
-            console.log(element.target);
-            var men = element.target.nextElementSibling;
-            if(men.style.display=='none'){
-                men.style.display='grid';
-            }
-            else{
-                men.style.display='none';
-            }
-        }
-        burger.addEventListener('click',showpopup);
-    </script>
 </body>
 </html>

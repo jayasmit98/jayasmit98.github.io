@@ -1,5 +1,6 @@
 const express = require("express");
 const docdetaildb = require("../models/docdetail");
+const userdb = require("../models/user");
 var login = (req,res)=>{
     
     
@@ -28,7 +29,12 @@ var signup = (req,res) => {
 var doctor = async (req,res) =>{
     var alldocs=await docdetaildb.find();
     req.session.doctors=alldocs;
-    res.render("doctor",{name:req.session.name, docs:req.session.doctors});
+    if(req.session.query){
+        var finddocs = await docdetaildb.find(req.session.query);
+        req.session.doctors=finddocs;
+    }
+    
+    res.render("doctor",{name:req.session.name, docs:req.session.doctors, alldocs:alldocs,user:req.session.user, filter:req.session.filter?req.session.filter:"undefined"});
 }
 var docdetail = (req,res) => {
     res.render("docdetail",{name:req.session.name});
@@ -36,7 +42,13 @@ var docdetail = (req,res) => {
 var addschedule = (req,res) => {
     res.render("addschedule",{name:req.session.name});
 }
-var profile = (req,res) => {
+var profile = async (req,res) => {
+    if(req.session.user.isdoctor){
+        var docs = await docdetaildb.findOne({email:req.session.user.email})
+        return res.render("profile",{name:req.session.name, user:req.session.user, img:req.session.image, doctordetails:docs})
+    } 
+    var finduser = await userdb.findOne({_id:req.session.user._id});
+    req.session.user=finduser;
     res.render("profile",{name:req.session.name, user:req.session.user, img:req.session.image});
 }
 var appointment = (req,res) => {
@@ -99,6 +111,78 @@ var rescheduleget = async (req,res) => {
         name:req.session.user.name
     })
 }
+
+const filter = async (req,res) => {
+    const location = req.body.state;
+    const hospitals = req.body.hospitals;
+    const treatments = req.body.specialization;
+    
+    var filter=[];
+    var locationlist = [];
+    var hospitalslist = [];
+    var treatmentslist = [];
+    console.log(hospitalslist);
+    if(location){
+        if(typeof(location)=="string"){
+            filter.push(location);
+            locationlist.push(location);
+        }
+        else{
+            for(var i=0;i<location.length;i++){
+                filter.push(location[i]);
+                locationlist.push(location[i])
+            }
+        }
+    }
+    if(hospitals){
+        if(typeof(hospitals)=="string"){
+            filter.push(hospitals);
+            hospitalslist.push(hospitals);
+        }
+        else{
+            for(var i=0;i<hospitals.length;i++){
+                filter.push(hospitals[i]);
+                hospitalslist.push(hospitals[i])
+            }
+        }
+    }
+    if(treatments){
+        if(typeof(treatments)=="string"){
+            filter.push(treatments);
+            treatmentslist.push(treatments);
+        }
+        else{
+            for(var i=0;i<treatments.length;i++){
+                filter.push(treatments[i]);
+                treatmentslist.push(treatments[i]);
+            }
+        }
+    }
+
+    var query = {
+        "state":{$all: locationlist},
+        "hospitals":{$all: hospitalslist},
+        "specialization":{$all: treatmentslist}
+    }
+
+    if(locationlist.length==0){
+        delete query.state;
+    }
+
+    if(hospitalslist.length==0){
+        delete query.hospitals;
+    }
+
+    if(treatmentslist.length==0){
+        delete query.specialization;
+    }
+    req.session.query=query;
+    console.log("the query is",query);
+    console.log(filter);
+    req.session.filter = filter;
+    res.redirect('/doctor');
+
+}
 module.exports={
     login:login,
     index:index,
@@ -122,5 +206,6 @@ module.exports={
     doctorprofile:doctorprofile,
     docdetail:docdetail,
     booking:booking,
-    rescheduleget:rescheduleget
+    rescheduleget:rescheduleget,
+    filter:filter
 };

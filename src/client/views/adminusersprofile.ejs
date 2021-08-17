@@ -7,10 +7,7 @@
     <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/adminhospdets.css">
-    <script src="https://unpkg.com/@yaireo/tagify"></script>
-    <script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
-    <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/profile.css">
     
     <title>Tvastra</title>
 </head>
@@ -30,7 +27,7 @@
             <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
             <a href="query"><button class="dark-blue">Get a Quote</button></a>
             <div class="name_container">
-                <h6><%= user.name %></h6>
+                <h6>Admin</h6>
                 <i class="fas fa-angle-down"></i>
             </div>
         </div>
@@ -59,8 +56,7 @@
     </div>
     <div class="profile_section_2">
         <div class="part_1">
-            <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
-            <h6><%= user.name %></h6>
+            <h6>Admin</h6>
         </div>
         <ul class="list">
             <a href="/adminhome">
@@ -72,6 +68,7 @@
             <a href="/admindoctors">
                 <li>Doctors</li>
             </a>
+           
             <a href="/adminhospitals">
                 <li>Hospitals</li>
             </a>
@@ -85,10 +82,10 @@
             <div class="part_1">
                 <h3>Enter New Mobile Number</h3>
             </div>
-            <div class="part_2">
+            <div class="part_2" >
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" pattern="[6789][0-9]{9}">
-                <button class="sky-blue ">SEND OTP</button>  
+                <input type="tel" name="phone" id="newphone" pattern="[6789][0-9]{9}">
+                <button onclick="send()" class="sky-blue ">SEND OTP</button>  
             </div>
             <div class="part_3">
                 <button class="dark-blue cancelview">Cancel</button>
@@ -113,7 +110,7 @@
                         <i class="fas fa-file-alt"></i>
                         <h4>Users</h4>
                     </li></a>
-                    <a href="/admindoctors"><li class="menu_items">
+                    <a href="admindoctors"><li class="menu_items">
                         <i class="fas fa-file-alt"></i>
                         <h4>Doctors</h4>
                     </li></a>
@@ -134,53 +131,100 @@
                 <h3>Dashboard</h3>
             </div>
             <ul class="part_2">
-                <a href="/adminhome"><li class="menu_items ">
-                    <i class="fas fa-file-alt "></i>
+                <a href="/adminhome"><li class="menu_items">
+                    <i class="fas fa-file-alt"></i>
                     <h4>Admin</h4>
                 </li></a>
-                <a href="/adminusers"><li class="menu_items ">
+                <a href="/adminusers"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
                     <h4>Users</h4>
                 </li></a>
-                <a href="/admindoctors"><li class="menu_items ">
+                <a href="/admindoctors"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
                     <h4>Doctors</h4>
                 </li></a>
-                <a href="adminhospitals"><li class="menu_items current">
+                <a href="/adminhospitals"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
                     <h4>Hospitals</h4>
                 </li></a>
             </div>
         </div>
-        <div class="data_container">
-            <form class="hospital_details" action="/hospdets" method="POST">
-                 <h4>Edit Hospital Details</h4>
-                 <div class="input_container">
-                     <label for="hospname">Hospital Name</label><input type="text" name="hospname" id="hospname">
+        <form class="data_container" action="/adminprofile/<%= users._id %>" method="POST" enctype="multipart/form-data">
+            <div class="part_1">
+                <h4>My Profile</h4>
+                <button class="sky-blue" type="submit">Save Changes</button>
+            </div>
+            <div class="part_2">
+                <h6>Profile Photo</h6>
+                <div class="profile_photo_section">
+                    
+                    <div class="photo_container">
+                        
+                        <div class="photo_name">
+                            <img src="../assets/uploads/<%= users.image%>" alt="">
+                            <div class="photo_text">
+                                <p>Pick a photo for your system</p>
+                                <label for="image-upload" class="input_label">Select Photo</label>
+                                <input type="file" id="image-upload" name="image" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_block">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" name="name" value="<%=users.name%>" required>
+                    </div>
+                    
                 </div>
-                 <div class="input_container">
-                     <label for="hospdesc">Hospital Description</label><textarea name="hospdesc" id="hospdesc" cols="30" rows="5"></textarea>
+            </div>
+            <div class="part_3">
+                <div class="input_block">
+                    <label for="phone">Phone Number</label>
+                    <div class="phone_input_container">
+                        <input type="tel" name="phone" id="phone" value="<%= users.phone %>" pattern="[6789][0-9]{9}" readonly>
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    
                 </div>
-                <div class="input_container">
-                     <label for="speciality">Speciality</label><input type="text" name="speciality" id="speciality">
+                <div class="input_block">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" value="<%=users.email%>" readonly>
                 </div>
-                <div class="input_container">
-                    <label for="treatments">Treatments</label><input type="text" name="treatments" id="treatments">
+                <div class="input_block">
+                    <label for="gender">Gender</label>                    
+                    <input type="text" id="gender" value="<%=users.gender%>" name="gender">
                 </div>
-                <div class="input_container">
-                    <label for="beds">No. of Beds</label><input type="text" name="beds" id="beds">
+                <div class="input_block">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" id="dob" value="<%=users.dob%>" name="dob">
                 </div>
-                <div class="input_container">
-                    <label for="address">Address</label><input type="text" name="address" id="address">
+                <div class="input_block">
+                    <label for="timezone">Time Zone</label>
+                    <input type="text" id="timezone" name="timezone">
                 </div>
-                <div class="input_container">
-                    <label for="disp">Profile Pic</label><input type="file" name="image" id="disp" accept="image/*">
+            </div>
+            <div class="part_4">
+                <div class="input_block">
+                    <label for="house">House Number/Street</label>
+                    <input type="text" id="house" name="house">
                 </div>
-                <button class="dark-blue" type="submit">Submit</button>
-                     
-            </form>
-            
-        </div>
+                <div class="input_block">
+                    <label for="colony">Colony/Locality</label>
+                    <input type="text" id="colony" name="colony">
+                </div>
+                <div class="input_block">
+                    <label for="city">City</label>
+                    <input type="text" id="city" value="<%=users.city%>" name="city">
+                </div>
+                <div class="input_block">
+                    <label for="state">State</label>
+                    <input type="text" id="state" value="<%=users.state%>" name="state">
+                </div>
+                <div class="input_block">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" value="<%=users.country%>" name="country">
+                </div>
+            </div>
+        </form>
     </section>
      <section class="help">
         <div class="help_container">
@@ -217,37 +261,5 @@
     </footer>
     <script type="text/javascript" src="../assets/scripts/index.js"></script>
     <script src="../assets/scripts/profile.js"></script>
-    <script>
-        var burger = document.querySelector('.showedit');
-        const showpopup = (element) => {
-            
-            if(element.target.classList.contains('fa-id-card')){
-                element=element.target.parentNode;
-            }
-            else{
-                element=element.target;
-            }
-            var men = element.target.nextElementSibling;
-            if(men.style.display=='none'){
-                men.style.display='grid';
-            }
-            else{
-                men.style.display='none';
-            }
-        }
-        
-        burger.addEventListener('click',showpopup);
-        
-        
-    </script>
-    <script>
-        var inp1= document.querySelector('input[name=speciality]');
-        var inp2= document.querySelector('input[name=treatments]');
-        
-
-        new Tagify(inp1);
-        new Tagify(inp2);
-        
-    </script>
 </body>
 </html>

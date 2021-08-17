@@ -228,6 +228,27 @@
   display: none;
 }
 
+.add_record_container .add_record .part_1 .inner_image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.add_record_container .add_record .part_1 .inner_image #prev_0, .add_record_container .add_record .part_1 .inner_image #prev_1 {
+  display: none;
+  height: 5rem;
+  width: 5rem;
+  margin-right: 0.5rem;
+}
+
 .add_record_container .add_record .part_2 {
   display: -ms-grid;
   display: grid;

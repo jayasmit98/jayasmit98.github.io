@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/5fdca5a363.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/admindoctors.css">
+    <link rel="stylesheet" href="../assets/css/medicalreport.css">
     
     <title>Tvastra</title>
 </head>
@@ -27,7 +27,7 @@
             <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
             <a href="query"><button class="dark-blue">Get a Quote</button></a>
             <div class="name_container">
-                <h6><%= user.name %></h6>
+                <h6>Admin</h6>
                 <i class="fas fa-angle-down"></i>
             </div>
         </div>
@@ -57,7 +57,7 @@
     <div class="profile_section_2">
         <div class="part_1">
             <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
-            <h6><%= user.name %></h6>
+            <h6>Admin</h6>
         </div>
         <ul class="list">
             <a href="/adminhome">
@@ -135,11 +135,11 @@
                     <i class="fas fa-file-alt "></i>
                     <h4>Admin</h4>
                 </li></a>
-                <a href="/adminusers"><li class="menu_items ">
+                <a href="/adminusers"><li class="menu_items current">
                     <i class="fas fa-file-alt"></i>
                     <h4>Users</h4>
                 </li></a>
-                <a href="/admindoctors"><li class="menu_items current">
+                <a href="/admindoctors"><li class="menu_items ">
                     <i class="fas fa-file-alt"></i>
                     <h4>Doctors</h4>
                 </li></a>
@@ -150,48 +150,29 @@
             </div>
         </div>
         <div class="data_container">
-            <div class="cards_container">
-                 
-                     <figure class="user_card">
-                         <img src="" alt="">
-                         <i class="fas fa-bars showedit"></i>
-                         
-                            <ul class="popmenu_container">
-                                <a href="" class="popmenu_list">
-                                    <li >Edit Profile</li>
-                                </a><a href="" class="popmenu_list">
-                                    <li >All booked appointments</li>
-                                </a>
-                            </ul>    
-                         
-                         <figcaption>
-                             <h4>Admin</h4>
-                             <ul class="details_container">
-                                 <li class="details">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <h6>no</h6>
-                                 </li>
-                                 <li class="details">
-                                    <i class="fas fa-envelope"></i>
-                                    <h6>email</h6>
-                                 </li>
-                                 <li class="details">
-                                    <i class="fas fa-venus-mars"></i>
-                                    <h6>Gender</h6>
-                                 </li>
-                                 <li class="details">
-                                    <i class="fas fa-calendar-week"></i>
-                                    <h6>Date</h6>
-                                 </li>
-                                 <li class="details">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <h6>Location</h6>
-                                 </li>
-                             </ul>
-                         </figcaption>
-                     </figure>
+            <div class="part_1">
+                <h2>Medical Records</h2>
+                <button class="sky-blue add-records">Add Records</button>
             </div>
-            
+            <div class="part_2">
+                <% for(var i=0;i<record.length;i++) { %>    
+                    <div class="inner_data">
+                        <div class="part_1">
+                            <h6><%= record[i].date %></h6>
+                        </div>
+                        <ul class="part_2">
+                            <li><%= record[i].name %></li>
+                            <li><%= record[i].title %></li>
+                            <li><%= record[i].report %></li>
+                        </ul>
+                        <div class="part_3">
+                            <form action="/admindeleterecord/<%=record[i]._id %>" method="POST">
+                                <button type="submit" class="sky-blue">Delete</button>
+                            </form>                            
+                        </div>
+                    </div>
+                <% } %>    
+            </div>
         </div>
     </section>
      <section class="help">
@@ -229,18 +210,26 @@
     </footer>
     <script type="text/javascript" src="../assets/scripts/index.js"></script>
     <script src="../assets/scripts/profile.js"></script>
+    <script src="../assets/scripts/medicalreport.js"></script>
     <script>
-        var burger = document.querySelector('.showedit');
-        const showpopup = (element) => {
-            var men = element.target.nextElementSibling;
-            if(men.style.display=='none'){
-                men.style.display='grid';
+        const inpFile = document.getElementById('add-photo');
+        
+        inpFile.addEventListener("change", function(){
+            for(var i=0;i<this.files.length;i++){
+                const file = this.files[i];
+                const previmg = document.getElementById(`prev_${i}`);
+                console.log(this.files);
+                if(file){
+                    const reader = new FileReader();
+                    previmg.style.display="block";
+                    reader.addEventListener("load",function(){
+                        previmg.setAttribute("src", this.result);
+                    });
+                    reader.readAsDataURL(file);
+                }
             }
-            else{
-                men.style.display='none';
-            }
-        }
-        burger.addEventListener('click',showpopup);
+        })
+        
     </script>
 </body>
 </html>

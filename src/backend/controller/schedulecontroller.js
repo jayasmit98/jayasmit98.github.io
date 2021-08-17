@@ -215,6 +215,12 @@ const showappointments = async (req,res) => {
             }
         }
     }
+    res.render("appointment",{
+        user:req.session.user,
+        upcomingdets:upcoming,
+        completeddet:completed
+    })
+
 }
 
 module.exports={
@@ -222,5 +228,6 @@ module.exports={
     getschedule:getschedule,
     removeschedule:removeschedule,
     slotdel:slotdel,
-    removeall:removeall
+    removeall:removeall,
+    showappointments:showappointments
 }

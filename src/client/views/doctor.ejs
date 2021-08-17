@@ -26,7 +26,7 @@
             <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
             <a href="query"><button class="dark-blue">Get a Quote</button></a>
             <div class="name_container">
-                <h6><%= name %></h6>
+                <h6><%= user.name %></h6>
                 <i class="fas fa-angle-down"></i>
             </div>
         </div>
@@ -56,7 +56,7 @@
     <div class="profile_section_2">
         <div class="part_1">
             <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
-            <h6><%= name %></h6>
+            <h6><%= user.name %></h6>
         </div>
         <ul class="list">
             <a href="/appointments">
@@ -92,50 +92,59 @@
                     <div class="filter_container_1">
                         <h6>Filter By</h6>
                     </div>
-                    <div class="filter_container_2">
-                        <div class="filter_tag">
-                           <p>DLF Cyber City</p> 
-                           <i class="fas fa-times"></i>
-                        </div>
-                        <div class="filter_tag">
-                            <p>Multi Organ Transplant</p>
-                            <i class="fas fa-times"></i>
-                        </div>
-                        <div class="filter_tag">
-                            <p>Apollo Hospital</p>
-                            <i class="fas fa-times"></i>
-                        </div>
-                        <div class="filter_tag">
-                            <p>30+</p>
-                            <i class="fas fa-times"></i>
-                        </div>
-                    </div>
+                    
                     
                 </header>
+                
+                    <% var l=[];
+                        var h=[];
+                        var h1=[];
+                        var t=[];
+                        var t1=[];
+                        for(var k=0;k<alldocs.length;k++){
+                            if(!l.includes(alldocs[k].state)){
+                                l.push(alldocs[k].state);
+                            }
+                            
+                        }
+                        for(var k=0;k<alldocs.length;k++){
+                            if(!h1.includes(alldocs[k].hospitals)){
+                                h1.push(alldocs[k].hospitals);
+                                for(var j=0;j<(JSON.parse(alldocs[k].hospitals)).length;j++){
+                                    h.push(JSON.parse(alldocs[k].hospitals)[j].value);
+                                };
+                                
+                            }
+                            
+                        }
+                        for(var k=0;k<alldocs.length;k++){
+                            if(!h1.includes(alldocs[k].specialization)){
+                                t1.push(alldocs[k].specialization);
+                                for(var j=0;j<(JSON.parse(alldocs[k].specialization)).length;j++){
+                                    t.push(JSON.parse(alldocs[k].specialization)[j].value);
+                                };
+                                
+                            }
+                            
+                        }
+                        
+                        
+                        
+
+
+                    %>
+            <form action="/filter" method="POST">
                 <div class="location">
                     <header>
                         <h6>Location</h6>
                         <i class="fas fa-search"></i>
                     </header>
                     <div class="data_container">
-                        <label class="labels" for="DLF">
-                            <input type="checkbox" class="options" id="DLF" value="DLF Cyber City">
-                        DLF Cyber City</label>
-                        <label class="labels" for="Dwarka">
-                            <input type="checkbox" class="options" id="Dwarka" value="Dwarka">
-                        Dwarka</label>
-                        <label for="Lajpat" class="labels">
-                            <input type="checkbox" class="options" id="Lajpat" value="Lajpat Nagar">
-                        Lajpat Nagar</label>
-                        <label for="Palam" class="labels">
-                            <input type="checkbox" class="options" id="Palam" value="Palam Vihar">
-                        Palam Vihar</label>
-                        <label for="Punjabi" class="labels">
-                            <input type="checkbox" class="options" id="Punjabi" value="Punjabi Bagh">
-                        Punjabi Bagh</label>
-                        <label for="Pusa" class="labels">
-                            <input type="checkbox" class="options" id="Pusa" value="Pusa Road">
-                        Pusa Road</label>
+                        <% for(var i=0;i<l.length;i++){ %>
+                            <label class="labels" for="<%= l[i] %>">
+                                <input type="checkbox" class="options" id="<%= l[i] %>" name="state" value="<%= l[i] %>" <% if(filter.includes(l[i])){ %>checked<%}else{%>unchecked<%}%> onchange="this.form.submit();">
+                                <%= l[i] %></label>
+                       <% } %>
                     </div>
                     <div class="bottom">
                         <p>+ Show More</p>
@@ -147,25 +156,11 @@
                         <i class="fas fa-search"></i>
                     </header>
                     <div class="data_container">
-                        <label class="labels" for="Mulit">
-                            <input type="checkbox" class="options" id="Multi" value="Multi Organ Transplant">
-                        Multi Organ Transplant</label>
-                        <label class="labels" for="Orthopedic">
-                            <input type="checkbox" class="options" id="Orthopedic" value="Orthopedic Surgery">
-                        Orthopedic Surgery</label>
-                        
-                        <label for="Infertility" class="labels">
-                            <input type="checkbox" class="options" id="Infertility" value="Infertility Treatment">
-                        Infertility Treatment</label>
-                        <label for="Dentistry" class="labels">
-                            <input type="checkbox" class="options" id="Dentistry" value="Dentistry">
-                        Dentistry</label>
-                        <label for="Cardiology" class="labels">
-                            <input type="checkbox" class="options" id="Cardiology" value="Cardiology">
-                        Cardiology</label>
-                        <label for="Cancer" class="labels">
-                            <input type="checkbox" class="options" id="Cancer" value="Cancer">
-                        Cancer</label>
+                        <% for(var i=0;i<t1.length;i++){ %>    
+                            <label class="labels" for="<%= t1[i] %>">
+                            <input type="checkbox" class="options" name="specialization" id="<%= t1[i] %>" value="<%= t1[i] %>" <% if(filter.includes(t1[i])){ %>checked<%}else{%>unchecked<%}%> onchange="this.form.submit();">
+                            <%= t[i] %></label>
+                        <% } %>
                     </div>
                     <div class="bottom">
                         <p>+ Show More</p>
@@ -177,58 +172,18 @@
                         <i class="fas fa-search"></i>
                     </header>
                     <div class="data_container">
-                        <label class="labels" for="Apollo">
-                            <input type="checkbox" class="options" id="Apollo" value="Apollo Hospital">
-                        Apollo Hospital</label>
-                        <label class="labels" for="Manipal">
-                            <input type="checkbox" class="options" id="Manipal" value="Manipal North Side Hospital">
-                        Manipal North Side Hospital</label>
-                        <label for="Northstar" class="labels">
-                            <input type="checkbox" class="options" id="Northstar" value="Northstar">
-                        Northstar</label>
-                        <label for="AIIMS" class="labels">
-                            <input type="checkbox" class="options" id="AIIMS" value="AIIMS">
-                        AIIMS</label>
-                        <label for="Fortis" class="labels">
-                            <input type="checkbox" class="options" id="Fortis" value="Fortis Hospital">
-                        Fortis Hospital</label>
-                        <label for="Elbit" class="labels">
-                            <input type="checkbox" class="options" id="Elbit" value="Elbit Diagnostic">
-                        Elbit Diagnostic</label>
+                        <% for(var i=0;i<h1.length;i++){ %>
+                            <label class="labels" for="<%=h[i]%>">
+                                <input type="checkbox" class="options" name="hospitals" id="<%=h1[i]%>" value="<%=h1[i]%>" <% if(filter.includes(h1[i])){ %>checked<%}else{%>unchecked<%}%> onchange="this.form.submit();">
+                                <%=h[i]%></label>
+                        <% } %>
                     </div>
                     <div class="bottom">
                         <p>+ Show More</p>
                     </div>
                 </div>
-                <div class="experience">
-                    <header>
-                        <h6>Year of Experience</h6>
-                        <i class="fas fa-search"></i>
-                    </header>
-                    <div class="data_container">
-                        <label class="labels" for="30">
-                            <input type="checkbox" class="options" id="30" value="30+">
-                        30+</label>
-                        <label class="labels" for="25">
-                            <input type="checkbox" class="options" id="25" value="25+">
-                        25+</label>
-                        <label for="20" class="labels">
-                            <input type="checkbox" class="options" id="20" value="20+">
-                        20+</label>
-                        <label for="15" class="labels">
-                            <input type="checkbox" class="options" id="15" value="15+">
-                        15+</label>
-                        <label for="10" class="labels">
-                            <input type="checkbox" class="options" id="10" value="10+">
-                        10+</label>
-                        <label for="5" class="labels">
-                            <input type="checkbox" class="options" id="12" value="5+">
-                        12+</label>
-                    </div>
-                    <div class="bottom">
-                        <p>+ Show More</p>
-                    </div>
-                </div>
+            </form>
+                
             </div>
             <div class="right">
                 <% for(var i=0;i<docs.length;i++){%>

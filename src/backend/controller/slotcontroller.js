@@ -190,7 +190,7 @@ const confirmapp = async (req,res) => {
         slottime:req.session.slotbooktime,
         mobileno:req.session.user.phone,
         userid:req.session.user._id,
-        checkdate:req.session.savedayforcheck
+        checkdate:req.session.dateforcheck
 
 
     })
