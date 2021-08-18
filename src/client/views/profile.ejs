@@ -18,7 +18,10 @@
         <div class="logo">
             <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
         </div> 
-        <i class="fas fa-bars"></i>
+        <div class="picburgercontainer">
+            <img class="mobimg" src="../assets/uploads/<%= user.image %>" alt="profile">
+            <i class="fas fa-bars"></i>
+        </div>
         <ul class="menubar">
             <a href="doctor"><li>Doctors</li></a>
             <a href="hospital"><li>Hospitals</li></a>
@@ -47,9 +50,6 @@
             </a>
             <a href="/settings">
                 <li>Settings</li>
-            </a>
-            <a href="/payments">
-                <li>My Payments</li>
             </a>
             <% if(user.isdoctor=='true'){ %>{
                 <a href="/add-schedule">
@@ -85,9 +85,6 @@
                     <li>Add Schedule</li>
                 </a>
             <% } %>
-            <a href="/payments">
-                <li>My Payments</li>
-            </a>
             <a href="/logout">
                 <li>Logout</li>
             </a>
@@ -126,7 +123,7 @@
                         <i class="fas fa-file-alt"></i>
                         <h4>Appointments</h4>
                     </li></a>
-                    <a href="/medicalreports"><li class="menu_items">
+                    <a href="/records"><li class="menu_items">
                         <i class="fas fa-file-alt"></i>
                         <h4>Medical Reports</h4>
                     </li></a>
@@ -163,7 +160,7 @@
                     <i class="fas fa-file-alt"></i>
                     <h4>Appointments</h4>
                 </li></a>
-                <a href="/medicalreports"><li class="menu_items">
+                <a href="/records"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
                     <h4>Medical Reports</h4>
                 </li></a>
@@ -260,35 +257,35 @@
                     <input type="text" id="country" value="<%=user.country%>" name="country">
                 </div>
             </div>
-            <% if(user.isdoctor) { %>
+            <% if(user.fees) { %>
                 <div class="part_5">
                     <div class="input_block">
                         <label for="hospital">Your Hospital</label>
-                        <input type="text" id="hospital" value="<%=doctordetails.hospitals%>" name="hospital">
+                        <input type="text" id="hospital" value="<%=user.hospitals%>" name="hospitals">
                     </div>
                     <div class="input_block">
                         <label for="achievments">achievments</label>
-                        <input type="text" id="achievments" value="<%=doctordetails.achievements%>" name="achievments">
+                        <input type="text" id="achievments" value="<%=user.achievements%>" name="achievements">
                     </div>
                     <div class="input_block">
                         <label for="experience">Experience</label>
-                        <input type="number" id="experience" value="<%=doctordetails.experience%>" name="experience">
+                        <input type="number" id="experience" value="<%=user.experience%>" name="experience">
                     </div>
                     <div class="input_block">
                         <label for="qualifications">Qualifications</label>
-                        <input type="text" id="qualifications" value="<%=doctordetails.qualification%>"  name="qualifications">
+                        <input type="text" id="qualifications" value="<%=user.qualification%>"  name="qualifications">
                     </div>
                     <div class="input_block">
                         <label for="awards">Awards</label>
-                        <input type="text" id="awards" value="<%=doctordetails.awards%>" name="awards">
+                        <input type="text" id="awards" value="<%=user.awards%>" name="awards">
                     </div>
                     <div class="input_block">
                         <label for="specialization">specialization</label>
-                        <input type="text" id="specialization" value="<%=doctordetails.specialization%>" name="specialization">
+                        <input type="text" id="specialization" value="<%=user.specialization%>" name="specialization">
                     </div>
                     <div class="input_block">
                         <label for="fees">Fees</label>
-                        <input type="text" id="fees" value="<%=doctordetails.fees%>" name="fees">
+                        <input type="text" id="fees" value="<%=user.fees%>" name="fees">
                     </div>
                     
                     
@@ -297,7 +294,7 @@
                 <div class="part_6">
                     <div class="input_block">
                         <label for="description">Description</label>
-                        <textarea name="description" id="description"  cols="30" rows="3"><%=doctordetails.description%></textarea>
+                        <textarea name="description" id="description"  cols="30" rows="3"><%=user.description%></textarea>
                     </div>
                 </div>
             <% } %>
@@ -339,8 +336,8 @@
     <script type="text/javascript" src="../assets/scripts/index.js"></script>
     <script src="../assets/scripts/profile.js"></script>
     <script>
-        var inp1= document.querySelector('input[name=hospital]');
-        var inp2= document.querySelector('input[name=achievments]');
+        var inp1= document.querySelector('input[name=hospitals]');
+        var inp2= document.querySelector('input[name=achievements]');
         var inp3= document.querySelector('input[name=qualifications]');
         var inp4= document.querySelector('input[name=awards]');
         var inp5= document.querySelector('input[name=specialization]');

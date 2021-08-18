@@ -15,7 +15,7 @@ var index = (req,res) => {
     }
     console.log(req.session.cnt);
     console.log(req.session.name);
-    res.render("index", {error:req.session.error,name:req.session.user.name, session:req.session, errorType:req.session.errorType, cnt:req.session.cnt, img:req.session.image});
+    res.render("index", {error:req.session.error,name:req.session.user.name, session:req.session, errorType:req.session.errorType, cnt:req.session.cnt, img:req.session.image, user:req.session.user});
 }
 var phonelogin =(req,res) => {
     res.render("phonelogin",{error:req.session.error, session:req.session, errorType:req.session.errorType});
@@ -27,66 +27,82 @@ var signup = (req,res) => {
     res.render("signup",{name:req.session.name});
 }
 var doctor = async (req,res) =>{
-    var alldocs=await docdetaildb.find();
-    req.session.doctors=alldocs;
-    if(req.session.query){
-        var finddocs = await docdetaildb.find(req.session.query);
-        req.session.doctors=finddocs;
+    let{page, ppi} = req.query;
+    console.log(req.query);
+    if(!page){
+        page=1;
     }
-    
-    res.render("doctor",{name:req.session.name, docs:req.session.doctors, alldocs:alldocs,user:req.session.user, filter:req.session.filter?req.session.filter:"undefined"});
+    if(!ppi){
+        ppi=3;
+    }
+    const skip = (page-1)*ppi;
+    var alldocs=await docdetaildb.find().sort(req.session.sortBy);
+    const cnt = alldocs.length;
+    var finddocs = await docdetaildb.find().sort(req.session.sortBy).limit(ppi).skip(skip);
+    if(req.session.query){
+        var finddocs = await docdetaildb.find(req.session.query).sort(req.session.sortBy).limit(ppi).skip(skip);
+        
+    }
+    req.session.doctors=finddocs;
+    console.log(alldocs);
+    console.log(finddocs);
+    console.log("user",req.session.user);
+    res.render("doctor",{name:req.session.name, docs:req.session.doctors, alldocs:alldocs, user:req.session.user, lastpage:Math.ceil(cnt/ppi), filter:req.session.filter?req.session.filter:"undefined"});
 }
 var docdetail = (req,res) => {
-    res.render("docdetail",{name:req.session.name});
+    res.render("docdetail",{name:req.session.name, user:req.session.user});
 }
 var addschedule = (req,res) => {
-    res.render("addschedule",{name:req.session.name});
+    res.render("addschedule",{name:req.session.name, user:req.session.user});
 }
 var profile = async (req,res) => {
-    if(req.session.user.isdoctor){
-        var docs = await docdetaildb.findOne({email:req.session.user.email})
-        return res.render("profile",{name:req.session.name, user:req.session.user, img:req.session.image, doctordetails:docs})
+    if(req.session.user.fees){
+        var docs = await docdetaildb.findOne({email:req.session.user.email});
+        req.session.user=docs;
+        return res.render("profile",{name:req.session.name, user:req.session.user, img:req.session.user.image})
     } 
     var finduser = await userdb.findOne({_id:req.session.user._id});
     req.session.user=finduser;
     res.render("profile",{name:req.session.name, user:req.session.user, img:req.session.image});
 }
 var appointment = (req,res) => {
-    res.render("appointment",{name:req.session.name});
+    res.render("appointment",{name:req.session.name, user:req.session.user});
 }
 var medicalreport = (req,res) => {
-    res.render("medicalreport",{name:req.session.name});
+    res.render("medicalreport",{name:req.session.name, user:req.session.user});
 }
 var settings = (req,res) => {
     res.render("settings",{name:req.session.name, user:req.session.user});
 }
 var hospitals = (req,res) =>{
-    res.render("hospital",{name:req.session.name});
+    res.render("hospital",{name:req.session.name, user:req.session.user});
 }
 var treatment = (req,res) => {
-    res.render("Dentistry",{name:req.session.name});
+    res.render("Dentistry",{name:req.session.name, user:req.session.user});
 }
 var about = (req,res) => {
-    res.render("about-us",{name:req.session.name});
+    res.render("about-us",{name:req.session.name, user:req.session.user});
 }
 var tvastraplus=(req,res) => {
-    res.render("tvastra-plus",{name:req.session.name});
+    res.render("tvastra-plus",{name:req.session.name, user:req.session.user});
 }
 var query = (req,res) => {
-    res.render("query",{name:req.session.name})
+    res.render("query",{name:req.session.name, user:req.session.user})
 }
 var faq = (req,res) => {
-    res.render("FAQ",{name:req.session.name});
+    res.render("FAQ",{name:req.session.name, user:req.session.user});
 }
 var contact = (req,res) => {
-    res.render("contact",{name:req.session.name});
+    res.render("contact",{name:req.session.name, user:req.session.user});
 }
 var abouthospital = (req,res) => {
-    res.render("about-hospital",{name:req.session.name});
+    res.render("about-hospital",{name:req.session.name, user:req.session.user});
 }
 
-var doctorprofile = (req,res) => {
-    res.render("doctor-profile",{name:req.session.name});
+var doctorprofile = async (req,res) => {
+    const doctoremail = req.params.demail;
+    var docinfo = await docdetaildb.findOne({email:doctoremail});
+    res.render("doctor-profile",{name:req.session.name, user:req.session.user, docinfo:docinfo});
 }
 
 var booking = (req,res) => {
@@ -111,6 +127,42 @@ var rescheduleget = async (req,res) => {
         name:req.session.user.name
     })
 }
+
+const sortby=async(req,res)=>{
+    var sort=req.body.sort.split("-");
+    console.log("checking sort",sort);
+    if(sort[0]=="name"){
+      if(sort[1]=="asc"){
+        var query={"name":1};
+      }
+      else if (sort[1] == "desc") {
+        var query = { "name": -1 };
+    }
+    }
+    if(sort[0]=="fees"){
+      if(sort[1]=="asc"){
+        var query={"fees":1};
+      }
+      else if (sort[1] == "desc") {
+        var query = { "name": -1 };
+    }
+    }
+  
+  
+    if(sort[0]=="experience"){
+      if(sort[1]=="asc"){
+        var query={"experience":1};
+      }
+      else if (sort[1] == "desc") {
+        var query = { "experience": -1 };
+    }
+    }
+    req.session.sortBy = query;
+      
+    return res.redirect("/doctor");
+    
+  }
+  
 
 const filter = async (req,res) => {
     const location = req.body.state;
@@ -207,5 +259,6 @@ module.exports={
     docdetail:docdetail,
     booking:booking,
     rescheduleget:rescheduleget,
-    filter:filter
+    filter:filter,
+    sortby:sortby
 };

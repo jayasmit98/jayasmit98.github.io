@@ -15,7 +15,10 @@
         <div class="logo">
             <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
         </div> 
-        <i class="fas fa-bars"></i>
+        <div class="picburgercontainer">
+            <img class="mobimg" src="../assets/uploads/<%= user.image %>" alt="profile">
+            <i class="fas fa-bars"></i>
+        </div>
         <ul class="menubar">
             <a href="doctor"><li>Doctors</li></a>
             <a href="hospital"><li>Hospitals</li></a>
@@ -45,9 +48,7 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
-            <a href="/payments">
-                <li>My Payments</li>
-            </a>
+
             <a href="/logout">
                 <li>Logout</li>
             </a>
@@ -55,7 +56,7 @@
     </div>
     <div class="profile_section_2">
         <div class="part_1">
-            <img src="https://image.shutterstock.com/image-vector/user-avatar-icon-button-profile-260nw-1517550290.jpg" alt="profile image">
+            <img src="../assets/uploads/<%= user.image %>" alt="profile image">
             <h6><%= user.name %></h6>
         </div>
         <ul class="list">
@@ -68,23 +69,29 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
-            <a href="/payments">
-                <li>My Payments</li>
-            </a>
             <a href="/logout">
                 <li>Logout</li>
             </a>
         </ul>
     </div> 
     <section class="intro">
-        <h3>Cardiac Surgeon in <span>Delhi</span></h3>
+        <h3>Doctors</h3>
     </section>
     <section class="doctors">
         <header class="sort">
             <h5>Home / Doctor List</h5>
-            <select name="sort" id="">
-                <option value="">Sort By</option>
-            </select>
+            <form action="/sort" method="POST">
+                <select name="sort" id="cars" onchange="this.form.submit()">
+                    <option value="" disabled selected>Sort By</option>
+                    <option value="name-asc">Name(Assc.)</option>
+                    <option value="name-desc">Name(Desc.)</option>
+                    <option value="fees-asc">Average Fee(Assc.)</option>
+                    <option value="fees-desc">Average Fee(Desc.)</option>
+                    <option value="experience-asc">Experience(Assc.)</option>
+                    <option value="experience-desc">Experience(Desc.)</option>
+                </select>
+            </form>
+
         </header>
         <div class="doctor_container">
             <div class="left">
@@ -96,43 +103,41 @@
                     
                 </header>
                 
-                    <% var l=[];
-                        var h=[];
-                        var h1=[];
-                        var t=[];
-                        var t1=[];
-                        for(var k=0;k<alldocs.length;k++){
-                            if(!l.includes(alldocs[k].state)){
-                                l.push(alldocs[k].state);
-                            }
-                            
-                        }
-                        for(var k=0;k<alldocs.length;k++){
-                            if(!h1.includes(alldocs[k].hospitals)){
-                                h1.push(alldocs[k].hospitals);
-                                for(var j=0;j<(JSON.parse(alldocs[k].hospitals)).length;j++){
-                                    h.push(JSON.parse(alldocs[k].hospitals)[j].value);
-                                };
-                                
-                            }
-                            
-                        }
-                        for(var k=0;k<alldocs.length;k++){
-                            if(!h1.includes(alldocs[k].specialization)){
-                                t1.push(alldocs[k].specialization);
-                                for(var j=0;j<(JSON.parse(alldocs[k].specialization)).length;j++){
-                                    t.push(JSON.parse(alldocs[k].specialization)[j].value);
-                                };
-                                
-                            }
-                            
-                        }
+                <% var l=[];
+                var h=[];
+                var h1=[];
+                var t=[];
+                var t1=[];
+                for(var k=0;k<alldocs.length;k++){
+                    if(!l.includes(alldocs[k].state)){
+                        l.push(alldocs[k].state);
+                    }
+                    
+                }
+                for(var k=0;k<alldocs.length;k++){
+                    if(!h1.includes(alldocs[k].hospitals)){
+                        h1.push(alldocs[k].hospitals);
+                        for(var j=0;j<(JSON.parse(alldocs[k].hospitals)).length;j++){
+                            h.push(JSON.parse(alldocs[k].hospitals)[j].value);
+                        };
                         
+                    }
+                    
+                }
+                for(var k=0;k<alldocs.length;k++){
+                    if(!h1.includes(alldocs[k].specialization)){
+                        t1.push(alldocs[k].specialization);
+                        for(var j=0;j<(JSON.parse(alldocs[k].specialization)).length;j++){
+                            t.push(JSON.parse(alldocs[k].specialization)[j].value);
+                        };
                         
-                        
-
-
-                    %>
+                    }
+                    
+                }
+                
+                
+                
+            %>
             <form action="/filter" method="POST">
                 <div class="location">
                     <header>
@@ -190,16 +195,20 @@
                     <figure class="doctor_card">
                         <figcaption>
                             <div class="name">
-                            <a href="/doctor-profile"><h5><%= docs[i].name %></h5></a>
+                            <a href="/doctor-profile/<%= docs[i].email %>"><h5><%= docs[i].name %></h5></a>
                             </div>
                             <ul>
                                 <li>
                                     <span><i class="fas fa-certificate"></i></span>
-                                    <%= docs[i].specialization %>
+                                    <% for(var j=0;j<(JSON.parse(docs[i].specialization)).length;j++){%>
+                                        <%= JSON.parse(docs[i].specialization)[j].value %>,
+                                    <% } %>
                                 </li>
                                 <li>
                                     <span><i class="fas fa-award"></i></span>
-                                    <%= docs[i].awards %>
+                                    <% for(var j=0;j<(JSON.parse(docs[i].qualification)).length;j++){%>
+                                        <%= JSON.parse(docs[i].qualification)[j].value %>,
+                                    <% } %>
                                 </li>
                                 <li>
                                     <span><i class="far fa-clock"></i></span>
@@ -207,7 +216,9 @@
                                 </li>
                                 <li>
                                     <span><i class="far fa-building"></i></span>
-                                    <%= docs[i].hospitals%>
+                                    <% for(var j=0;j<(JSON.parse(docs[i].hospitals)).length;j++){%>
+                                        <%= JSON.parse(docs[i].hospitals)[j].value %>,
+                                    <% } %>
                                 </li>
                                 <li>
                                     <span><i class="fas fa-map-marker-alt"></i></span>
@@ -272,6 +283,15 @@
             </div>
             
             
+        </div>
+    </section>
+    <section class="pagination_container">
+        <div class="pagination">
+            <% for(var i=1;i<=lastpage;i++){ %>
+                <a href="/doctor?page=<%= i %>">
+                <%= i %>
+            </a>
+            <% } %>
         </div>
     </section>
     <section class="help">

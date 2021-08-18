@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const userdb = require('../models/user');
 const Nexmo = require('nexmo');
-
+const docdb = require('../models/docdetail');
 const nexmo=new Nexmo({
     apiKey: '306bcc58', 
     apiSecret:'EfT1cIXutGptSDfH'
@@ -33,21 +33,33 @@ const signup = async (req,res,next) =>{
 
 const login = async (req,res,next) => {
     if(req.body.email=="admin@gmail.com" && req.body.password=="admin"){
+        req.session.adminuser=req.body.email;
         res.redirect('/adminhome');
     }
     
     if(req.body.email && req.body.password){
         const user = await userdb.findOne({email:req.body.email});
+        
         if(user){
+            
+            const dod = await docdb.findOne({email:req.body.email});
+            console.log(dod);
             const corrpass = await req.body.password.localeCompare(user.password);
             if(corrpass===0){
                 req.session.errorType='Success';
                 req.session.error='Login Successfull'
                 req.session.userId=user.id;
-                req.session.user=user;
+                if(user.isdoctor==true){
+                    req.session.user=dod;
+                }
+                else{
+                    req.session.user=user;
+                }
+                
                 req.session.name=user.name;
                 req.session.email=user.email;
                 req.session.image=user.image;
+                console.log(req.session.user);
                 res.redirect('/index');
             }
             else{
@@ -66,6 +78,17 @@ const login = async (req,res,next) => {
         res.redirect('/');
     }
   
+}
+
+const adminen = async (req,res,next) => {
+    if(!req.session.adminuser){
+        req.session.errorType="Failure";
+        req.session.error="Please login first"
+        return res.redirect("/");
+    }
+    else{
+        next();
+    }
 }
 const phonelogin= async (req,res,next)=>{
     if(req.body.phone){
@@ -178,7 +201,7 @@ const cancelotp = async (req,res,next) => {
 }
 
 const ensure = (req,res,next) => {
-    if(!req.session.userId){
+    if(!req.session.user){
         req.session.errorType="Failure";
         req.session.error="Please login first"
         res.redirect('/');
@@ -256,5 +279,6 @@ module.exports={
     cancelotp:cancelotp,
     ensure:ensure,
     sendotp:sendotp,
-    verotp:verotp
+    verotp:verotp,
+    adminen:adminen
 }

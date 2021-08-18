@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/theme.css">
     <link rel="stylesheet" href="../assets/scss/index.css">
-    
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+    <script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+    <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
     <title>Tvastra</title>
 </head>
 <body>
@@ -38,7 +40,10 @@
         <div class="logo">
             <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
         </div> 
-        <i class="fas fa-bars"></i>
+        <div class="picburgercontainer">
+            <img class="mobimg" src="../assets/uploads/<%= user.image %>" alt="profile">
+            <i class="fas fa-bars"></i>
+        </div>
         <ul class="menubar">
             <a href="doctor"><li>Doctors</li></a>
             <a href="hospital"><li>Hospitals</li></a>
@@ -68,9 +73,6 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
-            <a href="/payments">
-                <li>My Payments</li>
-            </a>
             <a href="/logout">
                 <li>Logout</li>
             </a>
@@ -78,7 +80,7 @@
     </div>
     <div class="profile_section_2">
         <div class="part_1">
-            <img src="../assets/uploads/<%=img%>" alt="profile image">
+            <img src="../assets/uploads/<%=user.image%>" alt="profile image">
             <h6><%= name %></h6>
         </div>
         <ul class="list">
@@ -91,9 +93,6 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
-            <a href="/payments">
-                <li>My Payments</li>
-            </a>
             <a href="/logout">
                 <li>Logout</li>
             </a>
@@ -104,15 +103,15 @@
             <h1>Find Affordable Healthcare</h1>
             <p>Join the thousands of others who have exercised their rights to quality healthcare at a price you can afford</p>
         </header>
-        <div class="formcontainer">
+        <form class="formcontainer" action="/addfilter" method="POST">
             <div class="country_container">
                 <i class="fas fa-map-marker-alt"></i>
                 <span class="gps"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/gps.png" alt="gps"></span>        
-                <input class="country" type="text" placeholder="Ahmedabad">
+                <input class="country" type="text" placeholder="Ahmedabad" name="state">
             </div>          
-            <input type="text" placeholder="Search for Doctor, hospitals and treatments">
-            <button class="dark-blue topsearch">Search</button>          
-        </div>        
+            <input type="text" class="hospitals_style" id="alignit" placeholder="Search hospitals" name="hospitals">
+            <button class="dark-blue topsearch" type="submit">Search</button>          
+        </form>        
     </section>
     <section class="howitworks">
         <header>
@@ -599,5 +598,10 @@
         </div>
     </footer>
     <script type="text/javascript" src="../assets/scripts/index.js"></script>
+    <script>
+        var inp = document.querySelector('input[name=hospitals');
+
+        new Tagify(inp);
+    </script>
 </body>
 </html>

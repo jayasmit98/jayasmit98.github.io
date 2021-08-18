@@ -15,12 +15,16 @@
         <div class="logo">
             <a href="/index"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra"></a>
         </div> 
-        <i class="fas fa-bars"></i>
+        <div class="picburgercontainer">
+            <img class="mobimg" src="../assets/uploads/<%= user.image %>" alt="profile">
+            <i class="fas fa-bars"></i>
+        </div>
+        
         <ul class="menubar">
-            <a href="doctor"><li>Doctors</li></a>
-            <a href="hospital"><li>Hospitals</li></a>
-            <a href="Dentistry"><li>Treatment</li></a>
-            <a href="about-us"><li>About</li></a>
+            <a href="/doctor"><li>Doctors</li></a>
+            <a href="/hospital"><li>Hospitals</li></a>
+            <a href="/Dentistry"><li>Treatment</li></a>
+            <a href="/about-us"><li>About</li></a>
         </ul>        
         <div class="top_button">
             <a href="tvastra-plus"><button class="sky-blue">Tvastra Plus</button></a>    
@@ -78,7 +82,7 @@
     </div>  
     <section class="top">
         <div class="heading_container">
-            <h1>About John Nission</h1>
+            <h1>About <%= docinfo.name %></h1>
             <span>Home / Doctor Profile</span>
         </div>        
     </section>
@@ -90,8 +94,8 @@
             </div>
             <div class="part2">
                 <header>
-                    <h2>John Nission</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus lacus a dui maximus ultrices. Quisque sit amet pretium orci, posuere gravida eros. Proin vitae euismod sem. Nunc commodo, lectus eget suscipit dignissim, risus urna maximus nisl, eu luctus mi ligula vel est. Praesent auctor ac odio vel fermentum. </p>
+                    <h2><%= docinfo.name %></h2>
+                    <p><%= docinfo.description %></p>
                 </header>
                 <li class="heading">
                     <div class="part1">
@@ -103,7 +107,9 @@
                     </div>
                 </li>
                 <div class="heading_data">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a augue vel risus molestie consequat vitae sed felis. Phasellus auctor pretium maximus. Pellentesque eget rhoncus ipsum, a tempor enim.</p> 
+                    <p><% for(var j=0;j<(JSON.parse(docinfo.specialization)).length;j++){%>
+                        <%= JSON.parse(docinfo.specialization)[j].value %>,
+                    <% } %></p> 
                 </div>
                 <li class="heading">
                     <div class="part1">
@@ -115,7 +121,9 @@
                     </div>
                 </li>
                 <div class="heading_data">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a augue vel risus molestie consequat vitae sed felis. Phasellus auctor pretium maximus. Pellentesque eget rhoncus ipsum, a tempor enim.</p> 
+                    <p><% for(var j=0;j<(JSON.parse(docinfo.specialization)).length;j++){%>
+                        <%= JSON.parse(docinfo.specialization)[j].value %>,
+                    <% } %></p> 
                 </div>
                 <li class="heading">
                     <div class="part1">
@@ -127,7 +135,7 @@
                     </div>
                 </li>
                 <div class="heading_data">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a augue vel risus molestie consequat vitae sed felis. Phasellus auctor pretium maximus. Pellentesque eget rhoncus ipsum, a tempor enim.</p> 
+                    <p><%= docinfo.experience %></p> 
                 </div>
                 <li class="heading">
                     <div class="part1">
@@ -139,7 +147,9 @@
                     </div>
                 </li>
                 <div class="heading_data">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a augue vel risus molestie consequat vitae sed felis. Phasellus auctor pretium maximus. Pellentesque eget rhoncus ipsum, a tempor enim.</p> 
+                    <p><% for(var j=0;j<(JSON.parse(docinfo.qualification)).length;j++){%>
+                        <%= JSON.parse(docinfo.qualification)[j].value %>,
+                    <% } %></p> 
                 </div>
                 <li class="heading">
                     <div class="part1">
@@ -151,7 +161,9 @@
                     </div>
                 </li>
                 <div class="heading_data">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a augue vel risus molestie consequat vitae sed felis. Phasellus auctor pretium maximus. Pellentesque eget rhoncus ipsum, a tempor enim.</p> 
+                    <p><% for(var j=0;j<(JSON.parse(docinfo.awards)).length;j++){%>
+                        <%= JSON.parse(docinfo.awards)[j].value %>,
+                    <% } %></p> 
                 </div>
                 <li class="heading">
                     <div class="part1">
@@ -163,7 +175,7 @@
                     </div>
                 </li>
                 <div class="heading_data">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a augue vel risus molestie consequat vitae sed felis. Phasellus auctor pretium maximus. Pellentesque eget rhoncus ipsum, a tempor enim.</p> 
+                    <p><%= docinfo.state %></p> 
                 </div>
                 <li class="heading">
                     <div class="part1">
@@ -175,7 +187,7 @@
                     </div>
                 </li>
                 <div class="heading_data">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a augue vel risus molestie consequat vitae sed felis. Phasellus auctor pretium maximus. Pellentesque eget rhoncus ipsum, a tempor enim.</p> 
+                    <p><%= docinfo.fees %></p> 
                 </div>
             </div>
         </div>

@@ -26,7 +26,7 @@ const update = async (req,res)=>{
         req.session.image=req.file.filename;
     }
     
-    if(req.session.isdoctor){
+    if(req.session.user.fees){
         const docupdate = await doctordb.findOneAndUpdate({email:req.session.user.email},{
             description: req.body.description,
             email: req.body.email,
@@ -145,10 +145,18 @@ const deleterecord = async (req,res) => {
     }   
 }
 
+const logout = async (req,res) => {
+    req.session.destroy(()=>{
+        console.log("session destroyed");
+    });
+    return res.redirect("/");
+}
+
 module.exports={
     update:update,
     passwordchange:passwordchange,
     addrecord:addrecord,
     showrecord:showrecord,
-    deleterecord:deleterecord
+    deleterecord:deleterecord,
+    logout:logout
 }

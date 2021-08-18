@@ -159,7 +159,7 @@ const slotclick = async (req,res) => {
     var savedayforcheck=today.getMonth() +" "+today.getDate()+" "+today.getFullYear();
     req.session.bookingdate=strd;
     req.session.dateforcheck=savedayforcheck;
-    if(req.session.user.isdoctor){
+    if(req.session.user.fees){
         console.log("doctors can't book a slot");
         res.redirect("/doctor");
     }

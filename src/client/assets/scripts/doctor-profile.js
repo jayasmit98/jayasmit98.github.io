@@ -1,5 +1,5 @@
 const dat = document.querySelectorAll('.heading');
-const expand = (element) => {
+const expan= (element) => {
     var t=element.target;
     while(!(t.classList.contains('heading'))){
         t=t.parentElement;
@@ -24,5 +24,5 @@ const expand = (element) => {
 }
 
 dat.forEach(el => {
-    el.addEventListener('click', expand);
+    el.addEventListener('click', expan);
 })
