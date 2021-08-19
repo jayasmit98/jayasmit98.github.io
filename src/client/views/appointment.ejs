@@ -49,6 +49,11 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
+            <% if(user.fees){ %>
+                <a href="/add-schedule">
+                    <li>Add Schedule</li>
+                </a>
+            <% } %>
             <a href="/logout">
                 <li>Logout</li>
             </a>
@@ -69,6 +74,11 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
+            <% if(user.fees){ %>
+                <a href="/add-schedule">
+                    <li>Add Schedule</li>
+                </a>
+            <% } %>
             <a href="/logout">
                 <li>Logout</li>
             </a>
@@ -111,6 +121,14 @@
                         <i class="fas fa-file-alt"></i>
                         <h4>Medical Reports</h4>
                     </li></a>
+                    <% if(user.fees){ %>
+                        <a href="/add-schedule">
+                            <li class="menu_items">
+                                <i class="fas fa-file-alt"></i>
+                                <h4>Add Schedule</h4>
+                            </li>
+                        </a>
+                    <% } %>
                     <a href="settings"><li class="menu_items">
                         <i class="fas fa-file-alt"></i>
                         <h4>Settings</h4>
@@ -132,7 +150,7 @@
                     <i class="fas fa-file-alt"></i>
                     <h4>Profile</h4>
                 </li></a>
-                <a href="/appointments"><li class="menu_items">
+                <a href="/appointments"><li class="menu_items current">
                     <i class="fas fa-file-alt"></i>
                     <h4>Appointments</h4>
                 </li></a>
@@ -140,6 +158,14 @@
                     <i class="fas fa-file-alt"></i>
                     <h4>Medical Reports</h4>
                 </li></a>
+                <% if(user.fees){ %>
+                    <a href="/add-schedule">
+                        <li class="menu_items">
+                            <i class="fas fa-file-alt"></i>
+                            <h4>Add Schedule</h4>
+                        </li>
+                    </a>
+                <% } %>
                 <a href="settings"><li class="menu_items">
                     <i class="fas fa-file-alt"></i>
                     <h4>Settings</h4>

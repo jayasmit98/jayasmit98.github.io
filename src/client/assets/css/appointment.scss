@@ -802,6 +802,13 @@ $lighter-grey:#eeebeb;
                     }
                     
                 }
+                .current{
+                    background-color: $sky-blue;
+                    .fas, h4{
+                        color: $white;
+                    }
+                    
+                }
             }
         }
         

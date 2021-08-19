@@ -51,7 +51,7 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
-            <% if(user.isdoctor=='true'){ %>{
+            <% if(user.fees){ %>
                 <a href="/add-schedule">
                     <li>Add Schedule</li>
                 </a>
@@ -63,11 +63,8 @@
     </div>
     <div class="profile_section_2">
         <div class="part_1">
-            <% if(user.isdoctor) { %>
-                <img src="../assets/uploads/<%=doctordetails.image%>" alt="profile image">
-            <% }else{ %>
-                <img src="../assets/uploads/<%=user.image%>" alt="profile image">
-            <% } %>
+            <img src="../assets/uploads/<%=user.image%>" alt="profile image">
+            
             <h6><%= user.name %></h6>
         </div>
         <ul class="list">
@@ -80,7 +77,7 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
-            <% if(user.isdoctor){ %>
+            <% if(user.fees){ %>
                 <a href="/add-schedule">
                     <li>Add Schedule</li>
                 </a>
@@ -127,7 +124,7 @@
                         <i class="fas fa-file-alt"></i>
                         <h4>Medical Reports</h4>
                     </li></a>
-                    <% if(user.isdoctor){ %>
+                    <% if(user.fees){ %>
                         <a href="/add-schedule">
                             <li class="menu_items">
                                 <i class="fas fa-file-alt"></i>
@@ -152,7 +149,7 @@
                 <h3>Dashboard</h3>
             </div>
             <ul class="part_2">
-                <a href="/profile"><li class="menu_items">
+                <a href="/profile"><li class="menu_items current">
                     <i class="fas fa-file-alt"></i>
                     <h4>Profile</h4>
                 </li></a>
@@ -164,7 +161,7 @@
                     <i class="fas fa-file-alt"></i>
                     <h4>Medical Reports</h4>
                 </li></a>
-                <% if(user.isdoctor){ %>
+                <% if(user.fees){ %>
                     <a href="/add-schedule">
                         <li class="menu_items">
                             <i class="fas fa-file-alt"></i>

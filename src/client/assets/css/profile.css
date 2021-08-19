@@ -1330,6 +1330,12 @@
   body .main_container .mob_header_desktop .part_2 .menu_items:hover .fas, body .main_container .mob_header_desktop .part_2 .menu_items:hover h4 {
     color: white;
   }
+  body .main_container .mob_header_desktop .part_2 .current {
+    background-color: #167ddd;
+  }
+  body .main_container .mob_header_desktop .part_2 .current .fas, body .main_container .mob_header_desktop .part_2 .current h4 {
+    color: white;
+  }
   body .main_container .data_container .part_3, body .main_container .data_container .part_4 {
     display: -ms-grid;
     display: grid;

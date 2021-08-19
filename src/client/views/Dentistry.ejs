@@ -48,6 +48,11 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
+            <% if(user.fees){ %>
+                <a href="/add-schedule">
+                    <li>Add Schedule</li>
+                </a>
+            <% } %>
             <a href="/logout">
                 <li>Logout</li>
             </a>
@@ -68,7 +73,11 @@
             <a href="/settings">
                 <li>Settings</li>
             </a>
-    
+            <% if(user.fees){ %>
+                <a href="/add-schedule">
+                    <li>Add Schedule</li>
+                </a>
+            <% } %>
             <a href="/logout">
                 <li>Logout</li>
             </a>
