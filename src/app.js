@@ -9,6 +9,8 @@ const mid = require("./backend/routes/router")
 const bodyparser = require("body-parser");
 const session = require('express-session');
 const connectDB=require("./backend/database/connection");
+const dotenv = require("dotenv");
+dotenv.config({path:"./backend/config.env"});
 app.use(cors());
 connectDB();
 app.use(compression());
