@@ -97,6 +97,9 @@ $dark-grey:rgb(102, 101, 101);
         }
     }
 }
+.profile_section_2{
+    display:none;
+}
 .booking_container{
     display:grid;
     flex-direction: column;
@@ -139,6 +142,7 @@ $dark-grey:rgb(102, 101, 101);
                 align-items:center;
                 justify-items: start;
                 h3{
+                    text-align: left;
                     span{
                         color:$sky-blue;
                         font-size:1.15rem;

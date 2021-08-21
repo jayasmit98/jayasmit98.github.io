@@ -235,6 +235,56 @@ const filter = async (req,res) => {
     res.redirect('/doctor');
 
 }
+const forgotpassget = async (req,res) => {
+    res.render("forgotpassword");
+}
+
+const changepassget = async (req,res) => {
+    res.render("changepassword");
+}
+
+const forgotpass = async (req,res) => {
+    const em = req.body.email;
+    const finduser = await userdb.findOne({email:em});
+    if(finduser){
+        req.session.tempuser = finduser;
+        res.redirect("/changepasswordget");
+    }
+    else{
+        console.log("User not found");
+        res.redirect("/");
+    }
+}
+ 
+
+const newpass = async (req,res) => {
+    const userdets = await userdb.findOneAndUpdate({email:req.session.tempuser.email});
+    const modpass = await userdb.findOneAndUpdate({email:req.session.tempuser.email},{
+        password:req.body.newpassword,
+    });
+    try{
+        if(modpass.isdoctor){
+            const docupd = await docdetaildb.findOneAndUpdate({email:req.session.tempuser.email},{
+                password:req.body.newpassword,
+            })
+            const docd = await docdetaildb.findOne({email:req.session.tempuser.email});
+            req.session.user=docd;
+            console.log("password changed successfully");
+            res.redirect("index");
+        }
+        else{
+            req.session.user=userdets;
+            res.redirect("index");
+        }
+    }
+    catch(err){
+        if(err){
+            console.log(err);
+            res.redirect("/");
+        }
+    }
+}
+
 module.exports={
     login:login,
     index:index,
@@ -260,5 +310,9 @@ module.exports={
     booking:booking,
     rescheduleget:rescheduleget,
     filter:filter,
-    sortby:sortby
+    sortby:sortby,
+    forgotpass:forgotpass,
+    newpass:newpass,
+    forgotpassget:forgotpassget,
+    changepassget:changepassget
 };

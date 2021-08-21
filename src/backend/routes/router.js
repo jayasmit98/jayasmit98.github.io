@@ -85,4 +85,8 @@ router.route("/filter").post(mainc.filter);
 router.route("/sort").post(mainc.sortby);
 router.route("/logout").get(userc.logout);
 router.route("/addfilter").post(mainc.filter);
+router.route("/forgotpasswordget").get(mainc.forgotpassget);
+router.route("/changepasswordget").get(mainc.changepassget);
+router.route("/forgotpassword").post(mainc.forgotpass);
+router.route("/newpassword").post(mainc.newpass);
 module.exports=router;

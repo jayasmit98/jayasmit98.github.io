@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const userdb = require('../models/user');
 const Nexmo = require('nexmo');
 const docdb = require('../models/docdetail');
+const docdetails = require('../models/docdetail');
 const nexmo=new Nexmo({
     apiKey: '306bcc58', 
     apiSecret:'EfT1cIXutGptSDfH'
@@ -238,8 +239,8 @@ const sendotp =(req,res,next) => {
     },requestotp);
 }
 
-const verotp = (req,res,next) => {
-    const nexmoverify = (err, result) =>{
+const verotp =(req,res,next) => {
+    const nexmoverify = async (err, result) =>{
         if(err){
             req.session.errorType='Failure';
             req.session.error='Please try again later';
@@ -252,7 +253,13 @@ const verotp = (req,res,next) => {
                 res.redirect("/otp");
             }
             else{
-                const user = userdb.findOne({email:req.session.user.email});
+                const user = await userdb.findOne({email:req.session.user.email});
+                req.session.user=user;
+                if(user.isdoctor){
+                    const docd = await docdb.findOne({email:user.email});
+                    req.session.user= docd;
+                }
+
                 user.phone=req.session.number;
                 user.save();
                 req.session.errorType='Success';

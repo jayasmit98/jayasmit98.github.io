@@ -117,6 +117,10 @@
   padding-left: 1rem;
 }
 
+.profile_section_2 {
+  display: none;
+}
+
 .booking_container {
   display: -ms-grid;
   display: grid;
@@ -187,6 +191,10 @@
       -ms-flex-align: center;
           align-items: center;
   justify-items: start;
+}
+
+.booking_container .part_1 .part__2 .detail h3 {
+  text-align: left;
 }
 
 .booking_container .part_1 .part__2 .detail h3 span {

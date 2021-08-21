@@ -37,7 +37,7 @@ const showslots = async (id,docid) => {
    
     for(var s=0;s<7;s++){
         
-        document.getElementById(s).innerHTML='<h5>'+finalarray[s]+'</h5><span class="slot_trigger">'+schedule[s] + ' Slots Available</span>';
+        document.getElementById('slot'+s+docid).innerHTML='<h5>'+finalarray[s]+'</h5><span class="slot_trigger">'+schedule[s] + ' Slots Available</span>';
     }
 }
 
